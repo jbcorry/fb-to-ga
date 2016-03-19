@@ -1,9 +1,3 @@
-// scripts.js
-// TODO
-// smoothscroll - privacy page scrolling
-// bootstrap FAQ
-// smoothscroll FAQ for up/down sections
-
 // ============================================================================
 // PAVE: Global
 // ============================================================================
