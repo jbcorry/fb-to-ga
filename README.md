@@ -8,3 +8,10 @@
 - Step 5: Security Questions
 - Step 6: Promissory Note
 - Step 7: Next Steps
+
+
+## Coming Next
+- Step 7: Document Upload Flow
+- Application Declined Page
+- Logged In User Settings Pages
+- Updated Global Styles
