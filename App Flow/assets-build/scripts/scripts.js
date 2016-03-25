@@ -17,7 +17,6 @@ var PAVE = PAVE || {};
 // PAVE: Init
 // ============================================================================
 $(document).ready(function(){
-  console.log('ready');
 
   if ( $('.page-home').length ) {
     new PAVE.Home.TestimonialSlider();
@@ -28,7 +27,6 @@ $(document).ready(function(){
     new PAVE.App.FieldActive();
     new PAVE.App.SchoolBlock();
     new PAVE.App.WorkBlock();
-    new PAVE.App.SidebarStick();
     new PAVE.App.CollegeRadioInputs();
     new PAVE.App.SchoolBlockSave();
     new PAVE.App.SchoolBlockDuplication();
@@ -39,10 +37,33 @@ $(document).ready(function(){
     new PAVE.App.LoanTermsSelection();
   }
 
+  if ( $('.page-application').length && !$('.page-sidebar').hasClass('no-stick') ) {
+    new PAVE.App.SidebarStick();
+  }
+
+  if ( $('.page-settings').length ) {
+    new PAVE.App.SidebarStick();
+  }
+
   if ( $('.range-slider').length ) {
     new PAVE.App.RangeSlider();
   }
 
+  if ( $('.page-secondary').length ) {
+    new PAVE.Secondary.TopNavBar();
+    new PAVE.Secondary.FAQItemClick();
+  }
+
+  if ( $('.page-support').length || $('.page-careers').length ) {
+    new PAVE.Secondary.SidebarLinkList();
+    new PAVE.Secondary.SidebarSticky();
+    new PAVE.Secondary.SidebarLinkListClicks();
+  }
+
+  if ( $('.page-legal').length ) {
+    new PAVE.Secondary.LegalNav();
+    new PAVE.Secondary.BackToTop();
+  }
 });
 
 // ============================================================================
@@ -60,8 +81,7 @@ function addCommas(nStr) {
       x1 = x1.replace(rgx, '$1' + ',' + '$2');
   }
   return x1 + x2;
-}
-
+};
 
 // ============================================================================
 // PAVE: Home
@@ -74,8 +94,190 @@ PAVE.Home.TestimonialSlider = function() {
     touch: true,
     slideshow: true,
   });
-}
+};
 
+// ============================================================================
+// PAVE: Secondary Pages
+// ============================================================================
+PAVE.Secondary.SidebarLinkList = function() {
+  activateSectionLink = function(curSection) {
+    $('.secondary-nav-item').removeClass('active');
+    curLink = $('[data-section-title="' + curSection + '"]');
+    $(curLink).addClass('active');
+  };
+
+  var waypointAbout = new Waypoint({
+    element: document.getElementById('page-secondary'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '-13%'
+  });
+
+  var waypointApplying = new Waypoint({
+    element: document.getElementById('applying'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '13%'
+  });
+
+  var waypointOnboarding = new Waypoint({
+    element: document.getElementById('onboarding'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '13%'
+  });
+
+  var waypointPayments = new Waypoint({
+    element: document.getElementById('payments'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '13%'
+  });
+
+  var waypointInvesting = new Waypoint({
+    element: document.getElementById('investing'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '13%'
+  });
+
+  var waypointInvesting = new Waypoint({
+    element: document.getElementById('security'),
+    handler: function(direction) {
+      activateSectionLink(this.element.id);
+    },
+    offset: '13%'
+  });
+
+  var waypointInvesting = new Waypoint({
+    element: document.getElementById('other'),
+    handler: function(direction) {
+      if ( direction === "down" ) {
+        $('.secondary-nav').removeClass('stuck');
+        activateSectionLink(this.element.id);
+      } else if ( direction === "up" ) {
+        activateSectionLink(this.element.id);
+        $('.secondary-nav').addClass('stuck');
+      }
+    },
+    offset: '13%'
+  });
+};
+
+PAVE.Secondary.SidebarLinkListClicks = function() {
+  $('.secondary-nav-item').on('click', function(event) {
+    var target = $(this).data('section-title'),
+        targetSection = $('#' + target);
+
+    if ( target = '#page-secondary' ) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - 110
+      }, 1000);
+    } else if ( targetSection.length ) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - 110
+      }, 1000);
+    }
+  });
+};
+
+PAVE.Secondary.SidebarSticky = function() {
+  var waypointSidebar = new Waypoint({
+    element: $('#page-secondary'),
+    handler: function(direction) {
+      if ( direction === "down" ) {
+        $('.secondary-nav').addClass('stuck');
+      } else if ( direction === "up" ) {
+        $('.secondary-nav').removeClass('stuck');
+      }
+    },
+    offset: -400
+  });
+};
+
+PAVE.Secondary.TopNavBar = function() {
+  var waypointTopBarHide = new Waypoint({
+    element: $('.secondary-header'),
+    handler: function(direction) {
+      if ( direction === "down" ) {
+        $('.secondary-header').addClass('hide');
+      } else if ( direction === "up" ) {
+        $('.secondary-header').removeClass('hide');
+      }
+    },
+    offset: -112
+  });
+
+  var waypointTopBarShow = new Waypoint({
+    element: $('#page-secondary'),
+    handler: function(direction) {
+      if ( direction === "down" ) {
+        $('.secondary-header').addClass('stuck');
+      } else if ( direction === "up" ) {
+        $('.secondary-header').removeClass('stuck');
+      }
+    },
+    offset: -400
+  });
+};
+
+PAVE.Secondary.FAQItemClick = function() {
+  // refresh waypoints when FAQs are expanded
+  $('.question-title').on('click', function() {
+    Waypoint.refreshAll();
+    console.log('refresh waypoints');
+  });
+};
+
+PAVE.Secondary.LegalNav = function() {
+  $('.legal-nav-item').on('click', function(event) {
+    var target = $(this).data('section-title'),
+        targetSection = $('#' + target);
+
+    if ( targetSection.length ) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - 110
+      }, 1000);
+    }
+  });
+};
+
+PAVE.Secondary.BackToTop = function() {
+  var reachedSection = false;
+
+  var waypointBTT = new Waypoint({
+    element: $('.back-to-top-trigger'),
+    offset: 'bottom-in-view',
+    handler: function(direction) {
+
+      // Back to Top
+      if ( direction === "up" ) {
+        $('.back-to-top').removeClass('active');
+      } else if ( direction === "down" ) {
+        $('.back-to-top').addClass('active');
+      }
+
+      reachedSection = true;
+    }
+  });
+
+  $('.back-to-top').on('click', function() {
+    event.preventDefault();
+    var target = $('.main-section-nav');
+
+    $('html, body').animate({
+      scrollTop: target.offset().top - 110
+    }, 1000);
+  });
+};
 
 // ============================================================================
 // PAVE: Application Flow
@@ -83,7 +285,7 @@ PAVE.Home.TestimonialSlider = function() {
 
 PAVE.App.SidebarStick = function() {
   var sidebar = $('.sidebar-inner'),
-      stickyTop = $('.app-form').offset().top,
+      stickyTop = $('.page-main').offset().top,
       headerHeight = $('.inner-header').height(),
       extraTopPadding = 50,
       topPadding = headerHeight + extraTopPadding,
@@ -92,7 +294,7 @@ PAVE.App.SidebarStick = function() {
 
   $(window).resize(function() {
     windowWidth = $(window).width();
-    stickyTop = $('.app-form').offset().top;
+    stickyTop = $('.page-main').offset().top;
   });
 
   // if window is < 642 && user is scrolled down a bit
@@ -106,7 +308,7 @@ PAVE.App.SidebarStick = function() {
     var windowTop = $(window).scrollTop() + headerHeight + extraTopPadding,
         sidebarWidth = $('.sidebar-inner').outerWidth();
 
-    if ( stickyTop < windowTop && !$('.page-sidebar').hasClass('no-stick') ) {
+    if ( stickyTop < windowTop ) {
       $(sidebar).css({ position: 'fixed', top: topPadding });
       $(sidebar).css('width', sidebarWidth);
     } else {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Pave - Accept Loan Terms</title>
+    <title>Pave - Declined</title>
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
 
@@ -17,12 +17,12 @@
 
   <body>
 
-    <div class="page-application page-flow-4">
+    <div class="page-application page-flow-declined">
 
       <div class="header">
         <div class="inner-header">
           <div class="header-left">
-            <h4>Accept Loan Terms</h4>
+            <h4>Thank You</h4>
           </div>
 
           <div class="header-right">
@@ -31,158 +31,34 @@
             </a>
           </div>
         </div>
-      </div> <!-- header -->
+      </div>
 
-      <div class="form-header">
-        <div class="form-header-inner">
-          <div class="form-header-icon-wrapper">
-            <img src="http://placehold.it/120x120/533CA0/533CA0" alt="" class="form-header-icon">
-          </div>
-
-          <div class="form-header-message">
-            <h1 class="form-headline">Congratulations, [NAME]!</h1>
-            <h2 class="form-headline-secondary">You’ve been approved. Your personalized terms are valid until 01/02/2016.</h2>
-            <span class="chat-arrow"></span>
-          </div>
-        </div>
-      </div> <!-- form-header -->
-
-      <div class="page-wrapper">
+      <div class="page-wrapper page-wrapper-secondary">
 
         <div class="page-main">
 
-          <form class="app-form" method="POST" action="#" id="app-form-4" role="form">
+          <div class="form-section">
+            <span class="form-section-top"></span>
 
-            <div class="form-section" id="loan-amount-changes">
-              <span class="form-section-top"></span>
+            <div class="form-section-inner">
 
-              <div class="form-section-inner">
-                <div class="form-row-titles range-slider-titles">
-                  <h4 class="form-section-title has-subtitle">Good news. You've been approved to borrow up to $25,000!</h4>
-                  <h2 class="form-headline-secondary">You were approved for your original loan amount, but you can change the amount if you'd like.</h2>
-                </div>
-
-                <div class="form-row row-wide range-slider">
-                  <div class="range-slider-inner">
-                    <fieldset class="form-group row-wide extend-title">
-                      <input type="range" min="3500" max="25000" step="500" value="10500" id="bonusFunds" required />
-                    </fieldset>
-                    <div class="range-slider-footer">
-                      <h5 class="min-value">$3,000</h5>
-                      <h5 class="max-value">$25,000</h5>
-                    </div>
-                  </div>
-                </div>
+              <div class="form-row-titles">
+                <h4 class="form-section-title">Thank you for taking the time to complete your Pave loan application.</h4>
               </div>
-            </div>
 
-            <div class="form-section" id="loan-terms">
-              <span class="form-section-top"></span>
-
-              <div class="form-section-inner">
-
+              <div class="form-section-block app-copy">
                 <div class="form-row">
-                  <h4 class="form-section-title has-subtitle">Select Your Loan Term</h4>
-                  <h2 class="form-headline-secondary">You can decide between a 2 or 3 year loan. Your monthly payments will be different depending on what you pick. Pick whatever option you think works best for you.</h2>
-                </div>
-
-                <div class="form-loan-terms-block form-row">
-                  <div class="loan-terms-col loan-terms-col-1">
-                    <div class="term-title">
-                      <span class="tooltip-question" data-toggle="tooltip" data-placement="bottom" title="This is some tooltip text right here. There can also be a second line.">?</span>
-                      <h6>Monthly Payment</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>Interest Rate</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>APR</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>Origination Fee</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>Payment Start Date</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>Final Payment Date</h6>
-                    </div>
-                    <div class="term-title">
-                      <span class="tooltip-question">?</span>
-                      <h6>Early Repayment Fee</h6>
-                    </div>
-                  </div>
-                  <div class="loan-terms-col loan-terms-col-2 loan-terms-option selected" id="loan-terms-opt-1">
-                    <h5 class="loan-terms-title">2 Years</h5>
-
-                    <h6>Monthly Payment</h6>
-                    <h5>$100.02/mo</h5>
-
-                    <h6>Interest Rate</h6>
-                    <h5>0.00%</h5>
-
-                    <h6>APR</h6>
-                    <h5>0.00%</h5>
-
-                    <h6>Origination Fee</h6>
-                    <h5>$50.00</h5>
-
-                    <h6>Payment Start Date</h6>
-                    <h5>02/02/2016</h5>
-
-                    <h6>Final Payment Date</h6>
-                    <h5>02/02/2019</h5>
-
-                    <h6>Early Repayment Fee</h6>
-                    <h5>$0.00</h5>
-
-                    <span class="terms-col-btn">Selected</span>
-                    <input type="checkbox" class="hidden" value="terms-2-years">
-                  </div>
-
-                  <div class="loan-terms-col loan-terms-col-3 loan-terms-option" id="loan-terms-opt-2">
-                    <h5 class="loan-terms-title">3 Years</h5>
-
-                    <h6>Monthly Payment</h6>
-                    <h5>$75.02/mo</h5>
-
-                    <h6>Interest Rate</h6>
-                    <h5>0.00%</h5>
-
-                    <h6>APR</h6>
-                    <h5>0.00%</h5>
-
-                    <h6>Origination Fee</h6>
-                    <h5>$50.00</h5>
-
-                    <h6>Payment Start Date</h6>
-                    <h5>02/02/2016</h5>
-
-                    <h6>Final Payment Date</h6>
-                    <h5>02/02/2019</h5>
-
-                    <h6>Early Repayment Fee</h6>
-                    <h5>$0.00</h5>
-
-                    <span class="terms-col-btn">Select 3 years</span>
-                    <input type="checkbox" class="hidden" value="terms-3-years">
-                  </div>
-                </div> <!-- form-loan-terms-block -->
-
+                  <h6>After a thorough review of your application, including your credit, career and education history, we regret to inform you that we cannot offer you a loan at this time.</h6>
+                  <h6>That said, we’re on a mission to make credit accessible to all, and we will soon be expanding our eligibility requirements to include even more credit-worthy borrowers.</h6>
+                  <h6>To see why we weren’t able to offer you a Pave loan, you can check your email for more specific information about our decision.</h6>
+                  <h6>Thank you for taking the time to apply for a loan, and we hope to see you back</h6>
+                  <h6>on Pave in the future!</h6>
+                  <h6>The Pave Team</h6>
+                </div> <!-- form-row -->
               </div>
             </div>
+          </div> <!-- form-section -->
 
-            <a href="/app-flow-5.html" class="btn btn-submit form-footer">Accept Loan Terms</a>
-            <!-- <button type="submit" class="btn btn-submit form-footer">Next Step</button> -->
-
-            <h6 class="form-note">You understand that by clicking below on the “Accept” button immediately following this notice, you are providing ‘written instructions’ to Pave under the Fair Credit Reporting Act authorizing Pave to obtain information from your personal credit profile or other information from one or more credit bureaus. You authorize Pave to obtain such information solely to prequalify you for credit options and confirm your identity to avoid potential fraudulent transactions in your name.</h6>
-
-          </form> <!-- form -->
         </div> <!-- page-main -->
 
         <div class="page-sidebar">
@@ -207,6 +83,7 @@
             </div> <!-- page-sidebar-block -->
           </div>
         </div> <!-- page-sidebar -->
+
       </div> <!-- page-wrapper -->
 
       <footer>
@@ -257,9 +134,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-    <script src="assets-build/scripts/plugins/jquery.mask.js"></script>
-    <script src="assets-build/scripts/plugins/rangeSlider.js"></script>
+    <script src="assets-build/scripts/plugins/validetta.js"></script>
     <script src="assets-build/scripts/plugins/bootstrap.js"></script>
+    <script src="assets-build/scripts/plugins/jquery.mask.js"></script>
     <script src="assets-build/scripts/scripts.js"></script>
 
   </body>

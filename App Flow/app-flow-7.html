@@ -95,76 +95,179 @@
                 <div class="steps-todo-content steps-content toggled" data-toggle="steps-todo" id="steps-todo">
                   <div class="final-step-item">
                     <div class="step-row">
-                      <h4 class="step-section-title">Confirm your email address.</h4>
-                      <h6>We have sent a confirmation email to: <span class="bold">randomstuff2501@gmail.com</span></h6>
-                      <h6>Look for the email in your inbox and verify your email clicking on the link in the email.</h6>
-                      <h6>Can’t find the email? <a href="#">Resend confirmation email.</a></h6>
+                      <div class="step-inner">
+                        <h4 class="step-section-title">Confirm your email address.</h4>
+                        <h6>We have sent a confirmation email to: <span class="bold">randomstuff2501@gmail.com</span></h6>
+                        <h6>Look for the email in your inbox and verify your email clicking on the link in the email.</h6>
+                        <h6>Can’t find the email? <a href="#">Resend confirmation email.</a></h6>
+                      </div>
                     </div>
 
                   </div> <!-- final-step-item -->
                   <div class="final-step-item">
                     <div class="step-row">
-                      <h4 class="step-section-title">Add your bank account.</h4>
-                      <h6>Add and verify your bank account (takes 1-2 business days) and confirm how you’d like to make your monthly payments.</h6>
+                      <div class="step-inner">
+                        <h4 class="step-section-title">Add your bank account.</h4>
+                        <h6>Add and verify your bank account (takes 1-2 business days) and confirm how you’d like to make your monthly payments.</h6>
 
-                      <a href="#" class="btn">Add Bank Account</a>
+                        <button type="button" class="btn btn-narrow" data-toggle="modal" data-target="#addBankAccount">Add Bank Account</button>
+                      </div>
                     </div>
 
                   </div> <!-- final-step-item -->
                   <div class="final-step-item">
                     <div class="step-row">
-                      <h4 class="step-section-title">Add your supporting documentation.</h4>
-                      <h6>Please submit the following documents so we can verify your information.</h6>
+                      <div class="step-inner">
+                        <h4 class="step-section-title has-subtitle">Add your supporting documentation.</h4>
+                        <h6>Please submit the following documents so we can verify your information.</h6>
+                      </div>
                     </div>
 
                     <div class="step-row">
-                      <h5 class="input-title has-subtitle">Proof of Identity</h5>
-                      <h6>Please attach a color photo of your driver’s license, passport, or government issued ID.</h6>
-                      <a href="#" class="btn">Upload File</a>
+                      <div class="step-inner">
+                        <p class="bold">Important! Name all of your documents in the following format:</p>
+                        <p>“First Name & Last Name - Document Name” (ie: Jane Doe - Driver’s License)</p>
+                      </div>
+                    </div>
+
+                    <div class="step-row upload-valid">
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Identity</h5>
+                        <h6>Please attach a color photo of your driver’s license, passport, or government issued ID.</h6>
+
+                        <button type="button" class="btn-secondary" data-toggle="modal" data-target="#proofOfIdentity">Upload File</button>
+                      </div>
+
+                      <div class="upload-content-block upload-file" id="uploadProofOfIdentity">
+                        <div class="upload-block-info">
+                          <h4 class="upload-block-title">john-doe-drivers-license.png</h4>
+                          <h4 class="upload-block-details">January 20, 2016</h4>
+                        </div>
+                        <div class="upload-block-buttons">
+                          <a href="#" class="form-block-edit">Remove</a>
+                          <a href="#" class="form-block-edit upload-file" data-toggle="modal" data-target="#proofOfIdentity">Change File</a>
+                        </div>
+                      </div> <!-- form-content-block -->
                     </div>
 
                     <div class="step-row">
-                      <h5 class="input-title has-subtitle">Proof of Bank Account</h5>
-                      <h6>Please attach the most recent statement (within 30 days) from your bank account showing your name and full balance in your savings and checking accounts.</h6>
-                      <a href="#" class="btn">Upload File</a>
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Bank Account</h5>
+                        <h6>Please attach the most recent statement (within 30 days) from your bank account showing your name and full balance in your savings and checking accounts.</h6>
+                        <button type="button" class="btn-secondary" data-toggle="modal" data-target="#proofOfFinances">Upload File</button>
+                      </div>
+
+                      <div class="upload-content-block upload-file" id="uploadProofOfBankAccount">
+                        <div class="upload-block-info">
+                          <h4 class="upload-block-title">bank-account-proof.png</h4>
+                          <h4 class="upload-block-details">January 20, 2016</h4>
+                        </div>
+                        <div class="upload-block-buttons">
+                          <a href="#" class="form-block-edit upload-file" data-toggle="modal" data-target="#proofOfIdentity">Change File</a>
+                        </div>
+                      </div> <!-- form-content-block -->
                     </div>
 
                     <div class="step-row">
-                      <h5 class="input-title has-subtitle">Proof of Employment with [EMPLOYER NAME]</h5>
-                      <h6>Please attach the most recent paystub dated after [DATE].</h6>
-                      <a href="#" class="btn">Upload File</a>
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Employment with [EMPLOYER NAME]</h5>
+                        <h6>Please attach the most recent paystub dated after [DATE].</h6>
+                        <button type="button" class="btn-secondary" data-toggle="modal" data-target="#proofOfIncome">Upload File</button>
+                      </div>
+
+                      <div class="upload-content-block upload-file" id="uploadProofOfEmployment">
+                        <div class="upload-block-info">
+                          <h4 class="upload-block-title">employment-proof.png</h4>
+                          <h4 class="upload-block-details">January 20, 2016</h4>
+                        </div>
+                        <div class="upload-block-buttons">
+                          <a href="#" class="form-block-edit upload-file" data-toggle="modal" data-target="#proofOfIdentity">Change File</a>
+                        </div>
+                      </div> <!-- form-content-block -->
                     </div>
 
-
+                    <div class="step-row last">
+                      <a href="#" class="btn">Submit Documents</a>
+                    </div>
                   </div> <!-- final-step-item -->
                 </div>
-
 
                 <div class="steps-done-content steps-content" data-toggle="steps-done" id="steps-done">
                   <div class="final-step-item">
                     <div class="step-row">
-                      <h4 class="step-section-title">Add your supporting documentation.</h4>
-                      <h6>Please submit the following documents so we can verify your information.</h6>
+                      <div class="step-inner">
+                        <h4 class="step-section-title">You’ve accepted your loan terms.</h4>
+                        <h6>Your monthly payment is $178.20 with a 6.5% interest rate for 3 years.<br /><a href="#">View your full loan terms.</a></h6>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="final-step-item">
+                    <div class="step-row">
+                      <div class="step-inner">
+                        <h4 class="step-section-title">You’ve signed your loan agreement.</h4>
+                        <h6>Your agreement has been signed. You can view your signed agreements at the bottom right of the page.</h6>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="final-step-item">
+                    <div class="step-row">
+                      <div class="step-inner">
+                        <h4 class="step-section-title">You’ve uploaded your supporting documentation.</h4>
+                      </div>
                     </div>
 
-                    <div class="step-row extra-margin">
-                      <h5 class="input-title has-subtitle">Proof of Identity</h5>
-                      <h6>Please attach a color photo of your driver’s license, passport, or government issued ID.</h6>
-                      <a href="#" class="btn">Add Bank Account</a>
+                    <div class="step-row">
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Identity</h5>
+                        <h6>Please attach a color photo of your driver’s license, passport, or government issued ID.</h6>
+                      </div>
+
+                      <div class="upload-content-complete">
+                        <div class="left">
+                          <img src="http://placehold.it/120x120/F2F2F2/F2F2F2" alt="">
+                        </div>
+                        <div class="right">
+                          <h5 class="upload-complete-title">john-doe-drivers-license.pdf</h5>
+                          <h6>January 20, 2016</h6>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="step-row extra-margin">
-                      <h5 class="input-title has-subtitle">Proof of Bank Account</h5>
-                      <h6>Please attach the most recent statement (within 30 days) from your bank account showing your name and full balance in your savings and checking accounts.</h6>
-                      <a href="#" class="btn">Add Bank Account</a>
+                    <div class="step-row">
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Bank Account</h5>
+                        <h6>Please attach the most recent statement (within 30 days) from your bank account showing your name and full balance in your savings and checking accounts.</h6>
+                      </div>
+
+                      <div class="upload-content-complete">
+                        <div class="left">
+                          <img src="http://placehold.it/120x120/F2F2F2/F2F2F2" alt="">
+                        </div>
+                        <div class="right">
+                          <h5 class="upload-complete-title">bank-account-proof.pdf</h5>
+                          <h6>January 20, 2016</h6>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="step-row extra-margin">
-                      <h5 class="input-title has-subtitle">Proof of Employment with [EMPLOYER NAME]</h5>
-                      <h6>Please attach the most recent paystub dated after [DATE].</h6>
-                      <a href="#" class="btn">Add Bank Account</a>
-                    </div>
+                    <div class="step-row last">
+                      <div class="step-inner">
+                        <h5 class="input-title has-subtitle">Proof of Employment with [EMPLOYER NAME]</h5>
+                        <h6>Please attach the most recent paystub dated after [DATE].</h6>
+                      </div>
 
+                      <div class="upload-content-complete">
+                        <div class="left">
+                          <img src="http://placehold.it/120x120/F2F2F2/F2F2F2" alt="">
+                        </div>
+                        <div class="right">
+                          <h5 class="upload-complete-title">employment-proof.pdf</h5>
+                          <h6>January 20, 2016</h6>
+                        </div>
+                      </div>
+                    </div>
 
                   </div> <!-- final-step-item -->
                 </div>
@@ -289,6 +392,182 @@
 
       <a href="#" class="overlay-close">Close</a>
     </div> <!-- contact-overlay -->
+
+    <div class="modal app-flow-modal" tabindex="-1" role="dialog" id="proofOfIdentity">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-border-top"></div>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:#989898;}</style><path class="st0" d="M22.9,1.1c-0.4-0.4-1-0.4-1.4,0L12,10.6L2.5,1.1c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.5,9.5l-9.5,9.5c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l9.5-9.5l9.5,9.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12l9.5-9.5C23.3,2.1,23.3,1.5,22.9,1.1z"/>
+            </button>
+            <h4 class="modal-title">Proof of Identity</h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-copy">
+              <div class="modal-copy-inner">
+                <div class="copy-block">
+                  <h5>Upload Instructions</h5>
+                  <p>Please attach a color photo of your driver's license, passport, or government issued ID.</p>
+                </div>
+
+                <div class="copy-block">
+                  <h5>Tips</h5>
+                  <ul>
+                    <li>Use a camera phone</li>
+                    <li>Place your ID on a white background</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-image">
+              <img src="/assets-build/images/pave-doc-example-driver-license@2x.png" class="modal-image" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn">Select File</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal app-flow-modal" tabindex="-1" role="dialog" id="proofOfIncome">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-border-top"></div>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:#989898;}</style><path class="st0" d="M22.9,1.1c-0.4-0.4-1-0.4-1.4,0L12,10.6L2.5,1.1c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.5,9.5l-9.5,9.5c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l9.5-9.5l9.5,9.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12l9.5-9.5C23.3,2.1,23.3,1.5,22.9,1.1z"/>
+            </button>
+            <h4 class="modal-title">Proof of Income</h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-copy">
+              <div class="modal-copy-inner">
+                <div class="copy-block">
+                  <h5>Upload Instructions</h5>
+                  <p>Attach you two most recent paystubs and/or proof of other sources of income (recent tax returns are acceptable).</p>
+                </div>
+
+                <div class="copy-block">
+                  <h5>Tips</h5>
+                  <ul>
+                    <li>Make sure your full name is visible</li>
+                    <li>Make sure the entire pay stub is visible</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-image">
+              <img src="/assets-build/images/pave-doc-example-paystub@2x.png" class="modal-image" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn">Select File</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal app-flow-modal" tabindex="-1" role="dialog" id="proofOfFinances">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-border-top"></div>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:#989898;}</style><path class="st0" d="M22.9,1.1c-0.4-0.4-1-0.4-1.4,0L12,10.6L2.5,1.1c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.5,9.5l-9.5,9.5c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l9.5-9.5l9.5,9.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12l9.5-9.5C23.3,2.1,23.3,1.5,22.9,1.1z"/>
+            </button>
+            <h4 class="modal-title">Proof of Finances</h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-copy">
+              <div class="modal-copy-inner">
+                <div class="copy-block">
+                  <h5>Upload Instructions</h5>
+                  <p>Attach your most recent financial statement(s) (checking, savings, investment, and/or retirement).</p>
+                </div>
+
+                <div class="copy-block">
+                  <h5>Tips</h5>
+                  <ul>
+                    <li>Make sure your full name and balance is visible.</li>
+                    <li>Make sure the total balance on your statements matches the total balance amount you entered on your application.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-image">
+              <img src="/assets-build/images/pave-doc-example-bank-statement@2x.png" class="modal-image" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn">Select File</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal app-flow-modal" tabindex="-1" role="dialog" id="addBankAccount">
+      <div class="modal-dialog">
+        <form class="modal-content" id="settings-bank-account" method="POST" action="#" role="form">
+          <div class="modal-border-top"></div>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:#989898;}</style><path class="st0" d="M22.9,1.1c-0.4-0.4-1-0.4-1.4,0L12,10.6L2.5,1.1c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.5,9.5l-9.5,9.5c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l9.5-9.5l9.5,9.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12l9.5-9.5C23.3,2.1,23.3,1.5,22.9,1.1z"/>
+            </button>
+            <h4 class="modal-title">Add a Bank Account</h4>
+          </div>
+          <div class="modal-body modal-settings">
+            <div class="modal-info">
+              <div class="modal-info-inner">
+                <div class="copy-block">
+                  <h5>What's Next?</h5>
+                  <p>As an extra layer of security, we first need to verify your bank.</p>
+                  <p>We will make two small depositys into your bank account within the next 1-2 business days. When you see the two small deposits, come back to this page and enter the values of the two deposits.</p>
+                  <p>Note: Your bank account must be a US-based account and your legal name must be listed.</p>
+                </div>
+
+                <div class="modal-image mobile">
+                  <img src="/assets-build/images/pave-doc-example-check-centered@2x.png" class="modal-image" />
+                </div>
+
+                <fieldset class="form-group row-half">
+                  <label for="firstName">Account Nickname</label>
+                  <input type="text" id="accountNickname" placeholder="Main" required />
+                </fieldset>
+
+              </div>
+            </div>
+
+            <div class="modal-image desktop">
+              <div class="modal-info-inner">
+                <img src="/assets-build/images/pave-doc-example-check@2x.png" class="modal-image" />
+              </div>
+            </div>
+
+            <div class="form-row margin-top">
+              <div class="modal-info-inner">
+                <fieldset class="form-group row-half">
+                  <label for="firstName">Routing Number</label>
+                  <input type="text" id="routingNumber" placeholder="000000000" required />
+                </fieldset>
+
+                <fieldset class="form-group row-half">
+                  <label for="firstName">Account Number</label>
+                  <input type="text" id="accountNumber" placeholder="000000000" required />
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer narrow">
+            <button type="button" class="btn btn-narrow">Add Bank Account</button>
+          </div>
+        </form><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>

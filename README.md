@@ -8,3 +8,9 @@
 - Step 5: Security Questions
 - Step 6: Promissory Note
 - Step 7: Next Steps
+
+
+## App Flow Handoff 2 (3/25)
+- Step 7: Document Upload Modals
+- User Settings
+- Declined Template
