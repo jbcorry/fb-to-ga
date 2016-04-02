@@ -1,0 +1,258 @@
+// _footer.scss
+
+////////////////////////////////////////////////////////
+// Footer
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Footer - Global
+// -----------------------------------------------------
+footer {
+  background: $color-white;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: $color-gray-4;
+
+  @media #{$large-up} {
+    padding: 4rem 1rem;
+  }
+
+  a,
+  h5 {
+    letter-spacing: 0.5px;
+  }
+
+  .footer-inner {
+    @include outer-container();
+    padding: 0 0.5rem;
+  }
+
+  .footer-top {
+    @include span-columns(12);
+  }
+
+  .footer-bottom {
+    @include span-columns(12);
+  }
+
+  &.footer-gray {
+    background: $color-gray-2;
+    border-top: 2px solid $color-border-gray;
+  }
+}
+
+// -----------------------------------------------------
+// Footer - Logo
+// -----------------------------------------------------
+.logo-footer {
+  text-decoration: none;
+  width: 88px;
+  height: 24px;
+  display: block;
+  margin: 0 auto 2.5rem;
+
+  .inner-logo {
+    fill: $text-color-gray;
+  }
+
+  svg {
+    width: 88px;
+    height: 24px;
+  }
+
+  @media #{$large-up} {
+    float: left;
+    width: 95px;
+    height: 25px;
+
+    svg {
+      width: 95px;
+      height: 25px;
+    }
+  }
+}
+
+.logo-pave-gray {
+  path {
+    fill: $color-gray-7;
+  }
+}
+
+.footer-legal {
+  @include fontSize(11px);
+  margin: 0 auto;
+  max-width: 16rem;
+  letter-spacing: 0.5px;
+
+  &:first-of-type {
+    margin-bottom: 1.5rem;
+  }
+
+  @media #{$large-up} {
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    @include fontSize(12px);
+
+    &:first-of-type {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Footer - Main
+// -----------------------------------------------------
+.main-footer {
+  @include outer-container();
+  max-width: none;
+  padding: 3rem 1rem 2rem;
+
+  @media #{$medium-up} {
+    padding: 6rem 1rem 2rem;
+  }
+
+  .main-footer-inner {
+    @include outer-container();
+    padding-bottom: 4rem;
+
+    @media #{$medium-up} {
+      padding-bottom: 6rem;
+    }
+  }
+
+  .footer-col-1 {
+    @include span-columns(12);
+    text-align: center;
+    padding-bottom: 4rem;
+
+    @media #{$medium-up} {
+      @include span-columns(3);
+      text-align: left;
+      padding-bottom: 0;
+    }
+
+    @media #{$large-up} {
+      @include span-columns(3);
+    }
+
+    .footer-tagline {
+      display: block;
+      padding-top: 0.85rem;
+
+      @media #{$medium-up} {
+        display: none;
+      }
+    }
+  }
+
+  .footer-col-2 {
+    @include span-columns(10);
+    text-align: center;
+
+    @media #{$medium-up} {
+      @include span-columns(5);
+      margin-right: 0;
+      padding-top: 12px;
+    }
+
+    @media #{$large-up} {
+      @include span-columns(3);
+    }
+
+    .links-col {
+      width: 40%;
+      float: left;
+      display: inline-block;
+      text-align: left;
+
+      @media #{$large-up} {
+        width: 50%;
+      }
+
+      h5 {
+        @include fontSize(12px);
+        color: $color-purple;
+        margin-bottom: 1.5rem;
+
+        @media #{$medium-up} {
+          @include fontSize(13px);
+        }
+      }
+
+      a {
+        @include fontSize(12px);
+        color: $text-color-gray;
+        text-decoration: none;
+        display: block;
+        font-weight: 300;
+        margin-bottom: 0.75rem;
+
+        @media #{$medium-up} {
+          @include fontSize(13px);
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-col-3 {
+    display: none;
+
+    @media #{$medium-up} {
+      @include span-columns(4);
+      text-align: right;
+      padding-top: 12px;
+    }
+
+    @media #{$large-up} {
+      @include span-columns(6);
+    }
+  }
+
+  .footer-tagline {
+    color: $color-purple;
+    @include fontSize(12px);
+    letter-spacing: 0.5px;
+    font-family: $sans-serif-secondary;
+    float: right;
+
+    @media #{$medium-up} {
+      @include fontSize(14px);
+      float: none;
+    }
+  }
+
+  .footer-bottom {
+    @include span-columns(12);
+
+    h6 {
+      @include fontSize(11px);
+      max-width: 18rem;
+      margin: 0 auto;
+      letter-spacing: 0.5px;
+
+      @media #{$large-up} {
+        max-width: none;
+        @include fontSize(12px);
+      }
+    }
+  }
+
+  .logo-footer {
+    display: block;
+    margin: 0;
+    float: left;
+
+    @media #{$medium-up} {
+      float: none;
+    }
+
+    .inner-logo {
+      fill: $color-purple;
+    }
+  }
+}

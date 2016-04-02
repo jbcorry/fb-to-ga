@@ -14,3 +14,13 @@
 - Step 7: Document Upload Modals
 - User Settings
 - Declined Template
+
+
+## Marketing Pages Handoff (4/1)
+- Home
+- About Us
+- Support
+- Contact
+- Careers
+- Legal Template (Privacy, ToS)
+- App Flow UI Updates

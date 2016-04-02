@@ -1,0 +1,406 @@
+// _header.scss
+
+////////////////////////////////////////////////////////
+// Header - Global
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Header - Secondary
+// -----------------------------------------------------
+.header-secondary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: $color-white;
+  border-bottom: 2px solid $color-border-gray;
+  z-index: 900;
+
+  .inner-header {
+    @include outer-container();
+    height: 60px;
+    padding: 0rem 1rem;
+
+    @media #{$medium-up} {
+      height: 80px;
+      padding: 0 1rem;
+      max-width: 75rem;
+    }
+
+    @media #{$large-up} {
+      padding: 0 2rem;
+    }
+
+    h6 {
+      color: $color-gray-7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include fontSize(9px);
+      font-family: $sans-serif-secondary;
+
+      @media #{$large-up} {
+        @include fontSize(10px);
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    h5 {
+      @include fontSize(14px);
+      line-height: 20px;
+      letter-spacing: 1px;
+
+      @media #{$large-up} {
+        @include fontSize(16px);
+      }
+    }
+
+    h4 {
+      @include fontSize(14px);
+      font-family: $serif;
+
+      @media #{$large-up} {
+        @include fontSize(18px);
+      }
+    }
+  }
+
+  .header-right {
+    @include vertical-align();
+    float: right;
+  }
+}
+
+.page-application {
+  .inner-header {
+    height: 75px;
+
+    @media #{$medium-up} {
+      height: 80px;
+    }
+  }
+}
+
+.logo-header {
+  float: left;
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+
+  svg {
+    width: 70px;
+    height: 24px;
+  }
+
+  .inner-logo {
+    fill: $color-brand-purple;
+  }
+
+  &.white {
+    .logo-pave-main {
+      path {
+        fill: $color-white;
+      }
+    }
+  }
+
+  @media #{$large-up} {
+    width: 95px;
+    height: 25px;
+
+    svg {
+      width: 95px;
+      height: 25px;
+    }
+  }
+}
+
+.header-left {
+  @include vertical-align();
+  float: left;
+  display: inline-block;
+}
+
+.logo-pave-main {
+  path {
+    fill: $color-brand-purple;
+  }
+}
+
+// ----------------------------------------------
+// Header: App Flow Header - Center Info
+// ----------------------------------------------
+.header-mobile-alt {
+  .inner-header {
+    padding: 0 0 0 1rem;
+
+    @media #{$medium-up} {
+      padding: 0 1rem;
+    }
+
+    @media #{$large-up} {
+      padding: 0 2rem;
+    }
+  }
+
+  .header-right {
+    display: none;
+
+    @media #{$large-up} {
+      display: block;
+    }
+  }
+}
+
+.header-center {
+  height: 75px;
+  @include span-columns(9);
+  float: right;
+
+  @media #{$medium-up} {
+    height: 80px;
+  }
+
+  @media #{$large-up} {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 520px;
+    height: 80px;
+    margin-left: -260px;
+    border-left: 1px solid $color-border-gray;
+    border-right: 1px solid $color-border-gray;
+    text-align: center;
+  }
+
+  .header-item {
+    height: 100%;
+
+    @media #{$medium-only} {
+      @include span-columns(3);
+
+      &.header-payment {
+        @include span-columns(4);
+      }
+    }
+
+    @media #{$large-up} {
+      @include span-columns(4);
+    }
+  }
+
+  .inner-header-item {
+    @include vertical-align();
+
+    @media #{$large-up} {
+      h5 {
+        @include fontSize(15px);
+      }
+    }
+  }
+
+  .header-amount {
+    padding-left: 2.84259%;
+    border-left: 1px solid $color-border-gray;
+    border-right: 1px solid $color-border-gray;
+    @include span-columns(3 of 10);
+
+    @media #{$large-up} {
+      @include span-columns(4 of 12);
+      padding-left: 0;
+    }
+  }
+
+  .header-term {
+    border-right: 1px solid $color-border-gray;
+    @include span-columns(3 of 10);
+
+    @media #{$large-up} {
+      @include span-columns(4 of 12);
+      padding-right: 2.84259%;
+    }
+  }
+
+  .header-payment {
+    @include span-columns(4 of 10);
+
+    @media #{$large-up} {
+      border-right: 1px solid $color-border-gray;
+      @include span-columns(4 of 12);
+      padding-right: 2.84259%;
+      border-right: 0;
+    }
+  }
+}
+
+// ---------------------------------------------
+// Main Header
+// ---------------------------------------------
+.hero-about {
+  .main-header {
+    @include transition(height 0.25s linear);
+  }
+
+  .header-secondary .inner-header {
+    height: 60px;
+
+    @media #{$medium-up} {
+      height: 80px;
+    }
+  }
+
+  .header-secondary {
+    &.hidden {
+      .inner-header {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-header {
+  background: $transparent;
+  border-bottom: 0;
+  position: relative;
+  z-index: 800;
+  @include transition(opacity 0.5s linear);
+
+  @media #{$large-up} {
+    padding-top: 1rem;
+  }
+
+  .inner-header {
+    @include outer-container(78rem);
+
+    &.stuck {
+      opacity: 0;
+      visibility: hidden;
+      @include transition(visibility 0.35s cubic-bezier(0.7, 0.01, 0.3, 1), opacity 0.35s cubic-bezier(0.7, 0.01, 0.3, 1));
+    }
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+
+  &.hidden {
+    height: 0;
+    visibility: hidden;
+  }
+
+  &.stuck {
+    z-index: 1000;
+    position: fixed;
+    padding-top: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: pink;
+    z-index: 900;
+    height: 60px;
+    visibility: visible;
+    background: $color-purple-transparent-2-90;
+
+    @media #{$medium-up} {
+      height: 80px;
+    }
+
+    .header-right {
+      a {
+        color: $color-white;
+
+        &:hover {
+          border-bottom: 1px solid $color-white;
+        }
+      }
+
+      .btn-header {
+        display: inline-block;
+        border-bottom: 1px solid $color-white !important;
+      }
+    }
+
+    .mobile-menu-trigger {
+      color: $color-white;
+
+      &:hover {
+        border-bottom: 1px solid $color-white;
+        color: $color-white;
+      }
+    }
+
+    .logo-pave-main path {
+      fill: $color-white;
+    }
+  }
+
+  .header-right {
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+      height: auto;
+      float: right;
+      @include vertical-align();
+    }
+
+    a {
+      color: $color-purple;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      @include fontSize(12px);
+      font-weight: 300;
+      border-bottom: 1px solid transparent;
+
+      @media #{$medium-up} {
+        @include fontSize(13px);
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+
+      &:hover,
+      &.active {
+        border-bottom: 1px solid $color-purple;
+      }
+
+      &.btn-header {
+        display: none;
+        @include fontSize(10px);
+      }
+    }
+  }
+
+  .mobile-menu-trigger {
+    color: $color-purple;
+
+    &:hover {
+      color: $color-purple;
+    }
+  }
+}
+
+.mobile-menu-trigger {
+  float: right;
+  @include vertical-align();
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  @include fontSize(13px);
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid $color-purple;
+  }
+
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+

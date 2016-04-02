@@ -1,0 +1,113 @@
+// _variables.scss
+
+////////////////////////////////////////////////////////
+// Variables: Global
+////////////////////////////////////////////////////////
+$max-width: 72rem;
+
+$margin-full: 1rem;
+$margin-full-half: 1.5rem;
+$margin-half: $margin-full / 2;
+$margin-third: $margin-full * 0.75;
+$margin-fourth: $margin-full / 4;
+$margin-double: $margin-full * 2;
+$margin-double-half: $margin-full * 2.5;
+$margin-triple: $margin-full * 3;
+$margin-double-double: $margin-full * 4;
+
+$weight-light: 200;
+$weight-regular: 300;
+$weight-bold: 500;
+
+////////////////////////////////////////////////////////
+// Variables: Colors
+////////////////////////////////////////////////////////
+
+$color-black:          #4D4D4D;
+$color-black-1:        #1A1A1A;
+$black-transparent-50: rgba(0, 0, 0, 0.5);
+
+$color-white:             #FFF;
+$white-transparent-50: rgba(255, 255, 255, 0.5);
+$white-transparent-75: rgba(255, 255, 255, 0.75);
+$white-transparent-80: rgba(255, 255, 255, 0.8);
+$white-transparent-85: rgba(255, 255, 255, 0.85);
+$white-transparent-95: rgba(255, 255, 255, 0.95);
+
+$transparent: rgba(255, 255, 255, 0);
+
+$color-gray:        #808080;
+$color-gray-1:      #CCCCCC;
+$color-gray-2:      #F9F9F9;
+$color-gray-3:      #F2F2F2;
+$color-gray-4:      #B3B3B3;
+$color-gray-5:      #999999;
+$color-gray-6:      #E6E6E6;
+$color-gray-7:      #BCBEC0;
+$color-gray-8:      #6D6E71;
+$color-gray-9:      #A7A9AC;
+$color-gray-10:     #939598;
+$color-gray-11:     #F7F7F7;
+
+$color-purple:      #5C4EA5;
+$color-purple-1:    #634ECC;
+$color-purple-2:    #3C2766;
+$color-purple-5:    #634ECC;
+$color-purple-6:    #968FCC;
+
+$color-purple-9:    #5A4FA0;
+$color-purple-10:   #9C95C6;
+
+
+
+$color-purple-one: #5C4EA5;
+$color-purple-two: #5A4FA0;
+
+
+
+
+$color-purple-transparent: rgba(60, 39, 102, 0.95);
+$color-purple-transparent-2-90: rgba(75, 55, 155, 0.90);
+$color-purple-transparent-2-85: rgba(75, 55, 155, 0.88);
+$color-purple-transparent-2-80: rgba(75, 55, 155, 0.80);
+$color-purple-transparent-2-75: rgba(75, 55, 155, 0.75);
+$color-purple-transparent-2-60: rgba(75, 55, 155, 0.6);
+$color-purple-transparent-2-40: rgba(75, 55, 155, 0.4);
+
+$color-red:         #ED1C24;
+
+$color-border-gray: #F2F2F2;
+
+// ------------------------------
+// Brand Colors
+// ------------------------------
+$color-brand-purple: $color-purple;
+
+// ------------------------------
+// Text Colors
+// ------------------------------
+$text-color:        #4D4D4D;
+$text-color-gray:   $color-gray-9;
+$text-color-gray-2:   $color-gray-10;
+
+
+$link-color:        $text-color;
+$link-hover:        darken($text-color, 9%);
+
+$text-hero-headline: $color-purple-9;
+
+// ------------------------------
+// Form Colors
+// ------------------------------
+$form-border-color:          $color-gray-1;
+$form-border-color-active:   $color-purple;
+$form-border-color-disabled: $color-purple-1;
+$form-border-color-success: $form-border-color;
+
+$form-color-disabled: $color-purple-6;
+$form-text-color:   $color-gray-1;
+
+$disabled-gray:     #cfcfcf;
+
+$alert-red:         #ED1C24;
+

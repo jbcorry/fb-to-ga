@@ -1,0 +1,868 @@
+// _secondary.scss
+
+////////////////////////////////////////////////////////
+// Secondary
+//
+// Table of Contents
+// 1. Global
+// 2. Header
+// 3. Sidebar
+// 4. Hero
+// 5. Navigation
+// 6. Support
+// 7. Legal
+// 8. Careers
+// 9. Contact
+//
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Secondary - Global
+// -----------------------------------------------------
+.page-wrapper-secondary {
+  @include outer-container(75rem);
+  margin-top: -115px;
+  position: relative;
+  z-index: 800;
+  padding: 0 0.5rem 4rem;
+
+  @media #{$medium-up} {
+    padding: 0 1.5rem 10rem;
+    margin-top: -85px;
+  }
+
+  @media #{$large-up} {
+    padding: 0 2rem 10rem;
+    margin-top: -192px;
+  }
+}
+
+.secondary-main {
+  @include span-columns(12);
+
+  @media #{$large-up} {
+    @include span-columns(8)
+  }
+}
+
+.main-section-header {
+  padding: 2rem 0 3rem;
+  text-align: center;
+
+  @media #{$medium-up} {
+    padding: 3rem 0 4rem;
+  }
+
+  .section-header-title {
+    @include fontSize(26px);
+    font-family: $serif;
+    color: $text-color;
+    max-width: 20rem;
+    margin: 0 auto 1rem;
+
+    @media #{$medium-up} {
+      max-width: none;
+      margin: 0 auto 1.5rem;
+    }
+  }
+
+  .section-header-tagline {
+    max-width: 16rem;
+    margin: 0 auto 1rem;
+
+    @media #{$medium-up} {
+      max-width: none;
+      margin: 0 auto 1.5rem;
+    }
+  }
+
+  .text-headline {
+    color: $text-color-gray;
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Header
+// -----------------------------------------------------
+.secondary-header {
+  background: $transparent;
+  border-bottom: 0;
+  position: relative;
+  z-index: 800;
+  @include transition(height 0.25s linear);
+
+  @media #{$large-up} {
+    padding-top: 2rem;
+  }
+
+  &.hide {
+    height: 0;
+  }
+
+  &.stuck {
+    height: 60px;
+    padding-top: 0;
+    position: fixed;
+    z-index: 900;
+    background: $color-purple-transparent-2-90;
+
+    @media #{$medium-up} {
+      height: 80px;
+    }
+  }
+
+  .header-right {
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+      height: auto;
+      float: right;
+      @include vertical-align();
+    }
+
+    a {
+      color: $color-white;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      @include fontSize(12px);
+      font-weight: 300;
+      border-bottom: 1px solid transparent;
+
+      @media #{$medium-up} {
+        @include fontSize(13px);
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+
+      &:hover,
+      &.active {
+        text-decoration: none;
+        border-bottom: 1px solid $color-white;
+      }
+
+      &.btn-header {
+        @include fontSize(10px);
+        border-bottom: 1px solid $color-white;
+      }
+    }
+  }
+
+  .mobile-menu-trigger {
+    color: $color-white;
+    border-bottom: 1px solid transparent;
+    line-height: 1.2;
+
+    &:hover {
+      color: $color-white;
+      border-bottom: 1px solid $color-white;
+      text-decoration: none;
+    }
+  }
+}
+
+.secondary-header-wrapper {
+  background: url('/assets-build/images/secondary-header-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  @media #{$large-up} {
+    height: 400px;
+  }
+
+  .header-wrapper-overlay {
+    background: $color-purple-transparent-2-90;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.page-secondary {
+  .secondary-hero-mobile.padding {
+    padding-top: 92px;
+
+    @media #{$medium-only} {
+      padding-top: 136px;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Sidebar
+// -----------------------------------------------------
+.secondary-sidebar {
+  display: none;
+
+  @media #{$large-up} {
+    display: block;
+    @include span-columns(4);
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Hero
+// -----------------------------------------------------
+.secondary-hero-mobile {
+  display: block;
+  position: relative;
+  z-index: 800;
+  padding: 2rem 1rem 14rem;
+
+  @media #{$medium-only} {
+    padding: 3.5rem 1rem 10rem;
+  }
+
+  .hero-headline {
+    color: $color-white;
+    letter-spacing: 0;
+    text-align: center;
+    max-width: 18rem;
+    margin: 0 auto;
+    font-family: $serif;
+
+    @media #{$medium-up} {
+      max-width: none;
+    }
+  }
+
+  @media #{$large-up} {
+    display: none;
+  }
+}
+
+.hero-secondary {
+  padding: 0;
+  height: 192px;
+
+  .hero-headline {
+    color: $color-white;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: center;
+    font-family: $serif;
+
+    @media #{$large-up} {
+      @include fontSize(44px);
+      text-align: left;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Navigation
+// -----------------------------------------------------
+.secondary-nav {
+  @include transition(padding 0.25s linear);
+  padding-top: 2rem;
+
+  &.stuck {
+    position: fixed;
+    top: 52px;
+    padding: 60px 0 0 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .secondary-nav-item {
+      @include fontSize(10px);
+      font-family: $sans-serif-secondary;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: $color-gray-7;
+      text-transform: uppercase;
+
+      &.active,
+      &:hover {
+        color: $color-purple;
+
+        &:before {
+          content: "•";
+          color: $color-purple;
+          margin-left: -12px;
+          padding-right: 4px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Support Grid
+// -----------------------------------------------------
+.secondary-main-section {
+  .top-bar {
+    width: 100%;
+    height: 6px;
+    background: $color-purple;
+    display: block;
+  }
+
+  .main-section-item {
+    background: $color-white;
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+    @include boxShadowOne();
+    @include clearfix();
+
+    @media #{$large-up} {
+      max-width: none;
+    }
+  }
+
+  .main-section-item-inner {
+    padding: $margin-full-half;
+    border-right: 1px solid $color-gray-3;
+    border-bottom: 1px solid $color-gray-3;
+    border-left: 1px solid $color-gray-3;
+    @include span-columns(12);
+
+    @media #{$large-up} {
+      padding: $margin-double;
+    }
+
+    .section-item {
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .main-section-title {
+    text-transform: uppercase;
+    color: $color-gray-7;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    font-family: $sans-serif-secondary;
+    @include fontSize(10px);
+    text-align: center;
+
+    @media #{$large-up} {
+      text-align: left;
+    }
+  }
+
+  .question-title {
+    font-family: $serif;
+    @include fontSize(18px);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    display: block;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-black;
+      outline: 0;
+    }
+  }
+
+  p {
+    color: $text-color-gray;
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.support-cta-section {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+
+  .support-icons-title {
+    margin-bottom: 2rem;
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Legal
+// -----------------------------------------------------
+.legal-wrapper {
+  position: relative;
+}
+
+.legal-main {
+  margin-right: 0;
+}
+
+.legal-section {
+
+  .main-section-item {
+    margin-bottom: 0;
+  }
+
+  .main-section-item-inner {
+    border-bottom: 0;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  .main-section-item-inner,
+  .main-section-header {
+    padding: 0 1rem;
+
+    @media #{$medium-up} {
+      padding: 0 2rem;
+    }
+
+    @media #{$large-up} {
+      padding: 0 3rem;
+    }
+  }
+
+  .legal-item {
+    padding-bottom: 1rem;
+
+    @media #{$medium-up} {
+      padding-bottom: 2rem;
+    }
+
+    @media #{$large-up} {
+      padding-bottom: 3rem;
+    }
+
+    p {
+      color: $text-color-gray;
+    }
+  }
+
+  .main-section-nav {
+    border-right: 1px solid $color-gray-3;
+    border-left: 1px solid $color-gray-3;
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+
+    @media #{$medium-up} {
+      padding: 0 2rem;
+      margin-bottom: 4rem;
+    }
+
+    @media #{$large-up} {
+      padding: 0 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .main-section-nav-title {
+      font-family: $serif;
+      @include fontSize(18px);
+      margin-bottom: 1rem;
+      max-width: 17rem;
+      line-height: 1.25;
+
+      @media #{$medium-up} {
+        max-width: none;
+      }
+    }
+
+    a {
+      color: $text-color-gray;
+      @include fontSize(14px);
+      font-weight: $weight-regular;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .main-section-header {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    border-right: 1px solid $color-gray-3;
+    border-left: 1px solid $color-gray-3;
+
+    @media #{$medium-up} {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+
+    @media #{$large-up} {
+      padding-top: 3rem;
+    }
+  }
+
+  .legal-section-title {
+    font-family: $serif;
+    @include fontSize(18px);
+    margin-bottom: 1rem;
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Careers
+// -----------------------------------------------------
+.careers-section {
+
+  .main-section-header {
+    border-right: 1px solid $color-gray-3;
+    border-left: 1px solid $color-gray-3;
+  }
+
+  .main-section-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid $color-gray-3;
+  }
+
+  .main-section-item-inner {
+    border-right: 1px solid $color-gray-3;
+    border-left: 1px solid $color-gray-3;
+    border-bottom: 0;
+
+    &:last-of-type {
+      padding-bottom: 5rem;
+    }
+  }
+
+  .main-section-title {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.careers-list {
+  li {
+    display: block;
+  }
+
+  a {
+    @include fontSize(18px);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-family: $serif;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Secondary - Contact
+// -----------------------------------------------------
+.contact-section {
+
+  .main-section-header {
+    padding: 2rem 0 2rem;
+    text-align: center;
+    color: $color-purple;
+
+    @media #{$medium-up} {
+      padding: 3rem 0 2rem;
+    }
+  }
+}
+
+.contact-block-headline {
+  max-width: 13rem;
+  @include fontSize(16px);
+  line-height: 1.25;
+  font-family: $serif;
+  text-align: center;
+  margin: 0 auto 1.5rem;
+
+  @media #{$medium-up} {
+    @include fontSize(20px);
+    margin: 0 auto 2rem;
+  }
+
+  @media #{$large-up} {
+    @include fontSize(20px);
+    margin-bottom: $margin-double;
+  }
+}
+
+.icon-contact-circle {
+  fill: none;
+  stroke: #BDBEC0;
+  stroke-width: 0;
+  stroke-miterlimit: 10;
+}
+
+.icon-contact-item {
+  fill: none;
+  stroke: #BDBEC0;
+  stroke-width: 0;
+  stroke-miterlimit: 10;
+}
+
+.contact-icon-title {
+  @include fontSize(10px);
+  color: $color-gray-7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: $weight-regular;
+  width: 50px;
+  text-align: center;
+  margin: 0 auto;
+
+  @media #{$large-up} {
+    margin: 0;
+  }
+}
+
+.contact-header-block {
+  display: block;
+  padding-bottom: 2rem;
+
+  @media #{$large-up} {
+    display: none;
+    padding-bottom: 0;
+  }
+
+  .contact-block-content {
+    max-width: 14rem;
+    margin: 0 auto;
+    display: block;
+
+    .contact-block-item {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: $margin-half;
+
+      h5, a {
+        text-align: left;
+        display: inline-block;
+        line-height: 1.25;
+        float: left;
+      }
+
+      .title {
+        font-family: $sans-serif-secondary;
+        @include fontSize(10px);
+        width: 50%;
+        color: $color-gray-7;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 20px;
+      }
+
+      .value {
+        color: $text-color;
+        width: 50%;
+        letter-spacing: 0.5px;
+        @include fontSize(13px);
+      }
+
+      a,
+      a.value {
+        color: $color-purple;
+      }
+    }
+  }
+}
+
+.contact-sidebar {
+  padding-top: 2rem;
+
+  .contact-sidebar-headline {
+    max-width: 13rem;
+    margin-bottom: $margin-full-half;
+    @include fontSize(16px);
+    line-height: 1.25;
+    font-family: $serif;
+
+    @media #{$large-up} {
+      @include fontSize(20px);
+      margin-bottom: $margin-double;
+    }
+  }
+
+  .sidebar-block-content {
+    width: 100%;
+    display: inline-block;
+
+    .sidebar-block-item {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: $margin-half;
+
+      h5, a {
+        float: left;
+        display: inline-block;
+        line-height: 1.25;
+      }
+
+      .title {
+        font-family: $sans-serif-secondary;
+        @include fontSize(10px);
+        width: 35%;
+        color: $color-gray-7;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 20px;
+      }
+
+      .value {
+        color: $text-color;
+        width: 60%;
+        letter-spacing: 0.5px;
+        @include fontSize(13px);
+      }
+
+      a,
+      a.value {
+        color: $color-purple;
+      }
+    }
+  }
+}
+
+.secondary-contact-cta-section {
+  background: url('/assets-build/images/secondary-contact-cta-bg.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  @include outer-container();
+  max-width: none;
+  margin-top: 8rem;
+  padding-bottom: 4rem;
+
+  @media #{$medium-up} {
+    margin-top: 0;
+    padding-bottom: 0;
+    height: 600px;
+  }
+
+  .secondary-contact-cta-inner {
+    @include outer-container();
+    display: block;
+    padding: 0 1.5rem;
+
+    @media #{$medium-up} {
+      padding: 0 1rem;
+    }
+  }
+
+  .contact-cta-block {
+    @include span-columns(12);
+    margin-top: -60px;
+    background: $color-purple-transparent-2-80;
+    text-align: center;
+    color: $color-white;
+    padding: 6rem 0;
+    @include transition(background 0.25s linear);
+
+    @media #{$medium-up} {
+      @include span-columns(9);
+      @include shift(1.5);
+    }
+
+    @media #{$large-up} {
+      background: $color-purple-transparent-2-90;
+      @include span-columns(8);
+      @include shift(4);
+      margin-top: -75px;
+    }
+
+    .section-tagline {
+      @include fontSize(20px);
+      line-height: 1.25;
+      margin-bottom: 3rem;
+      color: $color-white;
+
+      @media #{$medium-up} {
+        @include fontSize(30px);
+        margin-bottom: 4rem;
+      }
+    }
+
+    &:hover {
+      background: $color-purple-transparent-2-75;
+
+      @media #{$large-up} {
+        background: $color-purple-transparent-2-85;
+      }
+    }
+
+    a.btn-underline {
+      color: $color-white;
+    }
+  }
+
+  .cta-block-row {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .btn-underline {
+    @include fontSize(12px);
+
+    @media #{$medium-up} {
+      @include fontSize(14px);
+    }
+  }
+}
+
+.secondary-contact-cta-section-alt {
+  background: $color-purple;
+  @include outer-container();
+  max-width: none;
+
+  .secondary-contact-cta-inner-alt {
+    @include outer-container();
+    display: block;
+    padding: 0 1rem;
+  }
+
+  .contact-cta-block-alt {
+    @include span-columns(12);
+    text-align: center;
+    color: $color-white;
+    padding: 6rem 0;
+
+    .section-headline {
+      @include fontSize(10px);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+    }
+
+    .section-tagline {
+      @include fontSize(30px);
+      line-height: 1.25;
+      margin: 0 auto 4rem;
+      max-width: 32rem;
+    }
+
+    .section-cta-btn {
+      @include fontSize(14px);
+      font-weight: $weight-regular;
+      color: $color-white;
+      border-bottom: 1px solid $color-white;
+      text-decoration: none;
+      padding: 0 0 4px 0;
+      @include transition(padding 0.1s linear);
+
+      &:hover {
+        padding: 4px 4px;
+      }
+    }
+  }
+}
+
+.contact-form {
+  label {
+    color: $color-purple;
+    @include fontSize(10px);
+  }
+
+  .btn-row {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+}

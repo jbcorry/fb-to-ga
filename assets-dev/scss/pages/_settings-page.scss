@@ -1,0 +1,224 @@
+// settings-page.scss
+
+////////////////////////////////////////////////////////
+// Settings
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Settings: Global
+// -----------------------------------------------------
+.page-settings {
+  background: $color-gray-2;
+
+  .page-wrapper {
+    padding: 100px 0 0 0;
+    margin-top: 0;
+    border-bottom: 1px solid $color-border-gray;
+
+    @media #{$medium-up} {
+      padding: 143px 1rem 0;
+      margin-top: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .page-main {
+    padding-top: 0;
+    padding-bottom: $margin-double;
+    margin-bottom: 0;
+  }
+
+  .page-sidebar {
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+}
+
+.settings-header {
+  .header-logo {
+    display: inline-block;
+  }
+
+  .header-right {
+    float: right;
+  }
+}
+
+.settings-nav {
+  display: inline-block;
+  margin: 0 2rem 0 0;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+
+    a {
+      color: $color-purple;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      @include fontSize(12px);
+      font-weight: 300;
+      border-bottom: 1px solid transparent;
+
+      @media #{$medium-up} {
+        @include fontSize(13px);
+      }
+
+      &:hover {
+        color: $color-purple;
+        text-decoration: none;
+        border-bottom: 1px solid $color-purple;
+      }
+    }
+  }
+}
+
+.settings-section {
+  background: $color-white;
+  @include boxShadowOne();
+}
+
+// -----------------------------------------------------
+// Settings: Content
+// -----------------------------------------------------
+.settings-header {
+  border-bottom: 1px solid $color-border-gray;
+  margin: 0;
+  @include clearfix();
+
+  .dropdown {
+    float: right;
+  }
+
+  .settings-toggle {
+    .toggle-inner {
+      border-right: 1px solid $color-border-gray;
+      padding: 1.5rem 0.25rem 1.25rem;
+      display: block;
+      text-decoration: none;
+
+      &:first-of-type {
+        border-left: 1px solid $color-border-gray;
+      }
+    }
+  }
+
+  .settings-toggle {
+    @include span-columns(4 of 12, block-collapse);
+    text-align: center;
+    position: relative;
+    color: $color-gray-4;
+    background: $color-gray-2;
+
+    a {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: $weight-regular;
+      color: $color-gray-4;
+      outline: 0;
+      @include fontSize(10px);
+
+      @media #{$medium-up} {
+        @include fontSize(12px);
+      }
+    }
+
+    &.active {
+      background: $color-white;
+      cursor: pointer;
+
+      a {
+        color: $color-black;
+      }
+
+      .toggle-top {
+        background: $color-purple;
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      a {
+        color: $color-gray-1;
+      }
+
+      .toggle-top {
+        background: $color-gray-1;
+      }
+
+      &.active {
+        background: $color-white;
+        cursor: pointer;
+
+        a {
+          color: $color-black;
+        }
+
+        .toggle-top {
+          background: $color-purple;
+        }
+      }
+    }
+  }
+
+  .toggle-top {
+    width: 100%;
+    height: 6px;
+    display: block;
+    background: $color-gray-4;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.settings-content-wrapper {
+  border-right: 1px solid $color-border-gray;
+  border-bottom: 1px solid $color-border-gray;
+  border-left: 1px solid $color-border-gray;
+}
+
+.settings-section-inner {
+  .settings-section-block {
+    border-bottom: 1px solid $color-border-gray;
+    padding: 1.5rem 1rem 2rem;
+    @include clearfix();
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.settings-panel {
+  width: 100%;
+  @include clearfix();
+}
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.settings-section-block .checkbox {
+  p {
+    color: $text-color-gray;
+  }
+}

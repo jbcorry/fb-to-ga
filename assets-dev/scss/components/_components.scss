@@ -1,0 +1,473 @@
+// components.scss
+
+////////////////////////////////////////////////////////
+// Components
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Component: HERO MAIN
+// -----------------------------------------------------
+.hero-main {
+  position: relative;
+  background: $color-purple-transparent-2-90;
+  @include outer-container(none);
+
+  @media #{$medium-up} {
+    padding: 2rem;
+    height: 620px;
+  }
+
+  @media #{$large-up} {
+    padding: 3rem 3rem 0;
+  }
+
+  &.nav-stuck {
+    padding-top: 60px;
+
+    @media #{$medium-up} {
+      padding-top: 80px;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+  }
+
+  .hero-inner {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 82rem;
+    position: relative;
+    z-index: 200;
+
+    @media #{$medium-up} {
+      min-height: 584px;
+    }
+  }
+
+  .hero-inner-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $white-transparent-85;
+  }
+
+  .hero-bottom {
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+      padding: 2rem;
+      background-image: linear-gradient(bottom, $color-purple 75%, $color-white 25%);
+      background-image: -o-linear-gradient(bottom, $color-purple 75%, $color-white 25%);
+      background-image: -moz-linear-gradient(bottom, $color-purple 75%, $color-white 25%);
+      background-image: -webkit-linear-gradient(bottom, $color-purple 75%, $color-white 25%);
+      background-image: -ms-linear-gradient(bottom, $color-purple 75%, $color-white 25%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .about-hero {
+    text-align: center;
+    position: relative;
+    padding-top: 8rem;
+
+    .hero-headline {
+      @include fontSize(36px);
+      color: $text-hero-headline;
+      max-width: 20rem;
+      margin: 0 auto;
+
+      @media #{$medium-up} {
+        @include fontSize(44px);
+        max-width: 28rem;
+      }
+    }
+  }
+}
+
+.hero-inner-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero-about.hero-main {
+  @media #{$small-only} {
+    min-height: 378px;
+    height: 378px;
+  }
+
+  .hero-inner {
+    @media #{$small-only} {
+      min-height: 378px;
+      height: 378px;
+    }
+  }
+
+  &.nav-stuck {
+    padding-top: 0;
+
+    .home-hero {
+      padding: 7.75rem 0 7rem;
+    }
+
+    @media #{$medium-up} {
+      padding-top: 50px;
+
+      .hero-inner {
+        padding-top: 50px;
+      }
+    }
+  }
+}
+
+
+// -----------------------------------------------------
+// Component: Security Note
+// -----------------------------------------------------
+.security-note {
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding-top: $margin-half;
+  padding-bottom: $margin-full;
+
+  svg {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 1px;
+
+    @media #{$medium-up} {
+      margin-bottom: 2px;
+    }
+
+    path {
+      fill: $color-gray-10;
+    }
+  }
+
+  h6 {
+    text-transform: none;
+    margin: 0;
+    display: inline-block;
+    @include fontSize(11px);
+    letter-spacing: 0.5px;
+    color: $text-color-gray;
+
+    @media #{$medium-up} {
+      @include fontSize(12px);
+    }
+
+  }
+}
+
+// -----------------------------------------------------
+// Component: Help CTA
+// -----------------------------------------------------
+.help-cta {
+  padding: 4rem 1rem;
+  text-align: center;
+
+  .help-cta-headline {
+    margin-bottom: 1rem;
+  }
+
+  .help-cta-message {
+    margin-bottom: 2rem;
+  }
+
+  .help-cta-btns {
+    a.btn {
+      display: inline-block;
+      margin-right: 2rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Component: Press Bar
+// -----------------------------------------------------
+.press-bar {
+  @include outer-container();
+  max-width: none;
+  background: $color-gray-2;
+
+  .press-bar-inner {
+    @include outer-container();
+    text-align: center;
+    padding: 1rem;
+
+    @media #{$medium-up} {
+      padding: 2rem;
+    }
+  }
+
+  .press-bar-item {
+    display: inline-block;
+    margin: 0.5rem;
+
+    &:nth-child(n+4) {
+      display: none;
+    }
+
+    @media #{$medium-up} {
+      margin: 0.5rem 1.5rem;
+
+      &:nth-child(n+4) {
+        display: inline-block;
+      }
+    }
+
+    &.press-item-1 {
+      background: url('/assets-build/images/press-logo-npr@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 60px;
+      height: 24px;
+    }
+
+    &.press-item-2 {
+      background: url('/assets-build/images/press-logo-nyt@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 140px;
+      height: 24px;
+    }
+
+    &.press-item-3 {
+      background: url('/assets-build/images/press-logo-time@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 60px;
+      height: 24px;
+    }
+
+    &.press-item-4 {
+      background: url('/assets-build/images/press-logo-economist@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 76px;
+      height: 24px;
+    }
+
+    &.press-item-5 {
+      background: url('/assets-build/images/press-logo-ft@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 128px;
+      height: 24px;
+    }
+
+    &.press-item-6 {
+      background: url('/assets-build/images/press-logo-wired@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 91px;
+      height: 24px;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Component: Grid Section
+// -----------------------------------------------------
+.grid-section {
+  @include outer-container();
+  text-align: center;
+
+  .grid-inner {
+    display: inline-block;
+    width: 100%;
+    padding: 4rem 0 2rem;
+
+    @media #{$medium-up} {
+      padding: 4rem 0;
+    }
+  }
+
+  .grid-item {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.rwd {
+  display: none;
+
+  @media #{$medium-up} {
+    display: block;
+  }
+}
+
+// -----------------------------------------------------
+// Component: Page Section Message
+// -----------------------------------------------------
+.page-section-message {
+  background: $color-purple;
+  @include outer-container();
+  max-width: none;
+
+  .message-inner {
+    @include outer-container();
+    display: block;
+    text-align: center;
+    color: $color-white;
+    padding: 4rem 0;
+
+    @media #{$medium-up} {
+      padding: 6rem 0;
+    }
+
+    .section-headline {
+      @include fontSize(10px);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      color: $color-purple-10;
+      font-family: $sans-serif-secondary;
+    }
+
+    .section-tagline {
+      line-height: 1.25;
+      margin: 0 auto 4rem;
+      max-width: 21rem;
+      color: $color-white;
+
+      @media #{$medium-up} {
+        max-width: 40rem;
+      }
+    }
+
+    .section-cta-btn {
+      @include fontSize(12px);
+
+      @media #{$medium-up} {
+        @include fontSize(14px);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Component: Mobile Menu Overlay
+// -----------------------------------------------------
+.mobile-menu-overlay {
+  background: $color-white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 900;
+  @include transition(visibility 0.35s cubic-bezier(0.7, 0.01, 0.3, 1), opacity 0.35s cubic-bezier(0.7, 0.01, 0.3, 1), background 0.5s cubic-bezier(0.7, 0.01, 0.3, 1));
+
+  .mobile-menu-inner {
+    text-align: center;
+    position: relative;
+    height: 100%;
+  }
+
+  .mobile-menu-top {
+    height: 75px;
+    padding: 0rem 1rem;
+
+    .logo-header {
+      @include vertical-align();
+    }
+  }
+
+  .mobile-menu-nav {
+    padding: 4rem 0;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 1rem;
+    @include transition(all 0.65s cubic-bezier(0.7, 0.01, 0.3, 1));
+
+    li {
+      display: block;
+      text-align: center;
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      @include fontSize(24px);
+      color: $color-purple;
+      display: inline-block;
+      text-decoration: none;
+      font-family: $serif;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid $color-purple;
+      }
+    }
+  }
+
+  .mobile-menu-close-x {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    cursor: pointer;
+    bottom: -22px;
+    @include transition(all 0.65s cubic-bezier(0.7, 0.01, 0.3, 1));
+
+    path {
+      fill: $color-purple;
+    }
+  }
+
+  .mobile-overlay-btn {
+    margin-top: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all 0.65s cubic-bezier(0.7, 0.01, 0.3, 1));
+  }
+
+  .mobile-menu-trigger {
+    color: $color-purple;
+
+    &:hover {
+      color: $color-purple;
+      text-decoration: none;
+    }
+  }
+}
+
+body.mobile-menu-open {
+  position: fixed;
+  overflow: hidden;
+
+  .mobile-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: $white-transparent-95;
+  }
+
+  .mobile-menu-nav,
+  .mobile-overlay-btn {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu-close-x {
+    bottom: 1.5rem;
+  }
+}

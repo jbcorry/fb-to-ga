@@ -1,0 +1,199 @@
+// _buttons.scss
+
+////////////////////////////////////////////////////////
+// Buttons
+////////////////////////////////////////////////////////
+%btn {
+  display: inline-block;
+  position: relative;
+  font-family: $sans-serif-secondary;
+  text-decoration: none;
+  color: $color-white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 0 2rem;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: $color-purple;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 2px;
+  @include fontSize(10px);
+  @include transition(background 0.35s linear);
+  @include transition(color 0.35s linear);
+  @include transition(border-color 0.35s linear);
+
+  // hovering on the btn
+  &:hover, &:focus {
+    color: $color-white !important;
+    background: $color-purple-1;
+    text-decoration: none;
+  } // end hover
+
+  // clicking on the button
+  &:active {
+    top: 1px; // adds a tiny hop to the click
+  } // end active
+
+} // end .button
+
+a.btn,
+.btn {
+  @extend %btn; // here we load the btn defaults
+  background: $color-purple;
+
+  &:hover,
+  &:focus {
+    background: darken($color-purple, 10%);
+  } // end hover
+
+  &:active {
+    background: $color-purple-2;
+  } // end active
+
+} // end button
+
+a.btn-primary,
+.btn-primary {
+  @extend %btn; // here we load the btn defaults
+  background-color: $color-purple-2;
+  color: $color-white !important;
+
+  &:hover,
+  &:focus {
+    background-color: $color-purple-5;
+    color: $color-white !important;
+    border-color: $color-purple-5;
+  } // end hover
+
+  &:active {
+    background-color: $color-purple-5;
+    color: $color-white !important;
+  } // end active
+
+} // end primary button
+
+a.btn-secondary,
+.btn-secondary {
+  @extend %btn; // here we load the btn defaults
+  background-color: $color-gray-4;
+  border-color: $color-gray-4;
+  padding: 0 1.5rem;
+
+  &:focus,
+  &:hover {
+    background: darken($color-gray-4, 10%);
+    border-color: darken($color-gray-4, 10%);
+  }
+} // end secondary button
+
+a.btn-outline,
+.btn-outline {
+  @extend %btn; // here we load the btn defaults
+  background-color: $transparent;
+  border: 1px solid $color-white;
+  color: $color-white !important;
+
+  &:hover,
+  &:focus {
+    background-color: $color-white;
+    color: $color-purple !important;
+    border-color: $color-white;
+  } // end hover
+} // end outline button
+
+a.btn-outline-purple,
+.btn-outline-purple {
+  @extend %btn; // here we load the btn defaults
+  background-color: $transparent;
+  border: 1px solid $color-purple;
+  color: $color-purple !important;
+
+  &:hover,
+  &:focus {
+    background-color: $transparent;
+    color: $color-purple !important;
+    border-color: $color-purple;
+  } // end hover
+
+  &:active {
+    background-color: $transparent;
+    color: $color-purple !important;
+  } // end active
+
+} // end outline-purple button
+
+a.btn-text-gray,
+.btn-text-gray {
+  @include fontSize(12px);
+  font-weight: $weight-regular;
+  letter-spacing: 1px;
+  color: $color-gray;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.btn-wide,
+.btn-wide {
+  padding: 0 3rem;
+}
+
+a.btn-narrow,
+.btn-narrow {
+  padding: 0 1.5rem;
+}
+
+.btn-hover {
+  background-color: $color-purple-1 !important;
+}
+
+.btn-active {
+  background-color: $color-purple-6 !important;
+}
+
+// a disabled input
+a.btn.is-disabled,
+button.is-disabled {
+  cursor: default;
+  background-color: $form-color-disabled;
+  border-color: $form-color-disabled;
+
+  &:focus,
+  &:hover {
+    cursor: default;
+    background: $form-color-disabled;
+    border-color: $form-color-disabled;
+  } // end disabled focus
+
+} // end disabled input
+
+a.btn-submit,
+button.btn-submit {
+  height: 50px;
+  line-height: 50px;
+  @include fontSize(10px);
+}
+
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
+a.btn-underline,
+.btn-underline {
+  font-weight: $weight-regular;
+  color: $color-white;
+  border-bottom: 1px solid $color-white;
+  text-decoration: none;
+  padding: 0 0 2px 0;
+  letter-spacing: 0.5px;
+  @include transition(padding 0.1s linear);
+
+  &:hover {
+    padding: 0 4px 2px 4px;
+    color: $color-white;
+  }
+}

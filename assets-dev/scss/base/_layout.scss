@@ -1,0 +1,108 @@
+// _layout.scss
+
+////////////////////////////////////////////////////////
+// Layout
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Layout: Global
+// -----------------------------------------------------
+.page-wrapper {
+  @include outer-container();
+  margin-top: 60px;
+  padding: 0 0.5rem;
+
+  @media #{$medium-up} {
+    margin-top: 80px;
+  }
+}
+
+.page-main {
+  @include span-columns(12);
+  padding: 4rem 0 6rem;
+  margin-bottom: 4rem;
+
+  @media #{$medium-up} {
+    @include span-columns(8);
+  }
+
+  &.page-full-width {
+    @include span-columns(12);
+  }
+}
+
+.page-sidebar {
+  @include span-columns(12);
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+
+  @media #{$medium-up} {
+    @include span-columns(4);
+  }
+}
+
+.page-header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.page-section {
+  padding: 2rem 0;
+  @include outer-container();
+
+  .section-headline {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+.page-section-bleed {
+  @include outer-container(none);
+}
+
+.page-light {
+  background: $color-white;
+}
+
+.page-gray {
+  background: $color-gray-2;
+}
+
+.page-section-gray {
+  background: $color-gray-2;
+}
+
+.page-section-dark {
+  background: $color-purple;
+}
+
+// -----------------------------------------------------
+// Layout: Form UI Elements Page
+// -----------------------------------------------------
+.page-ui-form-elements {
+  background: $color-gray-2;
+  padding-bottom: 8rem;
+
+  .page-wrapper {
+    max-width: 48rem;
+  }
+
+  .ui-form-title {
+    text-align: center;
+    @include fontSize(10px);
+    text-transform: uppercase;
+    margin: 3rem 0;
+  }
+
+  .form-row .btn {
+    margin-bottom: 1rem;
+
+    @media #{$medium-up} {
+      margin-bottom: 0;
+
+      &:not(:first-of-type) {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
