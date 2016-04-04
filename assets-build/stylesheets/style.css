@@ -3401,7 +3401,7 @@ tbody.collapse.in {
 
 .mobile-menu-overlay {
   background: #FFF;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -3418,7 +3418,7 @@ tbody.collapse.in {
   height: 100%;
 }
 .mobile-menu-overlay .mobile-menu-top {
-  height: 75px;
+  height: 60px;
   padding: 0rem 1rem;
 }
 .mobile-menu-overlay .mobile-menu-top .logo-header {
@@ -3487,8 +3487,7 @@ tbody.collapse.in {
 }
 
 body.mobile-menu-open {
-  position: fixed;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 body.mobile-menu-open .mobile-menu-overlay {
   opacity: 1;

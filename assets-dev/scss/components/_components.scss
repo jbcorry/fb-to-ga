@@ -362,7 +362,7 @@
 // -----------------------------------------------------
 .mobile-menu-overlay {
   background: $color-white;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -379,7 +379,7 @@
   }
 
   .mobile-menu-top {
-    height: 75px;
+    height: 60px;
     padding: 0rem 1rem;
 
     .logo-header {
@@ -451,8 +451,7 @@
 }
 
 body.mobile-menu-open {
-  position: fixed;
-  overflow: hidden;
+  overflow: hidden !important;
 
   .mobile-menu-overlay {
     opacity: 1;

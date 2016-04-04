@@ -211,16 +211,21 @@ PAVE.Home.StickyNav = function() {
 };
 
 PAVE.Global.ScrollingCTA = function() {
-  var s = skrollr.init({
-    forceHeight: false,
-    edgeStrategy: 'set',
-    easing: {
-      WTF: Math.random,
-      inverted: function(p) {
-        return 1-p;
+  if ( $(window).width() <= 640 ) {
+    var s = skrollr.init({
+       mobileCheck: function() {
+        return false;
+      },
+      forceHeight: false,
+      edgeStrategy: 'set',
+      easing: {
+        WTF: Math.random,
+        inverted: function(p) {
+          return 1-p;
+        }
       }
-    }
-  });
+    });
+  }
 }
 
 PAVE.Secondary.AboutTopNavBar = function() {
