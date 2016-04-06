@@ -1,0 +1,160 @@
+// _navigation.scss
+
+////////////////////////////////////////////////////////
+// Navigation: Global
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// Navigation - Marketing Page Header Nav
+// -----------------------------------------------------
+.main-nav {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+
+    a {
+      color: $color-purple;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      @include fontSize(12px);
+
+      @media #{$medium-up} {
+        @include fontSize(13px);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Navigation - Secondary Page Header Nav
+// -----------------------------------------------------
+.secondary-header {
+  .main-nav {
+    li {
+      a {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Navigation: Top Nav Dropdown
+// -----------------------------------------------------
+.dropdown {
+
+  .caret {
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    margin-left: 2px;
+    vertical-align: middle;
+
+    polygon {
+      fill: $color-purple;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: 0;
+    border: 1px solid $color-border-gray;
+    padding: 0;
+    margin: 0;
+    left: -53px;
+    top: 135%;
+    min-width: 126px;
+    width: 126px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+
+    @media #{$medium-up} {
+      left: -49px;
+    }
+
+    @media #{$xlarge-up} {
+      left: -36px;
+    }
+
+    li {
+      display: block;
+      padding: 1rem 1.5rem;
+
+      a {
+        padding: 0;
+        display: inline-block;
+        line-height: 1.2;
+        color: $color-purple;
+        text-decoration: none;
+        @include fontSize(12px);
+        border-bottom: 1px solid transparent;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          border-bottom: 1px solid $color-purple;
+          background: none;
+          outline: 0;
+        }
+
+        @media #{$medium-up} {
+          @include fontSize(13px);
+        }
+      }
+    }
+
+    .divider {
+      margin: 0;
+      padding: 0;
+      display: block;
+      background-color: $color-border-gray;
+    }
+
+  }
+
+  .triangle-up {
+    background: url('/dist/images/pave-dropdown-arrow@2x.png') no-repeat center center;
+    position: absolute;
+    top: -14px;
+    right: 0;
+    background-size: 25px 14px;
+    width: 25px;
+    height: 14px;
+
+    @media #{$xlarge-up} {
+      top: -14px;
+      right: 12px;
+    }
+  }
+
+  .dd-trigger {
+    background: none;
+    text-decoration: none;
+    border: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    color: $color-purple;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid transparent;
+    @include fontSize(12px);
+
+    @media #{$medium-up} {
+      @include fontSize(13px);
+    }
+
+    &:hover {
+      color: $color-purple;
+      border-bottom: 1px solid $color-purple;
+
+      svg {
+        path {
+          fill: $text-color;
+        }
+      }
+    }
+  }
+}

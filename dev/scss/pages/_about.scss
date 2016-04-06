@@ -1,0 +1,497 @@
+// _about.scss
+
+////////////////////////////////////////////////////////
+// About
+////////////////////////////////////////////////////////
+
+// -----------------------------------------------------
+// About: Global
+// -----------------------------------------------------
+.page-about-wrapper {
+  background: $color-white;
+}
+
+.page-about {
+  .section-tagline {
+    @include fontSize(22px);
+
+    @media #{$medium-up} {
+      @include fontSize(26px);
+    }
+  }
+}
+
+
+// -----------------------------------------------------
+// About: Hero
+// -----------------------------------------------------
+.hero-about {
+  background: $color-purple;
+
+  .hero-inner {
+    background: $color-purple;
+    @include transition(opacity 0.3s ease-in);
+
+    @media #{$medium-only} {
+      height: 584px;
+    }
+  }
+
+  .hero-inner-overlay {
+    opacity: 0;
+    @include transition(opacity 0.3s linear);
+  }
+
+  .hero-inner-backdrop {
+    background: url('/dist/images/header-about-mobile@2x.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    @include transition(opacity 0.3s ease-in);
+
+    @media #{$medium-only} {
+      background: url('/dist/images/header-about-tablet.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/dist/images/header-about-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/dist/images/header-about-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/dist/images/header-about-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+  }
+
+  .about-hero {
+    text-align: center;
+    padding-top: 5rem;
+
+    @media #{$medium-up} {
+      padding-top: 10rem;
+    }
+
+    @media #{$large-up} {
+      padding-top: 10rem;
+    }
+
+
+    .hero-headline {
+      @media #{$small-only} {
+        line-height: 1.2;
+      }
+
+      @media #{$medium-up} {
+        max-width: 26rem;
+        margin: 0 auto;
+        padding-bottom: 15rem;
+      }
+
+      @media #{$large-up} {
+        max-width: 26rem;
+      }
+    }
+  }
+
+  .hero-bottom {
+    @media #{$medium-up} {
+      display: block;
+      padding: 2rem;
+      background-image: linear-gradient(bottom, $color-white 75%, $color-purple 25%);
+      background-image: -o-linear-gradient(bottom, $color-white 75%, $color-purple 25%);
+      background-image: -moz-linear-gradient(bottom, $color-white 75%, $color-purple 25%);
+      background-image: -webkit-linear-gradient(bottom, $color-white 75%, $color-purple 25%);
+      background-image: -ms-linear-gradient(bottom, $color-white 75%, $color-purple 25%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+body.showtime {
+  .hero-inner-overlay {
+    opacity: 1;
+  }
+
+  .hero-inner {
+    opacity: 1;
+  }
+}
+
+// -----------------------------------------------------
+// About: Mission
+// -----------------------------------------------------
+.about-mission {
+  @include outer-container(none);
+  background: $color-white;
+
+  .about-mission-inner {
+    @include span-columns(12);
+    text-align: center;
+    padding-top: 1.5rem;
+
+    .section-tagline {
+      max-width: 18rem;
+      margin: 0 auto 2rem;
+
+      @media #{$medium-up} {
+        max-width: 31rem;
+        margin: 0 auto 4rem;
+      }
+    }
+  }
+}
+
+.about-mission-block {
+  @include outer-container(none);
+
+  .mission-block-inner {
+    @include span-columns(12);
+  }
+
+  .mission-block {
+    width: 100%;
+    display: inline-block;
+    padding: 4rem 1rem;
+    text-align: center;
+
+    @media #{$large-up} {
+      width: 50%;
+      display: inline-block;
+      float: left;
+      height: 360px;
+      padding: 0;
+    }
+  }
+
+  .block-inner {
+    @media #{$large-up} {
+      @include vertical-align();
+    }
+
+    &.block-message {
+      max-width: 18rem;
+      margin: 0 auto;
+
+      @media #{$large-up} {
+        max-width: 27rem;
+      }
+    }
+  }
+
+  .section-tagline {
+    @include fontSize(22px);
+    max-width: 18rem;
+    margin: 0 auto;
+    color: $color-white;
+
+    @media #{$medium-up} {
+      @include fontSize(30px);
+      max-width: 28rem;
+    }
+
+    @media #{$large-up} {
+      max-width: 28rem;
+    }
+  }
+
+  h6 {
+    line-height: 1.4;
+    @include fontSize(14px);
+    letter-spacing: 0.5px;
+
+    &:first-child {
+      margin-bottom: 1.5rem;
+    }
+
+    @media #{$medium-up} {
+      @include fontSize(15px);
+    }
+  }
+
+  .mission-one {
+    background: $color-purple;
+    color: $color-white;
+  }
+
+  .mission-two {
+    background: $color-gray-2;
+    text-align: left;
+    padding: 3rem 1rem;
+    color: $text-color-gray;
+  }
+}
+
+// -----------------------------------------------------
+// About: Grids
+// -----------------------------------------------------
+.grid-section {
+  .section-title {
+    margin-bottom: 2rem;
+  }
+
+  .section-tagline {
+    margin: 0 auto;
+  }
+}
+
+.team-grid-section,
+.advisors-grid-section {
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+
+  @media #{$medium-up} {
+    padding-bottom: 4rem;
+  }
+
+  .section-tagline {
+    max-width: 21rem;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+
+    @media #{$medium-up} {
+      max-width: 26rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .team-grid,
+  .advisors-grid {
+    padding: 0;
+    max-width: 26rem;
+
+    @media #{$medium-only} {
+      max-width: 36rem;
+    }
+
+    @media #{$large-up} {
+      max-width: 56rem;
+    }
+  }
+}
+
+.team-grid,
+.advisors-grid {
+  .grid-item.team {
+    @include span-columns(6);
+    @include omega(2n);
+    margin-bottom: 2rem;
+
+    @media #{$medium-up} {
+      @include omega-reset(2n);
+      @include span-columns(4);
+      @include omega(3n);
+      margin-bottom: 3rem;
+    }
+
+    @media #{$large-up} {
+      @include omega-reset(3n);
+      @include span-columns(3);
+      @include omega(4n);
+      margin-bottom: 4rem;
+    }
+  }
+
+  .grid-item {
+    position: relative;
+  }
+
+  .team-item-image {
+    width: 142px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+
+    @media #{$medium-up} {
+      margin-bottom: 1.5rem;
+    }
+
+    &.normal {
+      display: block;
+    }
+
+    &.retina {
+      display: none;
+    }
+
+    @media #{$retina} {
+      &.normal {
+        display: none;
+      }
+
+      &.retina {
+        display: block;
+      }
+    }
+  }
+
+  .team-image-overlay {
+    background: rgba(255, 255, 255, 0.10);
+    width: 142px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 142px;
+
+    @media #{$medium-up} {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .grid-item-name {
+    @include fontSize(15px);
+    margin-bottom: 0.5rem;
+    font-family: $serif;
+
+    @media #{$medium-up} {
+      @include fontSize(16px);
+    }
+  }
+
+  .grid-item-job {
+    text-transform: none;
+    @include fontSize(12px);
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    color: $text-color-gray;
+    @media #{$medium-up} {
+      @include fontSize(13px);
+    }
+  }
+}
+
+// -------------------------------------
+// About: Investors
+// -------------------------------------
+.investors-grid-section {
+  max-width: none;
+  background: $color-gray-2;
+  padding: 4rem 0 0;
+
+  @media #{$medium-up} {
+    padding: 4rem 0;
+  }
+
+  .section-tagline {
+    max-width: 19rem;
+    margin: 0 auto;
+
+    @media #{$medium-up} {
+      max-width: 22rem;
+    }
+
+    @media #{$large-up} {
+      max-width: 50rem;
+    }
+  }
+
+  .investor-grid {
+    max-width: 24rem;
+    margin: 0 auto;
+    text-align: center;
+
+    @media #{$medium-up} {
+      max-width: 40rem;
+      padding: 4rem 0 5rem;
+    }
+  }
+}
+
+.investors-grid-section-inner {
+  @include outer-container();
+}
+
+.investor-grid {
+  .grid-item {
+    display: inline-block;
+    margin: 0.5rem;
+
+    @media #{$medium-up} {
+      margin: 0.5rem 1.5rem;
+    }
+
+    &.investor-item-1 {
+      background: url('/dist/images/press-logo-npr@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 60px;
+      height: 24px;
+    }
+
+    &.investor-item-2 {
+      background: url('/dist/images/press-logo-nyt@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 140px;
+      height: 24px;
+    }
+
+    &.investor-item-3 {
+      background: url('/dist/images/press-logo-time@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 60px;
+      height: 24px;
+    }
+
+    &.investor-item-4 {
+      background: url('/dist/images/press-logo-wired@2x.png') no-repeat center center;
+      background-size: 100% auto;
+      width: 91px;
+      height: 24px;
+    }
+  }
+}
+
+// -------------------------------------
+// About: CTA
+// -------------------------------------
+.page-about {
+  .secondary-contact-cta-section {
+    background: $color-white;
+  }
+
+  .secondary-cta-bg {
+    background: url('/dist/images/cta-careers-mobile@2x.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include outer-container(92rem);
+
+    @media #{$medium-only} {
+      background: url('/dist/images/cta-careers-tablet.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/dist/images/cta-careers-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/dist/images/cta-careers-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/dist/images/cta-careers-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+  }
+}

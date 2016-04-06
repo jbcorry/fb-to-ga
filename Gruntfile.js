@@ -1,16 +1,13 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   require('time-grunt')(grunt);
 
-  var globalConfig = {
-    build: 'build',
-    dev: 'assets-dev',
-    dist: 'assets-build'
-  };
-
   // Project Configuration
   grunt.initConfig({
-    globalConfig: globalConfig,
+    globalConfig: {
+      dev: 'dev',
+      dist: 'dist'
+    },
     fixturesPath: "includes",
     pkg: grunt.file.readJSON('package.json'),
 
@@ -24,19 +21,19 @@ module.exports = function(grunt) {
         files: '<%= globalConfig.dev %>/scripts/**',
         tasks: 'copy:dev',
         options: {
-          interrupt: true,
-        },
-      },
+          interrupt: true
+        }
+      }
     },
 
     sass: {
       dev: {
-        options: { style: 'expanded' },
-        files: { '<%= globalConfig.dist %>/stylesheets/style.css' : '<%= globalConfig.dev %>/scss/style.scss' }
+        options: {style: 'expanded'},
+        files: {'<%= globalConfig.dev %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
       },
-      build: {
-        options: { style: 'expanded' },
-        files: { '<%= globalConfig.dist %>/stylesheets/style.css' : '<%= globalConfig.dev %>/scss/style.scss' }
+      dist: {
+        options: {style: 'expanded'},
+        files: {'<%= globalConfig.dist %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
       }
     },
 
@@ -53,25 +50,19 @@ module.exports = function(grunt) {
         expand: true,
         src: '**',
         cwd: '<%= globalConfig.dev %>/scripts/plugins',
-        dest: '<%= globalConfig.dist %>/scripts/plugins',
+        dest: '<%= globalConfig.dist %>/scripts/plugins'
       },
-      dev: {
-        expand: true,
-        src: '**',
-        cwd: '<%= globalConfig.dev %>/scripts/',
-        dest: '<%= globalConfig.dist %>/scripts/',
-      },
-      build: {
-        src: ['**', '!node_modules/**', '!Gruntfile.js', '!package.json', '!assets-dev/**'],
-        dest: '<%= globalConfig.build %>/',
-      },
+      dist: {
+        src: ['<%= globalConfig.dev %>/', '!node_modules/**', '!Gruntfile.js', '!package.json', '!assets-dev/**'],
+        dest: '<%= globalConfig.dist %>/'
+      }
     },
 
     // Empty build folder
     clean: {
-        build: {
-          src: ['<%= globalConfig.build %>/']
-        }
+      dist: {
+        src: ['<%= globalConfig.dist %>/']
+      }
     },
 
     autoprefixer: {
@@ -89,19 +80,15 @@ module.exports = function(grunt) {
 
     connect: {
       localserver: {
-        port: 9001,
-        base: '/Users/bfbrad/Sites/pave/'
+        port: 9002,
+        base: '.'
       }
     },
 
     htmlbuild: {
-      src: 'index.html',
-      dest: 'dist/',
-      options: {
-        sections: {
-          header: 'includes/layouts/header.html',
-          footer: 'includes/layouts/footer.html',
-        }
+      dist: {
+        src: '<%= globalConfig.dev %>/*.html',
+        dest: '<%= globalConfig.dist %>'
       }
     }
 
@@ -119,14 +106,15 @@ module.exports = function(grunt) {
 
   // Define Tasks
   grunt.registerTask('build', [
-    'sass:build',
-    'clean:build',
-    'copy:build'
+    'clean:dist',
+    'sass:dist',
+    // 'copy:dist',
+    'htmlbuild'
   ]);
 
   grunt.registerTask('default', [
     'sass:dev',
-    'watch'
+    // 'watch'
   ]);
 
   grunt.registerTask('server', [
