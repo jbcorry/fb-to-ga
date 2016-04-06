@@ -75,6 +75,7 @@ body.showtime {
   }
 
   .hero-cta {
+    @include fontSize(11px);
     margin-bottom: 0.5rem;
     min-width: 193px;
   }
@@ -243,11 +244,11 @@ body.showtime {
   }
 
   &.proof-slide-2 {
-    background: url('images/testimonial-kim.jpg') no-repeat center center;
+    background: url('images/testimonial-jeffrey.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('images/testimonial-kim@2x.jpg');
+      background-image: url('images/testimonial-jeffrey@2x.jpg');
     }
   }
 
@@ -474,7 +475,7 @@ body.showtime {
     }
 
     .item-copy {
-      @include fontSize(16px);
+      @include fontSize(14px);
       color: $text-color-gray;
       max-width: 12rem;
       letter-spacing: 0.5px;
