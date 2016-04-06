@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {style: 'expanded'},
-        files: {'<%= globalConfig.dist %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
+        files: {'<%= globalConfig.dev %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
       }
     },
 
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
         dest: '<%= globalConfig.dist %>/scripts/plugins'
       },
       dist: {
-        src: ['<%= globalConfig.dev %>/', '!node_modules/**', '!Gruntfile.js', '!package.json', '!assets-dev/**'],
+        src: ['<%= globalConfig.dev %>/', '!scss/**'],
         dest: '<%= globalConfig.dist %>/'
       }
     },
@@ -81,14 +81,21 @@ module.exports = function (grunt) {
     connect: {
       localserver: {
         port: 9002,
-        base: '.'
+        base: '<%= globalConfig.dist %>'
       }
     },
 
     htmlbuild: {
       dist: {
         src: '<%= globalConfig.dev %>/*.html',
-        dest: '<%= globalConfig.dist %>'
+        dest: '<%= globalConfig.dist %>',
+        options: {
+          scripts: {
+            bundle: [
+              '<%= fixturesPath %>/scripts/*.js'
+            ]
+          }
+        }
       }
     }
 
@@ -102,22 +109,30 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-connect');
-  grunt.loadNpmTasks('grunt-html-build');
+  grunt.loadNpmTasks('grunt-usemin');
 
   // Define Tasks
   grunt.registerTask('build', [
     'clean:dist',
     'sass:dist',
-    // 'copy:dist',
-    'htmlbuild'
+
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin'
+
+    //'copy:dist'
   ]);
 
   grunt.registerTask('default', [
-    'sass:dev',
+    'sass:dev'
     // 'watch'
   ]);
 
   grunt.registerTask('server', [
+    'build',
     'connect:localserver'
   ]);
 
