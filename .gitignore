@@ -1,0 +1,29 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+/bower_components/
+/node_modules/
+tmp/
+.tmp
+*shim.sbt
+
+/.idea
+/.sass-cache
+*.iml
+/dist
+/dev/styles/style.css
+/dev/styles/style.css.map
+/npm-debug.log
+TEST_*
