@@ -3051,7 +3051,7 @@ tbody.collapse.in {
 
 #hbl_operator_state_div {
   position: relative;
-  z-index: 200;
+  z-index: 801;
 }
 
 .hero-main {
@@ -7128,6 +7128,7 @@ body.showtime .hero-inner-backdrop {
 .secondary-header-wrapper {
   background: rgba(75, 55, 155, 0.4);
   position: relative;
+  height: 386px;
 }
 @media only screen and (min-width: 63.063em) {
   .secondary-header-wrapper {

@@ -169,6 +169,7 @@
 .secondary-header-wrapper {
   background: $color-purple-transparent-2-40;
   position: relative;
+  height: 386px;
 
   @media #{$large-up} {
     height: 400px;
