@@ -46,15 +46,12 @@ module.exports = function (grunt) {
 
     // Copy to build folder
     copy: {
-      js: {
-        expand: true,
-        src: '**',
-        cwd: '<%= globalConfig.dev %>/scripts/plugins',
-        dest: '<%= globalConfig.dist %>/scripts/plugins'
-      },
       dist: {
-        src: ['<%= globalConfig.dev %>/', '!scss/**'],
-        dest: '<%= globalConfig.dist %>/'
+        expand: true,
+        cwd: '<%= globalConfig.dev %>/',
+        src: ['*', 'fonts/*', 'images/*'],
+        dest: '<%= globalConfig.dist %>/',
+        filter: 'isFile'
       }
     },
 
@@ -65,18 +62,18 @@ module.exports = function (grunt) {
       }
     },
 
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 versions', 'ie 11', '> 5%'],
-        map: true
-      },
-      main: {
-        expand: false,
-        flatten: true,
-        src: '<%= globalConfig.dev %>/stylesheets/style.css',
-        dest: '<%= globalConfig.dev %>/stylesheets/autoprefixed/style-prefixed.css'
-      }
-    },
+    //autoprefixer: {
+    //  options: {
+    //    browsers: ['last 2 versions', 'ie 11', '> 5%'],
+    //    map: true
+    //  },
+    //  main: {
+    //    expand: false,
+    //    flatten: true,
+    //    src: '<%= globalConfig.dev %>/stylesheets/style.css',
+    //    dest: '<%= globalConfig.dev %>/stylesheets/autoprefixed/style-prefixed.css'
+    //  }
+    //},
 
     connect: {
       localserver: {
@@ -85,19 +82,45 @@ module.exports = function (grunt) {
       }
     },
 
-    htmlbuild: {
-      dist: {
-        src: '<%= globalConfig.dev %>/*.html',
+    //  Renames files for browser caching purposes
+    //filerev: {
+    //  dist: {
+    //    files: {
+    //      src: [
+    //        '<%= globalConfig.dist %>/scripts/{,*/}*.js',
+    //        '<%= globalConfig.dist %>/stylesheets/{,*/}*.css',
+    //        '<%= globalConfig.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+    //        '<%= globalConfig.dist %>/fonts/*'
+    //      ]
+    //    }
+    //  }
+    //},
+
+    useminPrepare: {
+      html: '<%= globalConfig.dev %>/*.html',
+      options: {
         dest: '<%= globalConfig.dist %>',
-        options: {
-          scripts: {
-            bundle: [
-              '<%= fixturesPath %>/scripts/*.js'
-            ]
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['concat', 'cssmin']
+            },
+            post: {}
           }
         }
       }
+    },
+
+    // Performs rewrites based on rev and the useminPrepare configuration
+    usemin: {
+      html: ['<%= globalConfig.dist %>/*.html'],
+      css: ['<%= globalConfig.dist %>/stylesheets/*.css'],
+      options: {
+        assetsDirs: ['<%= globalConfig.dist %>']
+      }
     }
+
 
   }); // END grunt.initConfig
 
@@ -106,24 +129,27 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-connect');
+  grunt.loadNpmTasks('grunt-filerev');
   grunt.loadNpmTasks('grunt-usemin');
 
   // Define Tasks
   grunt.registerTask('build', [
     'clean:dist',
     'sass:dist',
-
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
     'uglify:generated',
-    'filerev',
+    //'filerev',
+    'copy:dist',
     'usemin'
 
-    //'copy:dist'
   ]);
 
   grunt.registerTask('default', [
