@@ -1017,12 +1017,8 @@ a.btn,
   border: 0;
   border-radius: 2px;
   font-size: 0.625rem;
-  -webkit-transition: background 0.35s linear;
-  transition: background 0.35s linear;
-  -webkit-transition: color 0.35s linear;
-  transition: color 0.35s linear;
-  -webkit-transition: border-color 0.35s linear;
-  transition: border-color 0.35s linear;
+  -webkit-transition: background 200ms linear, color 200ms linear, border-color 200ms linear;
+  transition: background 200ms linear, color 200ms linear, border-color 200ms linear;
 }
 .btn:hover,
 .btn-primary:hover,
@@ -1185,11 +1181,12 @@ a.btn-underline,
   text-decoration: none;
   padding: 0 0 2px 0;
   letter-spacing: 0.5px;
-  -webkit-transition: padding 0.1s linear;
-  transition: padding 0.1s linear;
+  -webkit-transition: padding 100ms linear;
+  transition: padding 100ms linear;
 }
-a.btn-underline:hover,
-.btn-underline:hover {
+a.btn-underline:hover, a.btn-underline:focus,
+.btn-underline:hover,
+.btn-underline:focus {
   padding: 0 4px 2px 4px;
   color: #FFF;
 }
@@ -3044,6 +3041,19 @@ tbody.collapse.in {
   border-bottom-color: #5C4EA5;
 }
 
+#habla_window_div #habla_topbar_div {
+  background: #5C4EA5 none repeat scroll 0 0 !important;
+}
+
+#habla_window_div #habla_oplink_a {
+  color: #FFF !important;
+}
+
+#hbl_operator_state_div {
+  position: relative;
+  z-index: 200;
+}
+
 .hero-main {
   position: relative;
   background: rgba(75, 55, 155, 0.9);
@@ -3058,8 +3068,7 @@ tbody.collapse.in {
 }
 @media only screen and (min-width: 40.063em) {
   .hero-main {
-    padding: 2rem;
-    height: 620px;
+    padding: 2rem 2rem 0;
   }
 }
 @media only screen and (min-width: 63.063em) {
@@ -3067,12 +3076,14 @@ tbody.collapse.in {
     padding: 3rem 3rem 0;
   }
 }
-.hero-main.nav-stuck {
-  padding-top: 60px;
-}
-@media only screen and (min-width: 40.063em) {
+@media only screen and (max-width: 40em) {
   .hero-main.nav-stuck {
-    padding-top: 80px;
+    padding-top: 60px;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .hero-main.nav-stuck {
+    padding-top: 110px;
   }
 }
 .hero-main .hero-content {
@@ -3082,13 +3093,13 @@ tbody.collapse.in {
   width: 100%;
   display: block;
   margin: 0 auto;
-  max-width: 82rem;
+  max-width: 92rem;
   position: relative;
   z-index: 200;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 63.063em) {
   .hero-main .hero-inner {
-    min-height: 584px;
+    min-height: 640px;
   }
 }
 .hero-main .hero-inner-overlay {
@@ -3097,7 +3108,7 @@ tbody.collapse.in {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.7);
 }
 .hero-main .hero-bottom {
   display: none;
@@ -3163,10 +3174,10 @@ tbody.collapse.in {
 }
 @media only screen and (min-width: 40.063em) {
   .hero-about.hero-main.nav-stuck {
-    padding-top: 50px;
+    padding-top: 32px;
   }
   .hero-about.hero-main.nav-stuck .hero-inner {
-    padding-top: 50px;
+    padding-top: 32px;
   }
 }
 
@@ -3183,6 +3194,7 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 1px;
+  opacity: 0.75;
 }
 @media only screen and (min-width: 40.063em) {
   .security-note svg {
@@ -3190,7 +3202,7 @@ tbody.collapse.in {
   }
 }
 .security-note svg path {
-  fill: #939598;
+  fill: #555;
 }
 .security-note h6 {
   text-transform: none;
@@ -3198,7 +3210,8 @@ tbody.collapse.in {
   display: inline-block;
   font-size: 0.6875rem;
   letter-spacing: 0.5px;
-  color: #A7A9AC;
+  color: #555;
+  opacity: 0.85;
 }
 @media only screen and (min-width: 40.063em) {
   .security-note h6 {
@@ -3401,7 +3414,7 @@ tbody.collapse.in {
 
 .mobile-menu-overlay {
   background: #FFF;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -3418,7 +3431,7 @@ tbody.collapse.in {
   height: 100%;
 }
 .mobile-menu-overlay .mobile-menu-top {
-  height: 75px;
+  height: 60px;
   padding: 0rem 1rem;
 }
 .mobile-menu-overlay .mobile-menu-top .logo-header {
@@ -3452,7 +3465,10 @@ tbody.collapse.in {
   display: inline-block;
   text-decoration: none;
   font-family: "ClarendonBT-Light", "Times New Roman", Times, Baskerville, Georgia, serif;
+  padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom 200ms linear;
+  transition: border-bottom 200ms linear;
 }
 .mobile-menu-overlay .mobile-menu-nav a:hover {
   border-bottom: 1px solid #5C4EA5;
@@ -3487,8 +3503,7 @@ tbody.collapse.in {
 }
 
 body.mobile-menu-open {
-  position: fixed;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 body.mobile-menu-open .mobile-menu-overlay {
   opacity: 1;
@@ -3531,7 +3546,7 @@ textarea,
   border-radius: 0;
   vertical-align: middle;
   box-shadow: none;
-  border: 2px solid #CCCCCC;
+  border: 1px solid #CCCCCC;
   width: 100%;
   font-weight: 300;
   letter-spacing: 0.5px;
@@ -4275,7 +4290,7 @@ select::-ms-expand {
 .checkbox input + label:before {
   content: '';
   background: #FFF;
-  border: 2px solid #CCCCCC;
+  border: 1px solid #CCCCCC;
   display: inline-block;
   vertical-align: middle;
   width: 16px;
@@ -4608,7 +4623,7 @@ footer.footer-gray {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
+    width: 18.96686%;
   }
   .main-footer .footer-col-1:last-child {
     margin-right: 0;
@@ -5135,7 +5150,7 @@ footer.footer-gray {
   z-index: 900;
   height: 60px;
   visibility: visible;
-  background: rgba(75, 55, 155, 0.9);
+  background: #5C4EA5;
 }
 @media only screen and (min-width: 40.063em) {
   .main-header.stuck {
@@ -5186,6 +5201,9 @@ footer.footer-gray {
   font-size: 0.75rem;
   font-weight: 300;
   border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  -webkit-transition: background 200ms linear, color 200ms linear, border-color 200ms linear, border-bottom 200ms linear;
+  transition: background 200ms linear, color 200ms linear, border-color 200ms linear, border-bottom 200ms linear;
 }
 @media only screen and (min-width: 40.063em) {
   .main-header .header-right a {
@@ -5207,6 +5225,7 @@ footer.footer-gray {
 }
 .main-header .mobile-menu-trigger:hover {
   color: #5C4EA5;
+  text-decoration: none;
 }
 
 .mobile-menu-trigger {
@@ -5222,9 +5241,6 @@ footer.footer-gray {
   text-decoration: none;
   font-size: 0.8125rem;
   border-bottom: 1px solid transparent;
-}
-.mobile-menu-trigger:hover {
-  border-bottom: 1px solid #5C4EA5;
 }
 @media only screen and (min-width: 40.063em) {
   .mobile-menu-trigger {
@@ -5376,29 +5392,80 @@ footer.footer-gray {
 }
 .hero-about .hero-inner {
   background: #5C4EA5;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .hero-about .hero-inner {
+    height: 584px;
+  }
 }
 .hero-about .hero-inner-overlay {
   opacity: 0;
-  -webkit-transition: opacity 0.4s linear;
-  transition: opacity 0.4s linear;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 .hero-about .hero-inner-backdrop {
-  background: url("/assets-build/images/hero-about-mobile@2x.jpg") no-repeat bottom center;
+  background: url("/assets-build/images/header-about-mobile@2x.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
   .hero-about .hero-inner-backdrop {
-    background: url("/assets-build/images/hero-about@2x.jpg") no-repeat bottom center;
+    background: url("/assets-build/images/header-about-tablet.jpg") no-repeat center center;
     background-size: cover;
   }
 }
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .hero-about .hero-inner-backdrop {
+    background: url("/assets-build/images/header-about-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .hero-about .hero-inner-backdrop {
+    background: url("/assets-build/images/header-about-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .hero-about .hero-inner-backdrop {
+    background: url("/assets-build/images/header-about-desktop@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+.hero-about .about-hero {
+  text-align: center;
+  padding-top: 5rem;
+}
 @media only screen and (min-width: 40.063em) {
-  .hero-about .hero-headline {
+  .hero-about .about-hero {
+    padding-top: 10rem;
+  }
+}
+@media only screen and (min-width: 63.063em) {
+  .hero-about .about-hero {
+    padding-top: 10rem;
+  }
+}
+@media only screen and (max-width: 40em) {
+  .hero-about .about-hero .hero-headline {
+    line-height: 1.2;
+  }
+}
+@media only screen and (min-width: 40.063em) {
+  .hero-about .about-hero .hero-headline {
+    max-width: 26rem;
+    margin: 0 auto;
+    padding-bottom: 15rem;
+  }
+}
+@media only screen and (min-width: 63.063em) {
+  .hero-about .about-hero .hero-headline {
     max-width: 26rem;
   }
 }
@@ -5448,7 +5515,7 @@ body.showtime .hero-inner {
   margin-right: 0;
 }
 .about-mission .about-mission-inner .section-tagline {
-  max-width: 20rem;
+  max-width: 18rem;
   margin: 0 auto 2rem;
 }
 @media only screen and (min-width: 40.063em) {
@@ -5504,7 +5571,7 @@ body.showtime .hero-inner {
   }
 }
 .about-mission-block .block-inner.block-message {
-  max-width: 20rem;
+  max-width: 18rem;
   margin: 0 auto;
 }
 @media only screen and (min-width: 63.063em) {
@@ -5531,7 +5598,7 @@ body.showtime .hero-inner {
 }
 .about-mission-block h6 {
   line-height: 1.4;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.5px;
 }
 .about-mission-block h6:first-child {
@@ -5573,7 +5640,7 @@ body.showtime .hero-inner {
 }
 .team-grid-section .section-tagline,
 .advisors-grid-section .section-tagline {
-  max-width: 20rem;
+  max-width: 21rem;
   margin: 0 auto;
   padding-bottom: 3rem;
 }
@@ -5692,15 +5759,57 @@ body.showtime .hero-inner {
     clear: left;
   }
 }
+.team-grid .grid-item,
+.advisors-grid .grid-item {
+  position: relative;
+}
 .team-grid .team-item-image,
 .advisors-grid .team-item-image {
   width: 142px;
   margin: 0 auto;
   margin-bottom: 0.5rem;
+  border-radius: 50%;
 }
 @media only screen and (min-width: 40.063em) {
   .team-grid .team-item-image,
   .advisors-grid .team-item-image {
+    margin-bottom: 1.5rem;
+  }
+}
+.team-grid .team-item-image.normal,
+.advisors-grid .team-item-image.normal {
+  display: block;
+}
+.team-grid .team-item-image.retina,
+.advisors-grid .team-item-image.retina {
+  display: none;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .team-grid .team-item-image.normal,
+  .advisors-grid .team-item-image.normal {
+    display: none;
+  }
+  .team-grid .team-item-image.retina,
+  .advisors-grid .team-item-image.retina {
+    display: block;
+  }
+}
+.team-grid .team-image-overlay,
+.advisors-grid .team-image-overlay {
+  background: rgba(255, 255, 255, 0.1);
+  width: 142px;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 142px;
+}
+@media only screen and (min-width: 40.063em) {
+  .team-grid .team-image-overlay,
+  .advisors-grid .team-image-overlay {
     margin-bottom: 1.5rem;
   }
 }
@@ -5813,8 +5922,49 @@ body.showtime .hero-inner {
 }
 
 .page-about .secondary-contact-cta-section {
-  background: url("/assets-build/images/about-cta-bg.jpg") no-repeat center center;
+  background: #FFF;
+}
+.page-about .secondary-cta-bg {
+  background: url("/assets-build/images/cta-careers-mobile@2x.jpg") no-repeat center center;
   background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 92rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-about .secondary-cta-bg::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .page-about .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-tablet.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .page-about .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .page-about .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .page-about .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-desktop@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
 }
 
 .page-home-wrapper {
@@ -5827,19 +5977,38 @@ body.showtime .hero-inner {
 }
 .hero-home .hero-inner {
   background: #FFF;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 .hero-home .hero-inner-backdrop {
-  background: url("/assets-build/images/hero-home-mobile@2x.jpg") no-repeat center center;
+  background: url("/assets-build/images/header-home-mobile@2x.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
   .hero-home .hero-inner-backdrop {
-    background: url("/assets-build/images/hero-home@2x.jpg") no-repeat center center;
+    background: url("/assets-build/images/header-home-tablet.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .hero-home .hero-inner-backdrop {
+    background: url("/assets-build/images/header-home-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .hero-home .hero-inner-backdrop {
+    background: url("/assets-build/images/header-home-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .hero-home .hero-inner-backdrop {
+    background: url("/assets-build/images/header-home-desktop@2x.jpg") no-repeat center center;
     background-size: cover;
   }
 }
@@ -5876,7 +6045,6 @@ body.showtime .hero-inner-backdrop {
   padding: 0;
 }
 .home-hero .security-note h6 {
-  color: #939598;
   text-transform: none;
   font-size: 0.625rem;
 }
@@ -5976,7 +6144,7 @@ body.showtime .hero-inner-backdrop {
 }
 @media only screen and (min-width: 40.063em) {
   .proof-slide {
-    padding: 5rem 1rem 2rem;
+    padding: 5rem 1rem 3.75rem;
     margin-bottom: 0;
   }
 }
@@ -5991,14 +6159,14 @@ body.showtime .hero-inner-backdrop {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(75, 55, 155, 0.4);
+  background: rgba(60, 39, 102, 0.2);
   border-radius: 5px;
   -webkit-transition: background 0.25s linear;
   transition: background 0.25s linear;
 }
 @media only screen and (min-width: 40.063em) {
   .proof-slide .slide-overlay {
-    background: rgba(75, 55, 155, 0.8);
+    background: rgba(60, 39, 102, 0.5);
   }
 }
 .proof-slide .slide-quote {
@@ -6032,16 +6200,31 @@ body.showtime .hero-inner-backdrop {
   }
 }
 .proof-slide.proof-slide-1 {
-  background: url("/assets-build/images/proof-slide-bg-1.jpg") no-repeat center center;
-  background-size: 100% auto;
+  background: url("/assets-build/images/testimonial-juliet.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .proof-slide.proof-slide-1 {
+    background-image: url("/assets-build/images/testimonial-juliet@2x.jpg");
+  }
 }
 .proof-slide.proof-slide-2 {
-  background: url("/assets-build/images/proof-slide-bg-2.jpg") no-repeat center center;
-  background-size: 100% auto;
+  background: url("/assets-build/images/testimonial-kim.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .proof-slide.proof-slide-2 {
+    background-image: url("/assets-build/images/testimonial-kim@2x.jpg");
+  }
 }
 .proof-slide.proof-slide-3 {
-  background: url("/assets-build/images/proof-slide-bg-3.jpg") no-repeat center center;
-  background-size: 100% auto;
+  background: url("/assets-build/images/testimonial-jeffrey.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .proof-slide.proof-slide-3 {
+    background-image: url("/assets-build/images/testimonial-jeffrey@2x.jpg");
+  }
 }
 
 .proof-slides {
@@ -6074,7 +6257,7 @@ body.showtime .hero-inner-backdrop {
   margin-right: 0;
 }
 .proof-slides .proof-slide.active .slide-overlay, .proof-slides .proof-slide:hover .slide-overlay {
-  background: rgba(75, 55, 155, 0.4);
+  background: rgba(60, 39, 102, 0.2);
 }
 
 .testimonial-slider {
@@ -6129,13 +6312,13 @@ body.showtime .hero-inner-backdrop {
   margin-bottom: 1.5rem;
 }
 .testimonial-slider .slides li .proof-quote {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #A7A9AC;
   font-family: "ClarendonBT-Light", "Times New Roman", Times, Baskerville, Georgia, serif;
   max-width: 16rem;
   margin: 0 auto;
   padding-bottom: 2rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .testimonial-slider .slides.desktop {
   display: none;
@@ -6303,7 +6486,7 @@ body.showtime .hero-inner-backdrop {
 .how-it-works-items .how-it-works-item .item-copy {
   font-size: 0.875rem;
   color: #A7A9AC;
-  max-width: 15rem;
+  max-width: 12rem;
   letter-spacing: 0.5px;
   margin: 0 auto;
   line-height: 1.4;
@@ -6509,6 +6692,49 @@ body.showtime .hero-inner-backdrop {
 }
 .home-get-started .security-note {
   padding-bottom: 0;
+}
+
+.secondary-contact-cta-section.home .secondary-cta-bg {
+  background: url("/assets-build/images/cta-support-mobile@2x.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 92rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.secondary-contact-cta-section.home .secondary-cta-bg::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .secondary-contact-cta-section.home .secondary-cta-bg {
+    background: url("/assets-build/images/cta-support-tablet.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .secondary-contact-cta-section.home .secondary-cta-bg {
+    background: url("/assets-build/images/cta-support-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .secondary-contact-cta-section.home .secondary-cta-bg {
+    background: url("/assets-build/images/cta-support-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .secondary-contact-cta-section.home .secondary-cta-bg {
+    background: url("/assets-build/images/cta-support-desktop@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
 }
 
 .secondary-contact-cta-section.home .contact-cta-block {
@@ -6784,7 +7010,7 @@ body.showtime .hero-inner-backdrop {
 }
 @media only screen and (min-width: 40.063em) {
   .main-section-header {
-    padding: 3rem 0 4rem;
+    padding: 3rem 0 2.65rem;
   }
 }
 .main-section-header .section-header-title {
@@ -6866,6 +7092,9 @@ body.showtime .hero-inner-backdrop {
   font-size: 0.75rem;
   font-weight: 300;
   border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  -webkit-transition: border-bottom 100ms linear;
+  transition: border-bottom 100ms linear;
 }
 @media only screen and (min-width: 40.063em) {
   .secondary-header .header-right a {
@@ -6880,6 +7109,8 @@ body.showtime .hero-inner-backdrop {
   border-bottom: 1px solid #FFF;
 }
 .secondary-header .header-right a.btn-header {
+  -webkit-transition: background 200ms linear, color 200ms linear, border-color 200ms linear;
+  transition: background 200ms linear, color 200ms linear, border-color 200ms linear;
   font-size: 0.625rem;
   border-bottom: 1px solid #FFF;
 }
@@ -6895,8 +7126,7 @@ body.showtime .hero-inner-backdrop {
 }
 
 .secondary-header-wrapper {
-  background: url("/assets-build/images/secondary-header-bg.jpg") no-repeat center center;
-  background-size: cover;
+  background: rgba(75, 55, 155, 0.4);
   position: relative;
 }
 @media only screen and (min-width: 63.063em) {
@@ -6904,6 +7134,44 @@ body.showtime .hero-inner-backdrop {
     height: 400px;
   }
 }
+.secondary-header-wrapper .header-wrapper-bg {
+  background: url("/assets-build/images/header-secondary-mobile@2x.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .secondary-header-wrapper .header-wrapper-bg {
+    background: url("/assets-build/images/header-secondary-tablet.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .secondary-header-wrapper .header-wrapper-bg {
+    background: url("/assets-build/images/header-secondary-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .secondary-header-wrapper .header-wrapper-bg {
+    background: url("/assets-build/images/header-secondary-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .secondary-header-wrapper .header-wrapper-bg {
+    background: url("/assets-build/images/header-secondary-desktop@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
 .secondary-header-wrapper .header-wrapper-overlay {
   background: rgba(75, 55, 155, 0.9);
   position: absolute;
@@ -6913,6 +7181,13 @@ body.showtime .hero-inner-backdrop {
   left: 0;
 }
 
+body.showtime .header-wrapper-bg {
+  opacity: 1;
+}
+
+.page-secondary {
+  background: #F9F9F9;
+}
 .page-secondary .secondary-hero-mobile.padding {
   padding-top: 92px;
 }
@@ -7232,16 +7507,12 @@ body.showtime .hero-inner-backdrop {
   border-left: 1px solid #F2F2F2;
 }
 .careers-section .main-section-item {
-  margin-bottom: 0;
   border-bottom: 1px solid #F2F2F2;
 }
 .careers-section .main-section-item-inner {
   border-right: 1px solid #F2F2F2;
   border-left: 1px solid #F2F2F2;
   border-bottom: 0;
-}
-.careers-section .main-section-item-inner:last-of-type {
-  padding-bottom: 5rem;
 }
 .careers-section .main-section-title {
   margin-bottom: 0.75rem;
@@ -7250,15 +7521,33 @@ body.showtime .hero-inner-backdrop {
 .careers-list li {
   display: block;
 }
-.careers-list a {
-  font-size: 1.125rem;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  text-decoration: none;
+.careers-list .career-title {
   font-family: "ClarendonBT-Light", "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
-.careers-list a:hover {
-  text-decoration: underline;
+.careers-list .section-item .career-copy-heading {
+  margin-bottom: 0.5rem;
+  color: #4D4D4D;
+}
+.careers-list .styled-list {
+  list-style-type: disc;
+  margin: 0 0 1rem 0;
+}
+.careers-list .styled-list li {
+  display: list-item;
+  list-style-position: outside;
+  margin-left: 19px;
+  color: #A7A9AC;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-size: 0.875rem;
+}
+.careers-list .career-copy-inner a {
+  color: #5C4EA5;
+  font-size: 0.875rem;
+  font-family: "BasicCommercialLTCom-Roman", Helvetica, Arial, sans-serif;
 }
 
 .contact-section .main-section-header {
@@ -7420,8 +7709,7 @@ body.showtime .hero-inner-backdrop {
 }
 
 .secondary-contact-cta-section {
-  background: url("/assets-build/images/secondary-contact-cta-bg.png") no-repeat center center;
-  background-size: cover;
+  background: #F9F9F9;
   position: relative;
   max-width: 72rem;
   margin-left: auto;
@@ -7442,12 +7730,65 @@ body.showtime .hero-inner-backdrop {
     height: 600px;
   }
 }
+.secondary-contact-cta-section.support .secondary-cta-bg {
+  background: url("/assets-build/images/cta-careers-mobile@2x.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 92rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.secondary-contact-cta-section.support .secondary-cta-bg::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) {
+  .secondary-contact-cta-section.support .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-tablet.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 63em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (max-width: 63em) and (min-resolution: 192dpi) {
+  .secondary-contact-cta-section.support .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-tablet@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 63.063em) {
+  .secondary-contact-cta-section.support .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-desktop.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+@media only screen and (min-width: 63.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 63.063em) and (min-resolution: 192dpi) {
+  .secondary-contact-cta-section.support .secondary-cta-bg {
+    background: url("/assets-build/images/cta-careers-desktop@2x.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+.secondary-contact-cta-section .secondary-cta-overlay {
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .secondary-contact-cta-section .secondary-contact-cta-inner {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  position: relative;
   padding: 0 1.5rem;
+  z-index: 100;
 }
 .secondary-contact-cta-section .secondary-contact-cta-inner::after {
   clear: both;
@@ -7495,7 +7836,7 @@ body.showtime .hero-inner-backdrop {
     margin-right: 2.35765%;
     width: 65.88078%;
     margin-left: 34.11922%;
-    margin-top: -75px;
+    margin-top: -45px;
   }
   .secondary-contact-cta-section .contact-cta-block:last-child {
     margin-right: 0;
@@ -7511,6 +7852,7 @@ body.showtime .hero-inner-backdrop {
   .secondary-contact-cta-section .contact-cta-block .section-tagline {
     font-size: 1.875rem;
     margin-bottom: 4rem;
+    max-width: 22rem;
   }
 }
 .secondary-contact-cta-section .contact-cta-block:hover {
@@ -7599,13 +7941,37 @@ body.showtime .hero-inner-backdrop {
   padding: 4px 4px;
 }
 
-.contact-form label {
-  color: #5C4EA5;
-  font-size: 0.625rem;
+@media only screen and (min-width: 40.063em) {
+  .contact-form-inner {
+    min-height: 498px;
+  }
 }
+
 .contact-form .btn-row {
   padding: 2rem 1rem;
   text-align: center;
+}
+.contact-form .contact-form-step-2 {
+  display: none;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+@media only screen and (min-width: 40.063em) {
+  .contact-form .contact-form-step-2 {
+    padding-top: 6rem;
+    padding-bottom: 0;
+  }
+}
+.contact-form .thank-you-note {
+  text-align: center;
+  max-width: 13rem;
+  margin: 0 auto;
+  color: #A7A9AC;
+}
+@media only screen and (min-width: 40.063em) {
+  .contact-form .thank-you-note {
+    max-width: none;
+  }
 }
 
 .page-application {
@@ -8304,14 +8670,14 @@ body.showtime .hero-inner-backdrop {
   font-size: 1rem;
   color: #FFF;
   text-align: center;
-  padding-top: 13px;
+  padding-top: 12px;
   font-family: "ClarendonBT-Light", "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 @media only screen and (min-width: 63.063em) {
   .input-icon-left .dollar-sign {
     width: 50px;
     height: 50px;
-    padding-top: 18px;
+    padding-top: 17px;
   }
 }
 .input-icon-left input {

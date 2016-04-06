@@ -4,6 +4,19 @@
 // Components
 ////////////////////////////////////////////////////////
 
+#habla_window_div #habla_topbar_div {
+  background: $color-purple none repeat scroll 0 0 !important;
+}
+
+#habla_window_div #habla_oplink_a {
+  color: $color-white !important;
+}
+
+#hbl_operator_state_div {
+  position: relative;
+  z-index: 200;
+}
+
 // -----------------------------------------------------
 // Component: HERO MAIN
 // -----------------------------------------------------
@@ -13,8 +26,7 @@
   @include outer-container(none);
 
   @media #{$medium-up} {
-    padding: 2rem;
-    height: 620px;
+    padding: 2rem 2rem 0;
   }
 
   @media #{$large-up} {
@@ -22,10 +34,12 @@
   }
 
   &.nav-stuck {
-    padding-top: 60px;
+    @media #{$small-only} {
+      padding-top: 60px;
+    }
 
-    @media #{$medium-up} {
-      padding-top: 80px;
+    @media #{$medium-only} {
+      padding-top: 110px;
     }
   }
 
@@ -37,12 +51,12 @@
     width: 100%;
     display: block;
     margin: 0 auto;
-    max-width: 82rem;
+    max-width: 92rem;
     position: relative;
     z-index: 200;
 
-    @media #{$medium-up} {
-      min-height: 584px;
+    @media #{$large-up} {
+      min-height: 640px;
     }
   }
 
@@ -52,7 +66,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: $white-transparent-85;
+    background: $white-transparent-70;
   }
 
   .hero-bottom {
@@ -121,10 +135,10 @@
     }
 
     @media #{$medium-up} {
-      padding-top: 50px;
+      padding-top: 32px;
 
       .hero-inner {
-        padding-top: 50px;
+        padding-top: 32px;
       }
     }
   }
@@ -147,13 +161,14 @@
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 1px;
+    opacity: 0.75;
 
     @media #{$medium-up} {
       margin-bottom: 2px;
     }
 
     path {
-      fill: $color-gray-10;
+      fill: #555;
     }
   }
 
@@ -163,7 +178,8 @@
     display: inline-block;
     @include fontSize(11px);
     letter-spacing: 0.5px;
-    color: $text-color-gray;
+    color: #555;
+    opacity: 0.85;
 
     @media #{$medium-up} {
       @include fontSize(12px);
@@ -362,7 +378,7 @@
 // -----------------------------------------------------
 .mobile-menu-overlay {
   background: $color-white;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -379,7 +395,7 @@
   }
 
   .mobile-menu-top {
-    height: 75px;
+    height: 60px;
     padding: 0rem 1rem;
 
     .logo-header {
@@ -410,7 +426,9 @@
       display: inline-block;
       text-decoration: none;
       font-family: $serif;
+      padding-bottom: 2px;
       border-bottom: 1px solid transparent;
+      @include transition(border-bottom 200ms linear);
 
       &:hover {
         border-bottom: 1px solid $color-purple;
@@ -451,8 +469,7 @@
 }
 
 body.mobile-menu-open {
-  position: fixed;
-  overflow: hidden;
+  overflow: hidden !important;
 
   .mobile-menu-overlay {
     opacity: 1;

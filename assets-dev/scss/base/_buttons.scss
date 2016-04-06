@@ -21,9 +21,7 @@
   border: 0;
   border-radius: 2px;
   @include fontSize(10px);
-  @include transition(background 0.35s linear);
-  @include transition(color 0.35s linear);
-  @include transition(border-color 0.35s linear);
+  @include transition(background 200ms linear, color 200ms linear, border-color 200ms linear);
 
   // hovering on the btn
   &:hover, &:focus {
@@ -190,9 +188,10 @@ a.btn-underline,
   text-decoration: none;
   padding: 0 0 2px 0;
   letter-spacing: 0.5px;
-  @include transition(padding 0.1s linear);
+  @include transition(padding 100ms linear);
 
-  &:hover {
+  &:hover,
+  &:focus {
     padding: 0 4px 2px 4px;
     color: $color-white;
   }

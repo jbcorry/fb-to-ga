@@ -305,7 +305,7 @@
     z-index: 900;
     height: 60px;
     visibility: visible;
-    background: $color-purple-transparent-2-90;
+    background: $color-purple;
 
     @media #{$medium-up} {
       height: 80px;
@@ -357,6 +357,8 @@
       @include fontSize(12px);
       font-weight: 300;
       border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      @include transition(background 200ms linear, color 200ms linear, border-color 200ms linear, border-bottom 200ms linear);
 
       @media #{$medium-up} {
         @include fontSize(13px);
@@ -383,6 +385,7 @@
 
     &:hover {
       color: $color-purple;
+      text-decoration: none;
     }
   }
 }
@@ -394,10 +397,6 @@
   text-decoration: none;
   @include fontSize(13px);
   border-bottom: 1px solid transparent;
-
-  &:hover {
-    border-bottom: 1px solid $color-purple;
-  }
 
   @media #{$medium-up} {
     display: none;

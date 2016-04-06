@@ -24,3 +24,10 @@
 - Careers
 - Legal Template (Privacy, ToS)
 - App Flow UI Updates
+
+
+## Content Handoff (4/5)
+- Copy
+- Web Image Assets
+- Performance Optimization
+- Feedback Updates

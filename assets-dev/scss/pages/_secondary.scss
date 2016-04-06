@@ -50,7 +50,7 @@
   text-align: center;
 
   @media #{$medium-up} {
-    padding: 3rem 0 4rem;
+    padding: 3rem 0 2.65rem;
   }
 
   .section-header-title {
@@ -128,6 +128,8 @@
       @include fontSize(12px);
       font-weight: 300;
       border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      @include transition(border-bottom 100ms linear);
 
       @media #{$medium-up} {
         @include fontSize(13px);
@@ -144,6 +146,7 @@
       }
 
       &.btn-header {
+        @include transition(background 200ms linear, color 200ms linear, border-color 200ms linear);
         @include fontSize(10px);
         border-bottom: 1px solid $color-white;
       }
@@ -164,12 +167,43 @@
 }
 
 .secondary-header-wrapper {
-  background: url('/assets-build/images/secondary-header-bg.jpg') no-repeat center center;
-  background-size: cover;
+  background: $color-purple-transparent-2-40;
   position: relative;
 
   @media #{$large-up} {
     height: 400px;
+  }
+
+  .header-wrapper-bg {
+    background: url('/assets-build/images/header-secondary-mobile@2x.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    @include transition(opacity 0.4s ease-in);
+
+    @media #{$medium-only} {
+      background: url('/assets-build/images/header-secondary-tablet.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-secondary-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/assets-build/images/header-secondary-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-secondary-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
   }
 
   .header-wrapper-overlay {
@@ -182,7 +216,13 @@
   }
 }
 
+body.showtime .header-wrapper-bg {
+  opacity: 1;
+}
+
 .page-secondary {
+  background: $color-gray-2;
+
   .secondary-hero-mobile.padding {
     padding-top: 92px;
 
@@ -515,7 +555,6 @@
   }
 
   .main-section-item {
-    margin-bottom: 0;
     border-bottom: 1px solid $color-gray-3;
   }
 
@@ -523,10 +562,6 @@
     border-right: 1px solid $color-gray-3;
     border-left: 1px solid $color-gray-3;
     border-bottom: 0;
-
-    &:last-of-type {
-      padding-bottom: 5rem;
-    }
   }
 
   .main-section-title {
@@ -539,15 +574,40 @@
     display: block;
   }
 
-  a {
-    @include fontSize(18px);
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    text-decoration: none;
+  .career-title {
     font-family: $serif;
+    @include fontSize(18px);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 
-    &:hover {
-      text-decoration: underline;
+  .section-item {
+    .career-copy-heading {
+      margin-bottom: 0.5rem;
+      color: $color-black;
+    }
+  }
+
+  .styled-list {
+    list-style-type: disc;
+    margin: 0 0 1rem 0;
+
+    li {
+      display: list-item;
+      list-style-position: outside;
+      margin-left: 19px;
+      color: $text-color-gray;
+      line-height: 1.5;
+      letter-spacing: 0;
+      @include fontSize(14px);
+    }
+  }
+
+  .career-copy-inner {
+    a {
+      color: $color-purple;
+      @include fontSize(14px);
+      font-family: $sans-serif;
     }
   }
 }
@@ -724,8 +784,7 @@
 }
 
 .secondary-contact-cta-section {
-  background: url('/assets-build/images/secondary-contact-cta-bg.png') no-repeat center center;
-  background-size: cover;
+  background: $color-gray-2;
   position: relative;
   @include outer-container();
   max-width: none;
@@ -738,10 +797,54 @@
     height: 600px;
   }
 
+  &.support {
+    .secondary-cta-bg {
+      background: url('/assets-build/images/cta-careers-mobile@2x.jpg') no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      @include outer-container(92rem);
+
+      @media #{$medium-only} {
+        background: url('/assets-build/images/cta-careers-tablet.jpg') no-repeat center center;
+        background-size: cover;
+
+        @media #{$retina} {
+          background: url('/assets-build/images/cta-careers-tablet@2x.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+
+      @media #{$large-up} {
+        background: url('/assets-build/images/cta-careers-desktop.jpg') no-repeat center center;
+        background-size: cover;
+
+        @media #{$retina} {
+          background: url('/assets-build/images/cta-careers-desktop@2x.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .secondary-cta-overlay {
+    background: rgba(255, 255, 255, .10);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .secondary-contact-cta-inner {
     @include outer-container();
     display: block;
+    position: relative;
     padding: 0 1.5rem;
+    z-index: 100;
 
     @media #{$medium-up} {
       padding: 0 1rem;
@@ -766,7 +869,7 @@
       background: $color-purple-transparent-2-90;
       @include span-columns(8);
       @include shift(4);
-      margin-top: -75px;
+      margin-top: -45px;
     }
 
     .section-tagline {
@@ -778,6 +881,7 @@
       @media #{$medium-up} {
         @include fontSize(30px);
         margin-bottom: 4rem;
+        max-width: 22rem;
       }
     }
 
@@ -855,14 +959,38 @@
   }
 }
 
-.contact-form {
-  label {
-    color: $color-purple;
-    @include fontSize(10px);
+.contact-form-inner {
+  @media #{$medium-up} {
+    min-height: 498px;
   }
+}
+
+.contact-form {
 
   .btn-row {
     padding: 2rem 1rem;
     text-align: center;
+  }
+
+  .contact-form-step-2 {
+    display: none;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    @media #{$medium-up} {
+      padding-top: 6rem;
+      padding-bottom: 0;
+    }
+  }
+
+  .thank-you-note {
+    text-align: center;
+    max-width: 13rem;
+    margin: 0 auto;
+    color: #A7A9AC;
+
+    @media #{$medium-up} {
+      max-width: none;
+    }
   }
 }

@@ -30,29 +30,72 @@
 
   .hero-inner {
     background: $color-purple;
-    @include transition(opacity 0.4s ease-in);
+    @include transition(opacity 0.3s ease-in);
+
+    @media #{$medium-only} {
+      height: 584px;
+    }
   }
 
   .hero-inner-overlay {
     opacity: 0;
-    @include transition(opacity 0.4s linear);
+    @include transition(opacity 0.3s linear);
   }
 
   .hero-inner-backdrop {
-    background: url('/assets-build/images/hero-about-mobile@2x.jpg') no-repeat bottom center;
+    background: url('/assets-build/images/header-about-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     opacity: 0;
-    @include transition(opacity 0.4s ease-in);
+    @include transition(opacity 0.3s ease-in);
 
-    @media #{$medium-up} {
-      background: url('/assets-build/images/hero-about@2x.jpg') no-repeat bottom center;
+    @media #{$medium-only} {
+      background: url('/assets-build/images/header-about-tablet.jpg') no-repeat center center;
       background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-about-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/assets-build/images/header-about-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-about-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
     }
   }
 
-  .hero-headline {
+  .about-hero {
+    text-align: center;
+    padding-top: 5rem;
+
     @media #{$medium-up} {
-      max-width: 26rem;
+      padding-top: 10rem;
+    }
+
+    @media #{$large-up} {
+      padding-top: 10rem;
+    }
+
+
+    .hero-headline {
+      @media #{$small-only} {
+        line-height: 1.2;
+      }
+
+      @media #{$medium-up} {
+        max-width: 26rem;
+        margin: 0 auto;
+        padding-bottom: 15rem;
+      }
+
+      @media #{$large-up} {
+        max-width: 26rem;
+      }
     }
   }
 
@@ -96,7 +139,7 @@ body.showtime {
     padding-top: 1.5rem;
 
     .section-tagline {
-      max-width: 20rem;
+      max-width: 18rem;
       margin: 0 auto 2rem;
 
       @media #{$medium-up} {
@@ -135,7 +178,7 @@ body.showtime {
     }
 
     &.block-message {
-      max-width: 20rem;
+      max-width: 18rem;
       margin: 0 auto;
 
       @media #{$large-up} {
@@ -162,7 +205,7 @@ body.showtime {
 
   h6 {
     line-height: 1.4;
-    @include fontSize(12px);
+    @include fontSize(14px);
     letter-spacing: 0.5px;
 
     &:first-child {
@@ -210,7 +253,7 @@ body.showtime {
   }
 
   .section-tagline {
-    max-width: 20rem;
+    max-width: 21rem;
     margin: 0 auto;
     padding-bottom: 3rem;
 
@@ -261,10 +304,50 @@ body.showtime {
     }
   }
 
+  .grid-item {
+    position: relative;
+  }
+
   .team-item-image {
     width: 142px;
     margin: 0 auto;
     margin-bottom: 0.5rem;
+    border-radius: 50%;
+
+    @media #{$medium-up} {
+      margin-bottom: 1.5rem;
+    }
+
+    &.normal {
+      display: block;
+    }
+
+    &.retina {
+      display: none;
+    }
+
+    @media #{$retina} {
+      &.normal {
+        display: none;
+      }
+
+      &.retina {
+        display: block;
+      }
+    }
+  }
+
+  .team-image-overlay {
+    background: rgba(255, 255, 255, 0.10);
+    width: 142px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 142px;
 
     @media #{$medium-up} {
       margin-bottom: 1.5rem;
@@ -378,7 +461,37 @@ body.showtime {
 // -------------------------------------
 .page-about {
   .secondary-contact-cta-section {
-    background: url('/assets-build/images/about-cta-bg.jpg') no-repeat center center;
+    background: $color-white;
+  }
+
+  .secondary-cta-bg {
+    background: url('/assets-build/images/cta-careers-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include outer-container(92rem);
+
+    @media #{$medium-only} {
+      background: url('/assets-build/images/cta-careers-tablet.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/cta-careers-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/assets-build/images/cta-careers-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/cta-careers-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
   }
 }

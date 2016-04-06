@@ -20,12 +20,10 @@ $(document).ready(function(){
   if ( $('.page-home').length ) {
     new PAVE.App.FormHelpers();
     new PAVE.Home.StickyNav();
-    new PAVE.Global.ScrollingCTA();
   }
 
   if ( $('.page-about').length ) {
     new PAVE.Secondary.AboutTopNavBar();
-    new PAVE.Global.ScrollingCTA();
   }
 
   if ( $('.page-application').length ) {
@@ -54,7 +52,6 @@ $(document).ready(function(){
     new PAVE.Secondary.SupportSidebarLinkList();
     new PAVE.Secondary.SidebarSticky();
     new PAVE.Secondary.SidebarLinkListClicks();
-    new PAVE.Global.ScrollingCTA();
   }
 
   if ( $('.range-slider').length ) {
@@ -152,11 +149,11 @@ PAVE.Home.StickyNav = function() {
       stuckOffsetOne = -70;
       stuckOffsetTwo = -65;
     } else if ( $(window).width() >= 641 && $(window).width() <= 1009 ) {
-      stuckOffsetOne = -60;
-      stuckOffsetTwo = -55;
+      stuckOffsetOne = -40;
+      stuckOffsetTwo = -50;
     } else {
-      stuckOffsetOne = -110;
-      stuckOffsetTwo = -118;
+      stuckOffsetOne = -154;
+      stuckOffsetTwo = -162;
     }
 
     return stuckOffsetOne;
@@ -210,19 +207,6 @@ PAVE.Home.StickyNav = function() {
 
 };
 
-PAVE.Global.ScrollingCTA = function() {
-  var s = skrollr.init({
-    forceHeight: false,
-    edgeStrategy: 'set',
-    easing: {
-      WTF: Math.random,
-      inverted: function(p) {
-        return 1-p;
-      }
-    }
-  });
-}
-
 PAVE.Secondary.AboutTopNavBar = function() {
   var waypointAboutTopBarHide = new Waypoint({
     element: $('#about-nav-trigger'),
@@ -237,7 +221,7 @@ PAVE.Secondary.AboutTopNavBar = function() {
         $('.inner-header').fadeIn(0);
       }
     },
-    offset: 300
+    offset: 100
   });
 
   var waypointAboutTopBarShow = new Waypoint({
@@ -277,13 +261,35 @@ PAVE.Home.QuoteSlider = function() {
     slideshow: false
   });
 
-  $('.proof-slide').on('click', function () {
+  $('.proof-slide').on('mouseover', function () {
+    var targetSlide = $(this).data('slide-number');
+
+    $('.proof-slide').removeClass('active');
+    $(this).addClass('active');
+    $('.quote-slider').flexslider(targetSlide);
+  }).on('click', function () {
     var targetSlide = $(this).data('slide-number');
 
     $('.proof-slide').removeClass('active');
     $(this).addClass('active');
     $('.quote-slider').flexslider(targetSlide);
   });
+
+  $('.flex-control-nav li').on('mouseover', function () {
+    var targetLink = parseInt($(this).text(), 10);
+        targetSlide = targetLink - 1;
+
+    $('.proof-slide').removeClass('active');
+    $('.proof-slide-' + targetLink).addClass('active');
+    $('.quote-slider').flexslider(targetSlide);
+  }).on('click', function () {
+    var targetSlide = $(this).data('slide-number');
+
+    $('.proof-slide').removeClass('active');
+    $('.proof-slide-' + targetLink).addClass('active');
+    $('.quote-slider').flexslider(targetSlide);
+  });
+
 };
 
 // ============================================================================
@@ -304,44 +310,100 @@ PAVE.Secondary.SupportSidebarLinkList = function() {
     offset: '-13%'
   });
 
-  var waypointApplying = new Waypoint({
-    element: document.getElementById('applying'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#applying').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('applying');
+    }
+  }, {
+    offset: '12%'
   });
 
-  var waypointOnboarding = new Waypoint({
-    element: document.getElementById('onboarding'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#applying').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('applying');
+    }
+  }, {
+    offset: '9%'
   });
 
-  var waypointPayments = new Waypoint({
-    element: document.getElementById('payments'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#onboarding').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('onboarding');
+    }
+  }, {
+    offset: '12%'
   });
 
-  var waypointInvesting = new Waypoint({
-    element: document.getElementById('investing'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#onboarding').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('onboarding');
+    }
+  }, {
+    offset: '9%'
   });
 
-  var waypointInvesting = new Waypoint({
-    element: document.getElementById('security'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#payments').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('payments');
+    }
+  }, {
+    offset: '12%'
+  });
+
+  $('#payments').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('payments');
+    }
+  }, {
+    offset: '9%'
+  });
+
+  $('#investing').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('investing');
+    }
+  }, {
+    offset: '12%'
+  });
+
+  $('#investing').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('investing');
+    }
+  }, {
+    offset: '9%'
+  });
+
+  $('#security').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('security');
+    }
+  }, {
+    offset: '12%'
+  });
+
+  $('#security').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('security');
+    }
+  }, {
+    offset: '9%'
+  });
+
+  $('#other').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('other');
+    }
+  }, {
+    offset: '20%'
+  });
+
+  $('#other').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('other');
+    }
+  }, {
+    offset: '9%'
   });
 
   var waypointInvesting = new Waypoint({
@@ -349,13 +411,11 @@ PAVE.Secondary.SupportSidebarLinkList = function() {
     handler: function(direction) {
       if ( direction === "down" ) {
         $('.secondary-nav').removeClass('stuck');
-        activateSectionLink(this.element.id);
       } else if ( direction === "up" ) {
-        activateSectionLink(this.element.id);
         $('.secondary-nav').addClass('stuck');
       }
     },
-    offset: '13%'
+    offset: '-4%'
   });
 };
 
@@ -374,42 +434,36 @@ PAVE.Secondary.CareersSidebarLinkList = function() {
     offset: '-13%'
   });
 
-  var waypointCareerTwo = new Waypoint({
-    element: document.getElementById('careers-marketing'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#careers-engineering').waypoint(function(direction) {
+    if (direction === 'down') {
+      activateSectionLink('careers-engineering');
+    }
+  }, {
+    offset: '12%'
   });
 
-  var waypointCareerThree = new Waypoint({
-    element: document.getElementById('careers-support'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#careers-engineering').waypoint(function(direction) {
+    if (direction === 'up') {
+      activateSectionLink('page-secondary');
+    }
+  }, {
+    offset: '30%'
   });
 
-  var waypointCareerFour = new Waypoint({
-    element: document.getElementById('careers-engineering'),
-    handler: function(direction) {
-      activateSectionLink(this.element.id);
-    },
-    offset: '13%'
+  $('#secondary-cta-alt').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('.secondary-nav').removeClass('stuck');
+    }
+  }, {
+    offset: '30%'
   });
 
-  var waypointCareersFive = new Waypoint({
-    element: document.getElementById('careers-leadership'),
-    handler: function(direction) {
-      if ( direction === "down" ) {
-        $('.secondary-nav').removeClass('stuck');
-        activateSectionLink(this.element.id);
-      } else if ( direction === "up" ) {
-        activateSectionLink(this.element.id);
-        $('.secondary-nav').addClass('stuck');
-      }
-    },
-    offset: '13%'
+  $('#secondary-cta-alt').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('.secondary-nav').addClass('stuck');
+    }
+  }, {
+    offset: '40%'
   });
 };
 
@@ -423,7 +477,7 @@ PAVE.Secondary.SidebarLinkListClicks = function() {
     if ( $('.page-support').length ) {
       var extraPadding = 110;
     } else if ( $('.page-careers').length ) {
-      var extraPadding = 85;
+      var extraPadding = 110;
     }
 
     if ( target = '#page-secondary' ) {
@@ -488,7 +542,6 @@ PAVE.Secondary.FAQItemClick = function() {
   // refresh waypoints when FAQs are expanded
   $('.question-title').on('click', function() {
     Waypoint.refreshAll();
-    console.log('refresh waypoints');
   });
 };
 
@@ -588,7 +641,6 @@ PAVE.App.LoanTermsSelection = function() {
         el.data("text-original", el.html());
         el.html(el.data("text-swap"));
       }
-      console.log(el.html())
     };
   });
 };
@@ -684,7 +736,6 @@ PAVE.App.SchoolBlock = function() {
     evt.preventDefault();
 
     var curBlock = $(this).data('school-block');
-    console.log(curBlock);
 
     $(this).closest('.form-content-block').addClass('hidden');
     $(this).closest('.school-block').find('.edit-cancel').removeClass('hidden');
@@ -783,7 +834,6 @@ PAVE.App.SchoolBlockSave = function() {
     // set values in saved block
     $(this).closest('.form-content-block').find(':input').each(function() {
       if(!$(this).val()){
-        console.log('Some fields are empty');
         return false;
       }
     });
@@ -811,11 +861,7 @@ PAVE.App.SchoolBlockDuplication = function() {
         newNumber  = new Number(num + 1),
         newElem = $('#schoolEntry' + num).clone().attr('id', 'schoolEntry' + newNum);
 
-    console.log('current number of schools ' + num);
-    console.log('new block number is ' + newNum);
-
     if ( $('#schoolEntry' + newNum).length ) {
-      console.log('block numbering conflict');
       var firstNum = $('.school-block:first').attr('id').replace('schoolEntry', '');
       var lastNum = new Number( $('.school-block:last').attr('id').replace('schoolEntry', ''));
       var newNum = new Number(lastNum + 1);
@@ -891,7 +937,6 @@ PAVE.App.WorkBlock = function() {
     evt.preventDefault();
 
     var curBlock = $(this).data('work-block');
-    console.log(curBlock);
 
     $(this).closest('.form-content-block').addClass('hidden');
     $(this).closest('.work-block').find('.edit-cancel').removeClass('hidden');
@@ -994,11 +1039,7 @@ PAVE.App.WorkBlockDuplication = function() {
         newNumber  = new Number(num + 1),
         newElem = $('#workEntry' + num).clone().attr('id', 'workEntry' + newNum);
 
-    console.log('current number of jobs ' + num);
-    console.log('new block number is ' + newNum);
-
     if ( $('#workEntry' + newNum).length ) {
-      console.log('block numbering conflict');
       var firstNum = $('.work-block:first').attr('id').replace('workEntry', '');
       var lastNum = new Number( $('.work-block:last').attr('id').replace('workEntry', ''));
       var newNum = new Number(lastNum + 1);

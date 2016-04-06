@@ -17,18 +17,33 @@
 
   .hero-inner {
     background: $color-white;
-    @include transition(opacity 0.4s ease-in);
+    @include transition(opacity 0.3s ease-in);
   }
 
   .hero-inner-backdrop {
-    background: url('/assets-build/images/hero-home-mobile@2x.jpg') no-repeat center center;
+    background: url('/assets-build/images/header-home-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     opacity: 0;
-    @include transition(opacity 0.4s ease-in);
+    @include transition(opacity 0.3s ease-in);
 
-    @media #{$medium-up} {
-      background: url('/assets-build/images/hero-home@2x.jpg') no-repeat center center;
+    @media #{$medium-only} {
+      background: url('/assets-build/images/header-home-tablet.jpg') no-repeat center center;
       background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-home-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/assets-build/images/header-home-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/header-home-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
     }
   }
 }
@@ -68,7 +83,6 @@ body.showtime {
     padding: 0;
 
     h6 {
-      color: $text-color-gray-2;
       text-transform: none;
       @include fontSize(10px);
     }
@@ -164,7 +178,7 @@ body.showtime {
   z-index: 100;
 
   @media #{$medium-up} {
-    padding: 5rem 1rem 2rem;
+    padding: 5rem 1rem 3.75rem;
     margin-bottom: 0;
   }
 
@@ -180,12 +194,12 @@ body.showtime {
     right: 0;
     bottom: 0;
     left: 0;
-    background: $color-purple-transparent-2-40;
+    background: $color-purple-transparent-20;
     border-radius: 5px;
     @include transition(background 0.25s linear);
 
     @media #{$medium-up} {
-      background: $color-purple-transparent-2-80;
+      background: $color-purple-transparent-50;
     }
   }
 
@@ -220,18 +234,30 @@ body.showtime {
   }
 
   &.proof-slide-1 {
-    background: url('/assets-build/images/proof-slide-bg-1.jpg') no-repeat center center;
-    background-size: 100% auto;
+    background: url('/assets-build/images/testimonial-juliet.jpg') no-repeat center center;
+    background-size: cover;
+
+    @media #{$retina} {
+      background-image: url('/assets-build/images/testimonial-juliet@2x.jpg');
+    }
   }
 
   &.proof-slide-2 {
-    background: url('/assets-build/images/proof-slide-bg-2.jpg') no-repeat center center;
-    background-size: 100% auto;
+    background: url('/assets-build/images/testimonial-kim.jpg') no-repeat center center;
+    background-size: cover;
+
+    @media #{$retina} {
+      background-image: url('/assets-build/images/testimonial-kim@2x.jpg');
+    }
   }
 
   &.proof-slide-3 {
-    background: url('/assets-build/images/proof-slide-bg-3.jpg') no-repeat center center;
-    background-size: 100% auto;
+    background: url('/assets-build/images/testimonial-jeffrey.jpg') no-repeat center center;
+    background-size: cover;
+
+    @media #{$retina} {
+      background-image: url('/assets-build/images/testimonial-jeffrey@2x.jpg');
+    }
   }
 }
 
@@ -265,7 +291,7 @@ body.showtime {
     &.active,
     &:hover {
       .slide-overlay {
-        background: $color-purple-transparent-2-40;
+        background: $color-purple-transparent-20;
       }
     }
   }
@@ -314,13 +340,13 @@ body.showtime {
       }
 
       .proof-quote {
-        @include fontSize(16px);
+        @include fontSize(14px);
         color: $text-color-gray;
         font-family: $serif;
         max-width: 16rem;
         margin: 0 auto;
         padding-bottom: 2rem;
-        line-height: 1.4;
+        line-height: 1.5;
       }
     }
 
@@ -450,7 +476,7 @@ body.showtime {
     .item-copy {
       @include fontSize(14px);
       color: $text-color-gray;
-      max-width: 15rem;
+      max-width: 12rem;
       letter-spacing: 0.5px;
       margin: 0 auto;
       line-height: 1.4;
@@ -666,6 +692,38 @@ body.showtime {
 }
 
 .secondary-contact-cta-section.home {
+
+  .secondary-cta-bg {
+    background: url('/assets-build/images/cta-support-mobile@2x.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include outer-container(92rem);
+
+    @media #{$medium-only} {
+      background: url('/assets-build/images/cta-support-tablet.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/cta-support-tablet@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    @media #{$large-up} {
+      background: url('/assets-build/images/cta-support-desktop.jpg') no-repeat center center;
+      background-size: cover;
+
+      @media #{$retina} {
+        background: url('/assets-build/images/cta-support-desktop@2x.jpg') no-repeat center center;
+        background-size: cover;
+      }
+    }
+  }
+
   .contact-cta-block {
     padding: 3rem 0;
 

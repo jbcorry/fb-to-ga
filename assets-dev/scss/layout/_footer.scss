@@ -133,7 +133,7 @@ footer {
     }
 
     @media #{$large-up} {
-      @include span-columns(3);
+      @include span-columns(2.5);
     }
 
     .footer-tagline {
