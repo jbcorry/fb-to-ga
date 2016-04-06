@@ -79,14 +79,14 @@ body.showtime {
     min-width: 193px;
   }
 
-  .security-note {
-    padding: 0;
-
-    h6 {
-      text-transform: none;
-      @include fontSize(10px);
-    }
-  }
+  //.security-note {
+  //  padding: 0;
+  //
+  //  h6 {
+  //    text-transform: none;
+  //    @include fontSize(10px);
+  //  }
+  //}
 }
 
 // -------------------------------------------
@@ -133,16 +133,16 @@ body.showtime {
   .value-copy {
     display: inline-block;
     letter-spacing: 0.5px;
-    @include fontSize(13px);
+    @include fontSize(16px);
     color: $color-white;
     font-family: $serif;
 
     @media #{$medium-up} {
-      @include fontSize(12px);
+      @include fontSize(14px);
     }
 
     @media #{$large-up} {
-      @include fontSize(14px);
+      @include fontSize(16px);
     }
   }
 }
@@ -234,11 +234,11 @@ body.showtime {
   }
 
   &.proof-slide-1 {
-    background: url('images/testimonial-juliet.jpg') no-repeat center center;
+    background: url('images/testimonial-morgan.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('images/testimonial-juliet@2x.jpg');
+      background-image: url('images/testimonial-morgan.jpg');
     }
   }
 
@@ -252,11 +252,11 @@ body.showtime {
   }
 
   &.proof-slide-3 {
-    background: url('images/testimonial-jeffrey.jpg') no-repeat center center;
+    background: url('images/testimonial-juliet.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('images/testimonial-jeffrey@2x.jpg');
+      background-image: url('images/testimonial-juliet@2x.jpg');
     }
   }
 }
@@ -464,7 +464,7 @@ body.showtime {
     }
 
     .item-title {
-      @include fontSize(16px);
+      @include fontSize(18px);
       font-family: $serif;
       margin-bottom: 1rem;
 
@@ -474,7 +474,7 @@ body.showtime {
     }
 
     .item-copy {
-      @include fontSize(14px);
+      @include fontSize(16px);
       color: $text-color-gray;
       max-width: 12rem;
       letter-spacing: 0.5px;
@@ -554,7 +554,7 @@ body.showtime {
     text-align: center;
     color: $text-color-gray;
     padding-bottom: 1rem;
-    @include fontSize(14px);
+    @include fontSize(16px);
     max-width: 17rem;
     margin: 0 auto;
     letter-spacing: 0.5px;
@@ -564,7 +564,7 @@ body.showtime {
     }
 
     @media #{$medium-up} {
-      @include fontSize(15px);
+      @include fontSize(18px);
       padding-bottom: 0.25rem;
       max-width: none;
     }
