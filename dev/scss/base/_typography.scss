@@ -33,9 +33,9 @@
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/30b979");
 
-@font-face {font-family: 'ClarendonBT-Light';src: url('/dist/fonts/30B979_0_0.eot');src: url('/dist/fonts/30B979_0_0.eot?#iefix') format('embedded-opentype'),url('/dist/fonts/30B979_0_0.woff2') format('woff2'),url('/dist/fonts/30B979_0_0.woff') format('woff'),url('/dist/fonts/30B979_0_0.ttf') format('truetype');}
+@font-face {font-family: 'ClarendonBT-Light';src: url('fonts/30B979_0_0.eot');src: url('fonts/30B979_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/30B979_0_0.woff2') format('woff2'),url('fonts/30B979_0_0.woff') format('woff'),url('fonts/30B979_0_0.ttf') format('truetype');}
 
-@font-face {font-family: 'BasicCommercialLTCom-Roman';src: url('/dist/fonts/30B979_1_0.eot');src: url('/dist/fonts/30B979_1_0.eot?#iefix') format('embedded-opentype'),url('/dist/fonts/30B979_1_0.woff2') format('woff2'),url('/dist/fonts/30B979_1_0.woff') format('woff'),url('/dist/fonts/30B979_1_0.ttf') format('truetype');}
+@font-face {font-family: 'BasicCommercialLTCom-Roman';src: url('fonts/30B979_1_0.eot');src: url('fonts/30B979_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/30B979_1_0.woff2') format('woff2'),url('fonts/30B979_1_0.woff') format('woff'),url('fonts/30B979_1_0.ttf') format('truetype');}
 
 /*
 TypeTrust.com Webfont License #16032803552
@@ -45,10 +45,10 @@ Get TypeTrust fonts for your website at http://typetrust.com/webfonts
 */
 
 @font-face { font-family: 'ReservationWideBold';
-  src:url('/dist/fonts/ReservationWide-BoldWebLtd.eot');
-  src:url('/dist/fonts/ReservationWide-BoldWebLtd.eot?#iefix') format('embedded-opentype'),
-    url('/dist/fonts/ReservationWide-BoldWebLtd.ttf') format('truetype'),
-    url('/dist/fonts/ReservationWide-BoldWebLtd.svg#ReservationWideBold') format('svg');
+  src:url('fonts/ReservationWide-BoldWebLtd.eot');
+  src:url('fonts/ReservationWide-BoldWebLtd.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ReservationWide-BoldWebLtd.ttf') format('truetype'),
+    url('fonts/ReservationWide-BoldWebLtd.svg#ReservationWideBold') format('svg');
   font-weight: 700; font-style: normal;
 }
 

@@ -23,6 +23,7 @@ tmp/
 /.sass-cache
 *.iml
 /dist
-/dev/stylesheets
+/dev/styles/style.css
+/dev/styles/style.css.map
 /npm-debug.log
 TEST*

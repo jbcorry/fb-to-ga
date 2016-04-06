@@ -21,27 +21,27 @@
   }
 
   .hero-inner-backdrop {
-    background: url('/dist/images/header-home-mobile@2x.jpg') no-repeat center center;
+    background: url('images/header-home-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     opacity: 0;
     @include transition(opacity 0.3s ease-in);
 
     @media #{$medium-only} {
-      background: url('/dist/images/header-home-tablet.jpg') no-repeat center center;
+      background: url('images/header-home-tablet.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/header-home-tablet@2x.jpg') no-repeat center center;
+        background: url('images/header-home-tablet@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
 
     @media #{$large-up} {
-      background: url('/dist/images/header-home-desktop.jpg') no-repeat center center;
+      background: url('images/header-home-desktop.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/header-home-desktop@2x.jpg') no-repeat center center;
+        background: url('images/header-home-desktop@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
@@ -234,29 +234,29 @@ body.showtime {
   }
 
   &.proof-slide-1 {
-    background: url('/dist/images/testimonial-juliet.jpg') no-repeat center center;
+    background: url('images/testimonial-juliet.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('/dist/images/testimonial-juliet@2x.jpg');
+      background-image: url('images/testimonial-juliet@2x.jpg');
     }
   }
 
   &.proof-slide-2 {
-    background: url('/dist/images/testimonial-kim.jpg') no-repeat center center;
+    background: url('images/testimonial-kim.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('/dist/images/testimonial-kim@2x.jpg');
+      background-image: url('images/testimonial-kim@2x.jpg');
     }
   }
 
   &.proof-slide-3 {
-    background: url('/dist/images/testimonial-jeffrey.jpg') no-repeat center center;
+    background: url('images/testimonial-jeffrey.jpg') no-repeat center center;
     background-size: cover;
 
     @media #{$retina} {
-      background-image: url('/dist/images/testimonial-jeffrey@2x.jpg');
+      background-image: url('images/testimonial-jeffrey@2x.jpg');
     }
   }
 }
@@ -492,22 +492,22 @@ body.showtime {
       }
 
       &.icon-computer {
-        background: url('/dist/images/icon-computer@2x.png') no-repeat center center;
+        background: url('images/icon-computer@2x.png') no-repeat center center;
         background-size: 100px 100px;
       }
 
       &.icon-insight {
-        background: url('/dist/images/icon-insight@2x.png') no-repeat center center;
+        background: url('images/icon-insight@2x.png') no-repeat center center;
         background-size: 100px 100px;
       }
 
       &.icon-chart {
-        background: url('/dist/images/icon-chart@2x.png') no-repeat center center;
+        background: url('images/icon-chart@2x.png') no-repeat center center;
         background-size: 100px 100px;
       }
 
       &.icon-chat {
-        background: url('/dist/images/icon-chat-bubbles@2x.png') no-repeat center center;
+        background: url('images/icon-chat-bubbles@2x.png') no-repeat center center;
         background-size: 100px 100px;
       }
     }
@@ -694,7 +694,7 @@ body.showtime {
 .secondary-contact-cta-section.home {
 
   .secondary-cta-bg {
-    background: url('/dist/images/cta-support-mobile@2x.jpg') no-repeat center center;
+    background: url('images/cta-support-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -704,21 +704,21 @@ body.showtime {
     @include outer-container(92rem);
 
     @media #{$medium-only} {
-      background: url('/dist/images/cta-support-tablet.jpg') no-repeat center center;
+      background: url('images/cta-support-tablet.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/cta-support-tablet@2x.jpg') no-repeat center center;
+        background: url('images/cta-support-tablet@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
 
     @media #{$large-up} {
-      background: url('/dist/images/cta-support-desktop.jpg') no-repeat center center;
+      background: url('images/cta-support-desktop.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/cta-support-desktop@2x.jpg') no-repeat center center;
+        background: url('images/cta-support-desktop@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }

@@ -43,27 +43,27 @@
   }
 
   .hero-inner-backdrop {
-    background: url('/dist/images/header-about-mobile@2x.jpg') no-repeat center center;
+    background: url('images/header-about-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     opacity: 0;
     @include transition(opacity 0.3s ease-in);
 
     @media #{$medium-only} {
-      background: url('/dist/images/header-about-tablet.jpg') no-repeat center center;
+      background: url('images/header-about-tablet.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/header-about-tablet@2x.jpg') no-repeat center center;
+        background: url('images/header-about-tablet@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
 
     @media #{$large-up} {
-      background: url('/dist/images/header-about-desktop.jpg') no-repeat center center;
+      background: url('images/header-about-desktop.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/header-about-desktop@2x.jpg') no-repeat center center;
+        background: url('images/header-about-desktop@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
@@ -427,28 +427,28 @@ body.showtime {
     }
 
     &.investor-item-1 {
-      background: url('/dist/images/press-logo-npr@2x.png') no-repeat center center;
+      background: url('images/press-logo-npr@2x.png') no-repeat center center;
       background-size: 100% auto;
       width: 60px;
       height: 24px;
     }
 
     &.investor-item-2 {
-      background: url('/dist/images/press-logo-nyt@2x.png') no-repeat center center;
+      background: url('images/press-logo-nyt@2x.png') no-repeat center center;
       background-size: 100% auto;
       width: 140px;
       height: 24px;
     }
 
     &.investor-item-3 {
-      background: url('/dist/images/press-logo-time@2x.png') no-repeat center center;
+      background: url('images/press-logo-time@2x.png') no-repeat center center;
       background-size: 100% auto;
       width: 60px;
       height: 24px;
     }
 
     &.investor-item-4 {
-      background: url('/dist/images/press-logo-wired@2x.png') no-repeat center center;
+      background: url('images/press-logo-wired@2x.png') no-repeat center center;
       background-size: 100% auto;
       width: 91px;
       height: 24px;
@@ -465,7 +465,7 @@ body.showtime {
   }
 
   .secondary-cta-bg {
-    background: url('/dist/images/cta-careers-mobile@2x.jpg') no-repeat center center;
+    background: url('images/cta-careers-mobile@2x.jpg') no-repeat center center;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -475,21 +475,21 @@ body.showtime {
     @include outer-container(92rem);
 
     @media #{$medium-only} {
-      background: url('/dist/images/cta-careers-tablet.jpg') no-repeat center center;
+      background: url('images/cta-careers-tablet.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/cta-careers-tablet@2x.jpg') no-repeat center center;
+        background: url('images/cta-careers-tablet@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }
 
     @media #{$large-up} {
-      background: url('/dist/images/cta-careers-desktop.jpg') no-repeat center center;
+      background: url('images/cta-careers-desktop.jpg') no-repeat center center;
       background-size: cover;
 
       @media #{$retina} {
-        background: url('/dist/images/cta-careers-desktop@2x.jpg') no-repeat center center;
+        background: url('images/cta-careers-desktop@2x.jpg') no-repeat center center;
         background-size: cover;
       }
     }

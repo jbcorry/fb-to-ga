@@ -29,11 +29,11 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {style: 'expanded'},
-        files: {'<%= globalConfig.dev %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
+        files: {'<%= globalConfig.dev %>/styles/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
       },
       dist: {
         options: {style: 'expanded'},
-        files: {'<%= globalConfig.dev %>/stylesheets/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
+        files: {'<%= globalConfig.dev %>/styles/style.css': '<%= globalConfig.dev %>/scss/style.scss'}
       }
     },
 
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: '<%= globalConfig.dev %>/',
-        src: ['*', 'fonts/*', 'images/*'],
+        src: ['*', 'fonts/*', 'styles/images/*'],
         dest: '<%= globalConfig.dist %>/',
         filter: 'isFile'
       }
@@ -70,8 +70,8 @@ module.exports = function (grunt) {
     //  main: {
     //    expand: false,
     //    flatten: true,
-    //    src: '<%= globalConfig.dev %>/stylesheets/style.css',
-    //    dest: '<%= globalConfig.dev %>/stylesheets/autoprefixed/style-prefixed.css'
+    //    src: '<%= globalConfig.dev %>/styles/style.css',
+    //    dest: '<%= globalConfig.dev %>/styles/autoprefixed/style-prefixed.css'
     //  }
     //},
 
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
     //    files: {
     //      src: [
     //        '<%= globalConfig.dist %>/scripts/{,*/}*.js',
-    //        '<%= globalConfig.dist %>/stylesheets/{,*/}*.css',
+    //        '<%= globalConfig.dist %>/styles/{,*/}*.css',
     //        '<%= globalConfig.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
     //        '<%= globalConfig.dist %>/fonts/*'
     //      ]
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= globalConfig.dist %>/*.html'],
-      css: ['<%= globalConfig.dist %>/stylesheets/*.css'],
+      css: ['<%= globalConfig.dist %>/styles/*.css'],
       options: {
         assetsDirs: ['<%= globalConfig.dist %>']
       }
