@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: '<%= globalConfig.dev %>/',
-        src: ['*', 'fonts/*', 'styles/images/*'],
+        src: ['*', 'fonts/*', 'styles/images/*', 'styles/fonts/*'],
         dest: '<%= globalConfig.dist %>/',
         filter: 'isFile'
       }
