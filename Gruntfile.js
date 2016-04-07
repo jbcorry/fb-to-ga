@@ -50,7 +50,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= globalConfig.dev %>/',
         src: ['*.html', 'favicon.*','fonts/*', 'styles/images/*', 'styles/fonts/*',
-              '!app-flow*', '!contact.html' ],
+              '!app-flow*'],
         dest: '<%= globalConfig.dist %>/',
         filter: 'isFile'
       }
