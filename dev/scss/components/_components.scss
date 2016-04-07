@@ -90,7 +90,6 @@
   .about-hero {
     text-align: center;
     position: relative;
-    padding-top: 8rem;
 
     .hero-headline {
       @include fontSize(36px);
@@ -135,11 +134,15 @@
     }
 
     @media #{$medium-up} {
-      padding-top: 32px;
+      padding-top: 34px;
 
       .hero-inner {
         padding-top: 32px;
       }
+    }
+
+    @media #{$large-up} {
+      padding-top: 48px;
     }
   }
 }
@@ -235,18 +238,10 @@
 
   .press-bar-item {
     display: inline-block;
-    margin: 0.5rem;
-
-    &:nth-child(n+4) {
-      display: none;
-    }
+    margin: 1rem 0.5rem;
 
     @media #{$medium-up} {
       margin: 0.5rem 1.5rem;
-
-      &:nth-child(n+4) {
-        display: inline-block;
-      }
     }
 
     &.press-item-1 {

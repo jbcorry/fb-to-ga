@@ -52,6 +52,7 @@ $(document).ready(function(){
     new PAVE.Secondary.SupportSidebarLinkList();
     new PAVE.Secondary.SidebarSticky();
     new PAVE.Secondary.SidebarLinkListClicks();
+    new PAVE.Secondary.MobileSecondaryNavLinkClicksSupport();
   }
 
   if ( $('.range-slider').length ) {
@@ -60,13 +61,13 @@ $(document).ready(function(){
 
   if ( $('.page-secondary').length ) {
     new PAVE.Secondary.TopNavBar();
-    new PAVE.Secondary.FAQItemClick();
   }
 
   if ( $('.page-careers').length ) {
     new PAVE.Secondary.CareersSidebarLinkList();
     new PAVE.Secondary.SidebarSticky();
     new PAVE.Secondary.SidebarLinkListClicks();
+    new PAVE.Secondary.MobileSecondaryNavLinkClicksCareers();
   }
 
   if ( $('.page-legal').length ) {
@@ -214,11 +215,19 @@ PAVE.Secondary.AboutTopNavBar = function() {
       if ( direction === "down" ) {
         $('.main-header').addClass('hidden');
         $('.hero-main').addClass('nav-stuck');
-        $('.inner-header').fadeOut(0);
+        $('.inner-header').addClass('hidden');
+
+        if ( $(window).width() >= 641 ) {
+          $('.inner-header').fadeOut(0);
+        }
       } else if ( direction === "up" ) {
         $('.main-header').removeClass('hidden');
         $('.hero-main').removeClass('nav-stuck');
-        $('.inner-header').fadeIn(0);
+        $('.inner-header').removeClass('hidden');
+
+        if ( $(window).width() >= 641 ) {
+          $('.inner-header').fadeIn(0);
+        }
       }
     },
     offset: 100
@@ -232,11 +241,28 @@ PAVE.Secondary.AboutTopNavBar = function() {
         $('.inner-header').delay(200).fadeIn(350);
       } else if ( direction === "up" ) {
         $('.main-header').removeClass('stuck');
-        $('.inner-header').fadeIn(0);
+
+        if ( $(window).width() >= 641 ) {
+          $('.inner-header').fadeOut(0);
+        }
       }
     },
     offset: 70
   });
+
+  // mobile sticky nav
+  var waypointAboutTopBar = new Waypoint({
+    element: $('#js-mobile-sticky-header'),
+    handler: function(direction) {
+      if ( direction === "down" ) {
+        $('.main-header').addClass('sticky');
+      } else if ( direction === "up" ) {
+        $('.main-header').removeClass('sticky');
+      }
+    },
+    offset: -40
+  });
+
 };
 
 // ============================================================================
@@ -492,6 +518,55 @@ PAVE.Secondary.SidebarLinkListClicks = function() {
   });
 };
 
+PAVE.Secondary.MobileSecondaryNavLinkClicksCareers = function() {
+  $('.mobile-secondary-nav-item').on('click', function(evt) {
+    evt.preventDefault();
+
+    var target = $(this).data('section-title'),
+        targetSection = $('#' + target);
+
+    if ( $(window).width() <= 640 ) {
+      designPadding = 56;
+      careerPadding = 72;
+    } else {
+      designPadding = 75;
+      careerPadding = 94;
+    }
+
+    if ( target == 'careers-design' ) {
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - designPadding
+      }, 1000);
+    } else if ( targetSection.length ) {
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - careerPadding
+      }, 1000);
+      console.log(careerPadding);
+    }
+  });
+};
+
+PAVE.Secondary.MobileSecondaryNavLinkClicksSupport = function() {
+  $('.mobile-secondary-nav-item').on('click', function(evt) {
+    evt.preventDefault();
+
+    var target = $(this).data('section-title'),
+        targetSection = $('#' + target);
+
+    if ( target == 'about' ) {
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - 42
+      }, 1000);
+      console.log('56');
+    } else {
+      $('html, body').animate({
+        scrollTop: targetSection.offset().top - 72
+      }, 1000);
+      console.log('100');
+    }
+  });
+};
+
 PAVE.Secondary.SidebarSticky = function() {
   var waypointSidebar = new Waypoint({
     element: $('#page-secondary'),
@@ -508,7 +583,7 @@ PAVE.Secondary.SidebarSticky = function() {
 
 PAVE.Secondary.TopNavBar = function() {
   var waypointTopBarHide = new Waypoint({
-    element: $('.secondary-header'),
+    element: $('#page-secondary'),
     handler: function(direction) {
       if ( direction === "down" ) {
         $('.secondary-header').addClass('hide');
@@ -531,17 +606,10 @@ PAVE.Secondary.TopNavBar = function() {
         $('.inner-header').delay(200).fadeIn(350);
       } else if ( direction === "up" ) {
         $('.secondary-header').removeClass('stuck');
-        $('.inner-header').fadeOut(0);
+        // $('.inner-header').fadeOut(0);
       }
     },
     offset: -400
-  });
-};
-
-PAVE.Secondary.FAQItemClick = function() {
-  // refresh waypoints when FAQs are expanded
-  $('.question-title').on('click', function() {
-    Waypoint.refreshAll();
   });
 };
 

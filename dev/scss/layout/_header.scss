@@ -8,6 +8,8 @@
 // Header - Secondary
 // -----------------------------------------------------
 .header-secondary {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   position: fixed;
   top: 0;
   left: 0;
@@ -239,7 +241,9 @@
 // ---------------------------------------------
 .hero-about {
   .main-header {
-    @include transition(height 0.25s linear);
+    @media #{$medium-up} {
+      @include transition(opacity 0.5s linear, background 0.35s cubic-bezier(0.7, 0.01, 0.3, 1), height 0.25s linear);
+    }
   }
 
   .header-secondary .inner-header {
@@ -251,9 +255,11 @@
   }
 
   .header-secondary {
-    &.hidden {
-      .inner-header {
-        display: none;
+    @media #{$medium-up} {
+      &.hidden {
+        .inner-header {
+          display: none;
+        }
       }
     }
   }
@@ -264,10 +270,26 @@
   border-bottom: 0;
   position: relative;
   z-index: 800;
-  @include transition(opacity 0.5s linear);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  @include transition(opacity 0.5s linear, background 0.35s cubic-bezier(0.7, 0.01, 0.3, 1));
 
   @media #{$large-up} {
     padding-top: 1rem;
+  }
+
+  &.about-header {
+    @media #{$small-only} {
+      position: fixed;
+    }
+
+    .inner-header {
+      @media #{$medium-up} {
+        &.hidden {
+          display: none;
+        }
+      }
+    }
   }
 
   .inner-header {
@@ -289,19 +311,19 @@
     opacity: 0;
   }
 
-  &.hidden {
-    height: 0;
-    visibility: hidden;
+  @media #{$medium-up} {
+    &.hidden {
+      height: 0;
+      visibility: hidden;
+    }
   }
 
   &.stuck {
-    z-index: 1000;
     position: fixed;
     padding-top: 0;
     top: 0;
     left: 0;
     right: 0;
-    background: pink;
     z-index: 900;
     height: 60px;
     visibility: visible;
@@ -317,6 +339,10 @@
 
         &:hover {
           border-bottom: 1px solid $color-white;
+        }
+
+        &.login-link {
+          margin-right: 2rem;
         }
       }
 
@@ -337,6 +363,49 @@
 
     .logo-pave-main path {
       fill: $color-white;
+    }
+  }
+
+  @media #{$small-only} {
+    &.sticky {
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      height: 60px;
+      background: $color-purple;
+
+      @media #{$medium-up} {
+        height: 80px;
+      }
+
+      .header-right {
+        a {
+          color: $color-white;
+
+          &:hover {
+            border-bottom: 1px solid $color-white;
+          }
+        }
+
+        .btn-header {
+          display: inline-block;
+          border-bottom: 1px solid $color-white !important;
+        }
+      }
+
+      .mobile-menu-trigger {
+        color: $color-white;
+
+        &:hover {
+          border-bottom: 1px solid $color-white;
+          color: $color-white;
+        }
+      }
+
+      .logo-pave-main path {
+        fill: $color-white;
+      }
     }
   }
 
@@ -366,6 +435,10 @@
 
       &:not(:last-of-type) {
         margin-right: 2rem;
+      }
+
+      &.login-link {
+        margin-right: 0;
       }
 
       &:hover,
