@@ -185,17 +185,17 @@ body.showtime {
   }
 
   .section-tagline {
-    @include fontSize(22px);
+    @include fontSize(20px);
     max-width: 18rem;
     margin: 0 auto;
     color: $color-white;
 
     @media #{$medium-up} {
-      @include fontSize(30px);
       max-width: 28rem;
     }
 
     @media #{$large-up} {
+      @include fontSize(24px);
       max-width: 28rem;
     }
   }
