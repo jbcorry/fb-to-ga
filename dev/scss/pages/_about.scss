@@ -71,16 +71,13 @@
 
   .about-hero {
     text-align: center;
-    padding-top: 5rem;
+    @media #{$small-only} {
+      @include vertical-align();
+    }
 
     @media #{$medium-up} {
       padding-top: 10rem;
     }
-
-    @media #{$large-up} {
-      padding-top: 10rem;
-    }
-
 
     .hero-headline {
       @media #{$small-only} {
@@ -309,13 +306,14 @@ body.showtime {
   }
 
   .team-item-image {
-    width: 142px;
+    width: 100px;
     margin: 0 auto;
     margin-bottom: 0.5rem;
     border-radius: 50%;
 
     @media #{$medium-up} {
       margin-bottom: 1.5rem;
+      width: 142px;
     }
 
     &.normal {
@@ -347,20 +345,22 @@ body.showtime {
     top: 0;
     left: 0;
     right: 0;
-    height: 142px;
+    height: 100px;
 
     @media #{$medium-up} {
       margin-bottom: 1.5rem;
+      height: 142px;
     }
   }
 
   .grid-item-name {
     @include fontSize(15px);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     font-family: $serif;
 
     @media #{$medium-up} {
       @include fontSize(16px);
+      margin-bottom: 0.5rem;
     }
   }
 
