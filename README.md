@@ -10,4 +10,4 @@
 
 ## install sass
 
-## build
+## grunt build
