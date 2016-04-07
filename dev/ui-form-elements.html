@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pave - UI Form Elements</title>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- build:css styles/main.min.css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <script src="scripts/modernizr.custom.min.js"></script>
+    <!-- endbuild -->
+
+  </head>
+
+  <body class="page-ui-form-elements">
+
+    <div class="page-application">
+
+      <div class="page-wrapper">
+
+      <h5 class="ui-form-title">UI Form Elements</h5>
+
+        <form class="app-form" id="app-form">
+
+          <div class="form-section">
+            <span class="form-section-top"></span>
+
+            <div class="form-section-inner">
+              <div class="form-row-titles">
+                <h4 class="form-section-title has-subtitle">Form Section Header</h4>
+                <h2 class="form-headline-secondary">Form body copy. Lorem ipsum dolor sit amet.</h2>
+                <h2 class="form-headline-secondary">Sometimes this text may contain an <a href="#">inline link</a>.</h2>
+              </div>
+
+              <div class="form-section-block">
+                <div class="form-row">
+                  <fieldset class="form-group row-wide">
+                    <label for="examnpleOne">Full Width Text Input</label>
+                    <input type="text" id="exampleOne" placeholder="Placeholder Text">
+                  </fieldset>
+                </div> <!-- form-row -->
+
+                <div class="form-row">
+                  <fieldset class="form-group row-half">
+                    <label for="examnpleTwo">Text Input - Default</label>
+                    <input type="text" id="exampleTwo" placeholder="Placeholder Text">
+                  </fieldset>
+                  <fieldset class="form-group row-half is-active">
+                    <label for="examnpleThree">Text Input - Active</label>
+                    <input type="text" id="exampleThree" placeholder="">
+                  </fieldset>
+                </div> <!-- form-row -->
+
+                <div class="form-row">
+                  <fieldset class="form-group row-half is-valid">
+                    <label for="examnpleFour">Text Input - Filled (Valid)</label>
+                    <input type="text" id="exampleFour" placeholder="Filled Text" value="Filled Text">
+                  </fieldset>
+                  <fieldset class="form-group row-half is-invalid">
+                    <label for="examnpleFive">Text Input - Filled (Error)</label>
+                    <input type="text" id="exampleFive" placeholder="Filled Text" value="Filled Text">
+                    <h4 class="error-message">Error: This is an error message.</h4>
+                  </fieldset>
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+              <div class="form-section-block">
+                <div class="form-row">
+                  <fieldset class="form-group row-half">
+                    <label for="exampleSix">Select - Default</label>
+                    <select id="exampleSix">
+                      <option value="">Select an option...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </fieldset>
+                  <fieldset class="form-group row-half is-active">
+                    <label for="exampleSeven">Select - Active</label>
+                    <select id="exampleSeven">
+                      <option value="">Select an option...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </fieldset>
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+              <div class="form-section-block">
+                <div class="form-row">
+                  <fieldset class="form-group attended-college">
+                    <h5 class="input-title">Radio Input</h5>
+                    <div class="checkbox outside-box inline">
+                      <input type="radio" id="exampleEight" class="is-checked" name="radio-input">
+                      <label for="ExampleEight" class="clear-margin radio" value="yes">Yes</label>
+                    </div>
+                    <div class="checkbox outside-box inline">
+                      <input type="radio" id="exampleNine" name="radio-input">
+                      <label for="ExampleNine" class="clear-margin radio" value="no">No</label>
+                    </div>
+                  </fieldset>
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+              <div class="form-section-block">
+                <div class="form-row">
+                  <h5 class="input-title form-row-title">Please indicate if you have any of the following accounts:</h5>
+
+                  <div class="form-inner-row">
+                    <fieldset class="form-group row-half checkbox-group">
+                      <div class="checkbox">
+                        <input type="checkbox" id="account-checking">
+                        <label class="clear-margin" for="account-checking">Checking Account</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form-group row-half checkbox-group">
+                      <div class="checkbox">
+                        <input type="checkbox" id="account-savings">
+                        <label class="clear-margin" for="account-savings">Savings Account</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form-group row-half checkbox-group">
+                      <div class="checkbox">
+                        <input type="checkbox" id="account-retirement">
+                        <label class="clear-margin" for="account-retirement">Retirement Account</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="form-group row-half checkbox-group">
+                      <div class="checkbox">
+                        <input type="checkbox" id="account-investment">
+                        <label class="clear-margin" for="account-investment">Investment Account</label>
+                      </div>
+                    </fieldset>
+                  </div> <!-- form-inner-row -->
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+              <div class="form-section-block">
+                <div class="form-row mobile-margin">
+                  <h5 class="input-title form-row-title">File Upload Input - Default</h5>
+                  <a href="#" class="btn btn-wide">Upload File</a>
+                </div> <!-- form-row -->
+
+                <div class="form-row">
+                  <h5 class="input-title form-row-title">File Upload Input - Uploaded</h5>
+                  <div class="file-upload-block">
+                    <div class="file-upload-titles">
+                      <h5 class="file-title">filename.pdf</h5>
+                      <h5 class="file-date">January 20, 2016</h5>
+                    </div>
+                    <div class="file-upload-actions">
+                      <a href="#" class="btn-text-gray">Remove</a>
+                    </div>
+                  </div> <!-- file-upload-block -->
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+              <div class="form-section-block">
+                <div class="form-row">
+                  <h5 class="input-title form-row-title">Buttons</h5>
+                  <a href="#" class="btn">Default</a>
+                  <a href="#" class="btn btn-hover">Hover</a>
+                  <a href="#" class="btn btn-active">Loading...</a>
+                </div> <!-- form-row -->
+              </div> <!-- form-section-block -->
+
+            </div>
+          </div> <!-- form-section -->
+
+          <h6 class="form-note">Note: This is a footnote containing some additional information.</h6>
+          <h6 class="form-note">It may also contain an <a href="#">inline link.</a></h6>
+
+        </form> <!-- form -->
+
+      </div> <!-- page-wrapper -->
+
+    </div> <!-- page-application -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="../dist/scripts/plugins/validetta.js"></script>
+    <script src="scripts/scripts.js"></script>
+
+  </body>
+</html>

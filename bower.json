@@ -1,0 +1,26 @@
+{
+  "name": "pave-web",
+  "description": "pave.com website",
+  "main": "Gruntfile.js",
+  "authors": [
+    "pave.com"
+  ],
+  "license": "ISC",
+  "homepage": "www.pave.com",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-mask-plugin": "^1.14.0",
+    "jquery": "^2.2.3",
+    "waypoints": "^4.0.0",
+    "bootstrap": "^3.3.6",
+    "flexslider": "^2.6.0"
+  }
+}
