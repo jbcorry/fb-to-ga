@@ -70,7 +70,7 @@
     max-width: 16rem;
     margin: 0 auto 1rem;
     font-size: 1rem;
-    line-height: 0.5;
+    line-height: 1;
 
     @media #{$medium-up} {
       max-width: none;
@@ -763,10 +763,10 @@ body.showtime .header-wrapper-bg {
   display: block;
   padding-bottom: 2rem;
 
-  @media #{$large-up} {
-    display: none;
-    padding-bottom: 0;
-  }
+  //@media #{$large-up} {
+  //  display: none;
+  //  padding-bottom: 0;
+  //}
 
   .contact-block-content {
     max-width: 14rem;
@@ -787,7 +787,7 @@ body.showtime .header-wrapper-bg {
 
       .title {
         font-family: $sans-serif-secondary;
-        @include fontSize(10px);
+        @include fontSize(12px);
         width: 50%;
         color: $color-gray-7;
         text-transform: uppercase;
@@ -799,7 +799,7 @@ body.showtime .header-wrapper-bg {
         color: $text-color;
         width: 50%;
         letter-spacing: 0.5px;
-        @include fontSize(13px);
+        @include fontSize(15px);
       }
 
       a,
