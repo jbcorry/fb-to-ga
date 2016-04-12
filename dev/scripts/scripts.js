@@ -1197,4 +1197,9 @@ PAVE.App.UploadBlockEditing = function() {
     $(this).closest('.delete-block').addClass('hidden');
     $(this).closest('.delete-block').siblings('.upload-block-buttons').removeClass('hidden');
   });
-}
+};
+
+PAVE.tracking = function(eventName) {
+    ga('send', 'event', 'click',  eventName);
+    mixpanel.track(eventName);
+};
