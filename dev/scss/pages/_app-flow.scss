@@ -113,7 +113,7 @@
         font-family: $sans-serif-secondary;
         @include fontSize(10px);
         width: 35%;
-        color: $color-gray-7;
+        color: $color-app-body-copy;
         text-transform: uppercase;
         letter-spacing: 1px;
         line-height: 20px;
@@ -156,7 +156,7 @@
 
   .gray-bar {
     height: 2px;
-    background: $color-gray-4;
+    background: $color-gray-1;
     position: absolute;
     top: 11px;
     left: 50%;
@@ -165,13 +165,13 @@
   }
 
   span {
-    border: 2px solid $color-gray-4;
+    border: 2px solid $color-gray-1;
     text-align: center;
     border-radius: 50%;
     width: 24px;
     height: 24px;
     display: inline-block;
-    color: $color-gray-4;
+    color: $color-gray-1;
     @include fontSize(10px);
     padding-top: 6px;
     position: relative;
@@ -185,7 +185,7 @@
     &.current {
       border-color: $color-purple;
       color: $color-purple;
-      box-shadow: 0 0 0 4px $color-white;
+      box-shadow: 0 0 0 2px $color-white;
     }
   }
 }
@@ -281,10 +281,10 @@
 
 .form-headline-secondary {
   @include fontSize(14px);
-  color: $text-color-gray;
+  color: $color-app-body-copy;
   display: inline-block;
   line-height: 1.5;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 
   @media #{$large-up} {
     @include clearfix();
@@ -400,7 +400,8 @@
   @include span-columns(12);
   margin-bottom: 0;
   line-height: 1.5;
-  color: $text-color-gray;
+  color: $color-app-body-copy;
+  letter-spacing: 0;
 
   @media #{$medium-up} {
     @include fontSize(14px);
@@ -441,7 +442,7 @@
 
 .security-block {
   .input-subtitle {
-    color: $text-color-gray;
+    color: $color-app-body-copy;
     max-width: 34.5rem;
     letter-spacing: 0;
   }
@@ -705,11 +706,11 @@
 }
 
 .form-note {
-  color: $text-color-gray;
+  color: $color-app-body-copy;
   @include fontSize(12px);
   margin-top: $margin-double;
   padding: 0 1rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 
   @media #{$medium-up} {
     margin-top: $margin-double;
@@ -717,7 +718,8 @@
   }
 
   a {
-    color: $text-color-gray;
+    color: $color-app-body-copy;
+    letter-spacing: 0;
 
     &:hover {
       text-decoration: underline;
@@ -1050,7 +1052,7 @@
       border: 2px solid $color-purple;
 
       span {
-        background: $color-purple-2;
+        background: darken($color-purple, 10%);
         color: $color-white;
       }
 
@@ -1109,7 +1111,7 @@
         border: 2px solid $color-purple;
 
         span {
-          background: $color-purple-2;
+          background: darken($color-purple, 10%);
           color: $color-white;
         }
 
@@ -1150,10 +1152,20 @@
 
   .loan-terms-title {
     text-align: center;
-    font-weight: $weight-regular;
-    margin-bottom: $margin-double-half;
+    font-family: $serif;
+    margin-bottom: 37px;
     padding-left: 0;
     letter-spacing: 0.5px;
+    @include fontSize(16px);
+  }
+
+  .term-info {
+    height: 50px;
+
+    @media #{$large-up} {
+      height: 46px;
+      padding-top: 2px;
+    }
   }
 
   h5 {
@@ -1165,7 +1177,7 @@
 
     @media #{$large-up} {
       padding-left: 20%;
-      margin-bottom: $margin-double;
+      margin-bottom: 0;
     }
   }
 
@@ -1195,7 +1207,7 @@
   }
 
   .term-title {
-    padding-bottom: 30px;
+    height: 46px;
     text-align: left;
 
     .tooltip-question {
@@ -1293,9 +1305,10 @@
 }
 
 label.label-secondary {
-  color: $text-color-gray;
+  color: $color-app-body-copy;
   margin-bottom: $margin-full;
   @include fontSize(12px);
+  letter-spacing: 0;
 
   @media #{$medium-up} {
     @include fontSize(14px);
@@ -1339,7 +1352,7 @@ label.label-secondary {
 
 .app-copy {
   p {
-    color: $text-color-gray;
+    color: $color-app-body-copy;
     margin-bottom: 1rem;
     letter-spacing: 0;
     line-height: 1.5;
@@ -1375,7 +1388,7 @@ label.label-secondary {
 
   .range-slider-inner {
     margin: 0 auto;
-    max-width: 36rem;
+    width: 100%;
   }
 
   .range-slider-footer {
@@ -1385,7 +1398,7 @@ label.label-secondary {
     padding-top: $margin-double;
 
     h5 {
-      @include fontSize(12px);
+      @include fontSize(14px);
       letter-spacing: 0.5px;
       color: $color-gray;
       font-weight: $weight-regular;
@@ -1394,11 +1407,13 @@ label.label-secondary {
     .min-value {
       float: left;
       display: inline-block;
+      padding-left: 40px;
     }
 
     .max-value {
       float: right;
       display: inline-block;
+      padding-right: 40px;
     }
 
     @media #{$medium-up} {
@@ -1412,7 +1427,7 @@ label.label-secondary {
 
   .rangeslider__handle {
     background: url('images/pave-slider-bubble@2x.png') no-repeat center center;
-    background-size: 102px 43px;
+    background-size: 102px 41px;
     @include fontSize(14px);
     letter-spacing: 0.5px;
   }
@@ -1505,15 +1520,11 @@ label.label-secondary {
       cursor: pointer;
 
       span {
-        background: $color-gray-1;
+        background: $color-black;
       }
 
       h5 {
-        color: $color-gray-1;
-      }
-
-      .steps-top {
-        background: $color-gray-1;
+        color: $color-black;
       }
 
       &.toggled {
@@ -1568,7 +1579,7 @@ label.label-secondary {
       @include fontSize(14px);
       line-height: 1.5;
       letter-spacing: 0;
-      color: $text-color-gray;
+      color: $color-app-body-copy;
 
       &.black {
         color: $text-color;
@@ -1616,7 +1627,8 @@ label.label-secondary {
 
   h6 {
     @include fontSize(14px);
-    color: $text-color-gray;
+    color: $color-app-body-copy;
+    letter-spacing: 0;
   }
 
   .final-step-item {

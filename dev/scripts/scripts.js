@@ -690,6 +690,10 @@ PAVE.App.FieldActive = function() {
 };
 
 PAVE.App.LoanTermsSelection = function() {
+  if ( $('.loan-terms-option').hasClass('selected') ) {
+    $('.loan-terms-option.selected').find('.terms-col-btn').html('Selected');
+  }
+
   $('.loan-terms-option').on('click', function() {
     if ( $(this).hasClass('selected') ) {
       // do nothing
@@ -700,16 +704,25 @@ PAVE.App.LoanTermsSelection = function() {
       $(this).addClass('selected');
       // check hidden input
       $(this).find('input[type="checkbox"]').prop( "checked", true );
-      // update button
-      var el = $(this).find('.terms-col-btn');
-
-      if (el.html() == el.data("text-swap")) {
-        el.html(el.data("text-original"));
-      } else {
-        el.data("text-original", el.html());
-        el.html(el.data("text-swap"));
-      }
     };
+  });
+
+  $('#loan-terms-opt-1').on('click', function() {
+    if ( $(this).find('.terms-col-btn').html() == 'Selected') {
+      // do nothing
+    } else {
+      $(this).find('.terms-col-btn').html("Selected");
+      $('#loan-terms-opt-2').find('.terms-col-btn').html("Select 3 years");
+    }
+  });
+
+  $('#loan-terms-opt-2').on('click', function() {
+    if ( $(this).find('.terms-col-btn').html() == 'Selected') {
+      // do nothing
+    } else {
+      $(this).find('.terms-col-btn').html("Selected");
+      $('#loan-terms-opt-1').find('.terms-col-btn').html("Select 2 years");
+    }
   });
 };
 
