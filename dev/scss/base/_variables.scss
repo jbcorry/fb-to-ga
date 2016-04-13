@@ -4,6 +4,7 @@
 // Variables: Global
 ////////////////////////////////////////////////////////
 $max-width: 72rem;
+$hero-height-breakpoint: 670px;
 
 $margin-full: 1rem;
 $margin-full-half: 1.5rem;
@@ -101,16 +102,19 @@ $link-hover:        darken($text-color, 9%);
 
 $text-hero-headline: $color-purple-9;
 
+// APP FLOW
+$color-app-body-copy: #8C8C8C;
+
 // ------------------------------
 // Form Colors
 // ------------------------------
-$form-border-color:          $color-gray-1;
+$form-border-color:          $color-gray-6;
 $form-border-color-active:   $color-purple;
 $form-border-color-disabled: $color-purple-1;
 $form-border-color-success: $form-border-color;
 
 $form-color-disabled: $color-purple-6;
-$form-text-color:   $color-gray-1;
+$form-text-color:   #A0A0A0;
 
 $disabled-gray:     #cfcfcf;
 

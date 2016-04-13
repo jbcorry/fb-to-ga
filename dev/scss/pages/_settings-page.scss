@@ -122,19 +122,19 @@
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: $weight-regular;
-      color: $color-gray-4;
+      color: $color-gray;
       outline: 0;
+      font-family: $sans-serif-secondary;
       @include fontSize(10px);
-
-      @media #{$medium-up} {
-        @include fontSize(12px);
-      }
     }
 
     &.active {
       background: $color-white;
       cursor: pointer;
+
+      span {
+        background: $color-purple;
+      }
 
       a {
         color: $color-black;
@@ -145,25 +145,24 @@
       }
     }
 
-    &:focus,
-    &:active {
-      outline: 0;
-    }
-
     &:hover {
       cursor: pointer;
 
-      a {
-        color: $color-gray-1;
+      span {
+        background: $color-gray-1;
       }
 
-      .toggle-top {
-        background: $color-gray-1;
+      a {
+        color: $color-black;
       }
 
       &.active {
         background: $color-white;
         cursor: pointer;
+
+        span {
+          background: $color-purple;
+        }
 
         a {
           color: $color-black;
@@ -174,13 +173,18 @@
         }
       }
     }
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
   }
 
   .toggle-top {
     width: 100%;
     height: 6px;
     display: block;
-    background: $color-gray-4;
+    background: $color-gray;
     position: absolute;
     top: 0;
   }
@@ -219,6 +223,6 @@
 
 .settings-section-block .checkbox {
   p {
-    color: $text-color-gray;
+    color: $color-app-body-copy;
   }
 }
