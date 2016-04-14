@@ -145,7 +145,7 @@ textarea,
 
 .input-icon-left.active {
   span {
-    background: $color-purple-2;
+    background: $form-border-color-active;
   }
 }
 
@@ -227,6 +227,10 @@ textarea,
 ////////////////////////////////////////////////////////
 // Forms: Fields
 ////////////////////////////////////////////////////////
+label {
+  cursor: pointer;
+}
+
 input[type="password"] {
   letter-spacing: 1px;
 }
@@ -389,6 +393,9 @@ select::-ms-expand {
   width: 100px;
   height: 40px;
   position: absolute;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 }
 
 .rangeslider__handle:after {
@@ -423,6 +430,26 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
 
   &:after {
     background: 0;
+  }
+}
+
+.range-slider-inner {
+  .left-side {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 7px;
+    background: $color-white;
+  }
+
+  .right-side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 7px;
+    background: $color-white;
   }
 }
 

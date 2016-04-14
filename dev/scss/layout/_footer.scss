@@ -82,7 +82,7 @@ footer {
   @include fontSize(11px);
   margin: 0 auto;
   max-width: 16rem;
-  letter-spacing: 0.5px;
+  color: $color-app-body-copy;
 
   &:first-of-type {
     margin-bottom: 1.5rem;

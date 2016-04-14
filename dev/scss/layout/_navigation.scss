@@ -65,19 +65,16 @@
     border: 1px solid $color-border-gray;
     padding: 0;
     margin: 0;
-    left: -53px;
-    top: 135%;
+    left: -60px;
+    top: 30px;
     min-width: 126px;
     width: 126px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
 
     @media #{$medium-up} {
-      left: -49px;
-    }
-
-    @media #{$xlarge-up} {
-      left: -36px;
+      left: -57px;
+      top: 30px;
     }
 
     li {
@@ -90,6 +87,7 @@
         line-height: 1.2;
         color: $color-purple;
         text-decoration: none;
+        letter-spacing: 0.5px;
         @include fontSize(12px);
         border-bottom: 1px solid transparent;
 
@@ -148,7 +146,11 @@
 
     &:hover {
       color: $color-purple;
-      border-bottom: 1px solid $color-purple;
+      text-decoration: none;
+
+      span {
+        border-bottom: 1px solid $color-purple;
+      }
 
       svg {
         path {

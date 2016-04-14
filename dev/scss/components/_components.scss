@@ -60,6 +60,15 @@
     }
   }
 
+  @media screen and (max-height: $hero-height-breakpoint) {
+    &.hero-home .hero-inner {
+      @media #{$medium-up} {
+        min-height: 445px;
+        height: 445px;
+      }
+    }
+  }
+
   .hero-inner-overlay {
     position: absolute;
     top: 0;
