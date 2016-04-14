@@ -472,36 +472,6 @@ body.showtime .header-wrapper-bg {
     }
   }
 
-  ul {
-    list-style-type: disc;
-    margin: 0 0 1rem 0;
-
-    li {
-      display: list-item;
-      list-style-position: outside;
-      margin-left: 19px;
-      color: $text-color-gray;
-      line-height: 1.5;
-      letter-spacing: 0;
-      @include fontSize(14px);
-    }
-  }
-
-  ol {
-    list-style-type: decimal;
-    margin: 0 0 1rem 0;
-
-    li {
-      display: list-item;
-      list-style-position: outside;
-      margin-left: 19px;
-      color: $text-color-gray;
-      line-height: 1.5;
-      letter-spacing: 0;
-      @include fontSize(14px);
-    }
-  }
-
   p {
     color: $text-color-gray;
     line-height: 1.5;
@@ -672,7 +642,6 @@ body.showtime .header-wrapper-bg {
     margin-bottom: 0.5rem;
     display: block;
     color: $color-black;
-    font-weight : bold;
   }
 
   .section-item {
@@ -693,6 +662,40 @@ body.showtime .header-wrapper-bg {
 
 .well {
   padding-bottom: 1rem;
+}
+
+.career-info,
+.legal-item,
+.well {
+  ul {
+    list-style-type: disc;
+    margin: 0 0 1rem 0;
+
+    li {
+      display: list-item;
+      list-style-position: outside;
+      margin-left: 19px;
+      color: $text-color-gray;
+      line-height: 1.5;
+      letter-spacing: 0;
+      @include fontSize(14px);
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin: 0 0 1rem 0;
+
+    li {
+      display: list-item;
+      list-style-position: outside;
+      margin-left: 19px;
+      color: $text-color-gray;
+      line-height: 1.5;
+      letter-spacing: 0;
+      @include fontSize(14px);
+    }
+  }
 }
 
 // -----------------------------------------------------
