@@ -31,24 +31,24 @@
 */
 
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/30b979");
+// @import url("//hello.myfonts.net/count/30b979");
 
 @font-face {
   font-family: 'ClarendonBT-Light';
-  src: url('/assets-build/fonts/30B979_0_0.eot');
-  src: url('/assets-build/fonts/30B979_0_0.eot?#iefix') format('embedded-opentype'),
-       url('/assets-build/fonts/30B979_0_0.woff2') format('woff2'),
-       url('/assets-build/fonts/30B979_0_0.woff') format('woff'),
-       url('/assets-build/fonts/30B979_0_0.ttf') format('truetype');
+  src: url('fonts/30B979_0_0.eot');
+  src: url('fonts/30B979_0_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/30B979_0_0.woff2') format('woff2'),
+       url('fonts/30B979_0_0.woff') format('woff'),
+       url('fonts/30B979_0_0.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'BasicCommercial';
-  src: url('/assets-build/fonts/30B979_1_0.eot');
-  src: url('/assets-build/fonts/30B979_1_0.eot?#iefix') format('embedded-opentype'),
-       url('/assets-build/fonts/30B979_1_0.woff2') format('woff2'),
-       url('/assets-build/fonts/30B979_1_0.woff') format('woff'),
-       url('/assets-build/fonts/30B979_1_0.ttf') format('truetype');
+  src: url('fonts/30B979_1_0.eot');
+  src: url('fonts/30B979_1_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/30B979_1_0.woff2') format('woff2'),
+       url('fonts/30B979_1_0.woff') format('woff'),
+       url('fonts/30B979_1_0.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -79,11 +79,11 @@
 
 @font-face {
   font-family: 'BasicCommercial';
-  src: url('/assets-build/fonts/30E4BF_0_0.eot');
-  src: url('/assets-build/fonts/30E4BF_0_0.eot?#iefix') format('embedded-opentype'),
-       url('/assets-build/fonts/30E4BF_0_0.woff2') format('woff2'),
-       url('/assets-build/fonts/30E4BF_0_0.woff') format('woff'),
-       url('/assets-build/fonts/30E4BF_0_0.ttf') format('truetype');
+  src: url('fonts/30E4BF_0_0.eot');
+  src: url('fonts/30E4BF_0_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/30E4BF_0_0.woff2') format('woff2'),
+       url('fonts/30E4BF_0_0.woff') format('woff'),
+       url('fonts/30E4BF_0_0.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -96,10 +96,10 @@ Get TypeTrust fonts for your website at http://typetrust.com/webfonts
 */
 
 @font-face { font-family: 'ReservationWideBold';
-  src:url('/assets-build/fonts/ReservationWide-BoldWebLtd.eot');
-  src:url('/assets-build/fonts/ReservationWide-BoldWebLtd.eot?#iefix') format('embedded-opentype'),
-    url('/assets-build/fonts/ReservationWide-BoldWebLtd.ttf') format('truetype'),
-    url('/assets-build/fonts/ReservationWide-BoldWebLtd.svg#ReservationWideBold') format('svg');
+  src:url('fonts/ReservationWide-BoldWebLtd.eot');
+  src:url('fonts/ReservationWide-BoldWebLtd.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ReservationWide-BoldWebLtd.ttf') format('truetype'),
+    url('fonts/ReservationWide-BoldWebLtd.svg#ReservationWideBold') format('svg');
   font-weight: 700;
   font-style: normal;
 }
