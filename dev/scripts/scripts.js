@@ -1213,6 +1213,6 @@ PAVE.App.UploadBlockEditing = function() {
 };
 
 PAVE.tracking = function(eventName) {
-    ga('send', 'event', 'click',  eventName);
+    // ga('send', 'event', 'click',  eventName);
     mixpanel.track(eventName);
 };
